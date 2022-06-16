@@ -28,7 +28,7 @@ if (!defined('WPINC')) {
 }
 
 // Set some global paths
-define('OF_DIR', plugin_dir_path(__FILE__));
+define('OF_SM_DIR', plugin_dir_path(__FILE__));
 
 
 
@@ -82,9 +82,9 @@ require plugin_dir_path(__FILE__) . 'includes/oxyframe-style-manager.php';
  *
  * @since    1.0.0
  */
-function run_oxyframe()
+function run_oxyframe_style_manager()
 {
 	$plugin = new Oxyframe_Style_Manager();
 	$plugin->run();
 }
-run_oxyframe();
+run_oxyframe_style_manager();

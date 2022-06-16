@@ -12,7 +12,7 @@
 
 //use WP_REST_Controller;
 
-class Rest_Settings extends WP_Rest_Controller
+class Rest_Settings_sm extends WP_Rest_Controller
 {
 
     protected $namespace;
@@ -22,7 +22,7 @@ class Rest_Settings extends WP_Rest_Controller
     {
 
         $this->namespace = 'oxyframe-style-manager/v2';
-        $this->rest_base = '/settings';
+        $this->rest_base = '/sm';
     }
 
     public function register_routes()
@@ -71,7 +71,7 @@ class Rest_Settings extends WP_Rest_Controller
     public function get_settings($request)
     {
         $meta_query = new ClassData();
-        $base_set = new Base();
+        $base_set = new Base_sm();
         $components_classes = get_option("ct_components_classes");
         $style_folders = get_option("ct_style_folders");
         $style_sets = get_option("ct_style_sets");
@@ -101,10 +101,9 @@ class Rest_Settings extends WP_Rest_Controller
         update_option('ct_style_sets', $style_sets);
         update_option('ct_custom_selectors', $custom_selectors);
         update_option('ct_style_sheets', $style_sheets);
-        $postUpdate = new Of_styles;
-        $postUpdate->updateOxyCache();
         // Send Success response
         $response = true;
+        oxygen_vsb_cache_universal_css();
         return rest_ensure_response($response);
     }
 }

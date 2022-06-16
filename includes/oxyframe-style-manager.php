@@ -158,7 +158,7 @@ class Oxyframe_Style_Manager
 	 */
 	private function register_of_api()
 	{
-		$of_rest_api = new Rest_Settings();
+		$of_rest_api = new Rest_Settings_sm();
 		$this->loader->add_action('rest_api_init', $of_rest_api, 'register_routes');
 	}
 

@@ -1,0 +1,148 @@
+<template>
+  <div class="selector-preview selectors" v-if="view === ''">
+    <h5>All Selectors</h5>
+    <div class="selector-list">
+      <div v-for="(element, index) in selectorStore.selectors" :key="index">
+        <h6 class="selector-item text-limit">{{ selectorName(element) }}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="selector-preview selectors" v-if="view === 'selectors'">
+    <h5>Selectors</h5>
+    <div class="selector-list">
+      <div v-for="(element, index) in selectorsOnly" :key="index">
+        <h6 class="selector-item text-limit">
+          {{ selectorName(element) }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div
+    class="selector-preview custom-selectors"
+    v-if="view === 'custom-selectors'"
+  >
+    <h5>Custom Selectors</h5>
+    <div class="selector-list">
+      <div v-for="(element, index) in customSelectorsOnly" :key="index">
+        <h6 class="selector-item text-limit">
+          {{ selectorName(element) }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="selector-preview active" v-if="view === 'active'">
+    <h5>Active</h5>
+    <div class="selector-list">
+      <div
+        v-for="(element, index) in selectorStore.activeSelectors"
+        :key="index"
+      >
+        <h6 class="selector-item text-limit">
+          {{ selectorName(element) }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="selector-preview unused" v-if="view === 'unused'">
+    <h5>Unused</h5>
+    <div class="selector-list">
+      <div v-for="(element, index) in selectorStore.unusedClasses" :key="index">
+        <h6 class="selector-item text-limit">
+          {{ element.key }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="selector-preview missing" v-if="view === 'missing'">
+    <h5>Missing</h5>
+    <div class="selector-list">
+      <div
+        v-for="(element, index) in selectorStore.missingClasses"
+        :key="index"
+      >
+        <h6 class="selector-item text-limit">
+          {{ element }}
+        </h6>
+      </div>
+    </div>
+  </div>
+  <div class="selector-preview inactive" v-if="view === 'inactive'">
+    <h5>Inactive</h5>
+    <div class="selector-list">
+      <div
+        v-for="(element, index) in selectorStore.inactiveSelectors"
+        :key="index"
+      >
+        <h6 class="selector-item text-limit">
+          {{ selectorName(element) }}
+        </h6>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { useSelectorStore } from '@/store/selectorStore'
+import useHorizontalScroll from '@/composables/useHorizontalScroll'
+import { ref, computed, onMounted, onUpdated } from 'vue'
+/**
+ * stores
+ */
+const selectorStore = useSelectorStore()
+const props = defineProps(['view'])
+
+const { hScroll } = useHorizontalScroll()
+
+onUpdated(() => {
+  hScroll('.selector-list')
+})
+onMounted(() => {
+  hScroll('.selector-list')
+})
+
+const selectorsOnly = computed(() => {
+  return selectorStore.selectors.filter((cClass) => cClass.type === 'selector')
+})
+const customSelectorsOnly = computed(() => {
+  return selectorStore.selectors.filter(
+    (cClass) => cClass.type === 'custom-selector'
+  )
+})
+/**
+ * get friendly name for custom class
+ */
+const selectorName = (sel) => {
+  if (sel['friendly_name'] !== undefined) {
+    return sel['friendly_name']
+  } else {
+    return sel.key
+  }
+}
+</script>
+<style scoped>
+.selector-preview {
+  grid-area: 1 / 1 / 3 / 2;
+  padding: var(--global-space-m);
+}
+.selector-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--global-space-xs);
+  overflow-x: auto;
+}
+.selector-preview h5 {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.selector-item {
+  padding-right: var(--global-space-m);
+}
+.text-limit {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 28ch;
+}
+</style>

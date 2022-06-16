@@ -11,7 +11,7 @@
  * @author     Paul Ryder <paul@oxyframe.com>
  */
 
-class Base
+class Base_sm
 {
 
     /**
