@@ -481,6 +481,7 @@ textarea {
   border-radius: var(--radius-m);
   user-select: none;
   overflow: hidden;
+  min-height: 34px;
 }
 .preview-switch > div {
   width: 50%;
