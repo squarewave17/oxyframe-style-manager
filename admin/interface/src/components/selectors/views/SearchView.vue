@@ -26,6 +26,8 @@
       @searchQuery="querySelectors"
       @replacementName="replacementName"
       @replace="replaceValues"
+      @mode="switchMode"
+      :mode="mode"
     />
   </div>
 </template>
@@ -53,10 +55,21 @@ const searchResults = ref('')
 const searchQuery = ref('')
 const replaceAll = ref('')
 const newValues = ref([])
+const mode = ref('value')
+
+const switchMode = (m) => {
+  mode.value = m
+}
 
 const querySelectors = (q) => {
-  //set search results to query result
-  if (q.length >= 1) searchResults.value = search.searchSelectors(q)
+  switch (mode.value) {
+    case 'value':
+      if (q.length >= 1) searchResults.value = search.searchSelectors(q)
+      break
+    case 'props':
+      if (q.length >= 1) searchResults.value = search.searchProperties(q)
+      break
+  }
 }
 
 const replacementName = (r) => {

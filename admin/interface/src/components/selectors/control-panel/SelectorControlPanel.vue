@@ -134,7 +134,7 @@
     <div
       v-if="selectorStore.selectorsEmpty === false"
       class="preview-panel"
-      :class="{ preview: previewPanelSwitch === 'css' }"
+      :class="{ preview: previewPanelpad }"
     >
       <component :is="previewPanel"></component>
     </div>
@@ -353,6 +353,16 @@ const previewPanel = computed(() => {
 const preview = (p) => {
   previewPanelSwitch.value = p
 }
+const previewPanelpad = computed(() => {
+  if (
+    selectorStore.classIsMulti === true ||
+    previewPanelSwitch.value === 'state'
+  ) {
+    return false
+  } else {
+    return true
+  }
+})
 </script>
 <style scoped>
 .selector-control-panel {

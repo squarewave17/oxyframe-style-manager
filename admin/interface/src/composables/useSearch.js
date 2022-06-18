@@ -198,11 +198,228 @@ export default function search() {
     return result
   }
 
-  const searchProperties = (query) =>{
-
+  const searchProperties = (query) => {
+    //set up aray for the result
+    const result = []
+    //loop through selectors
+    selectors.forEach((item, index) => {
+      //get the keys of each selector
+      Object.keys(item).forEach((objKey) => {
+        //filter out some keys
+        if (
+          objKey !== 'key' &&
+          objKey !== 'parent' &&
+          objKey !== 'type' &&
+          objKey !== 'set_name' &&
+          objKey !== 'friendly_name' &&
+          objKey !== 'originalFolder'
+        ) {
+          //if the key isn't media
+          if (objKey !== 'media') {
+            //get the css properties of each item
+            Object.keys(item[objKey]).forEach((property) => {
+              //define some constants for full screen size
+              const state = objKey
+              const selectorIndex = index
+              const screen = ''
+              const cssProperty = property
+              if (
+                cssProperty.includes(query) &&
+                cssProperty !== 'font-family'
+              ) {
+                // process items depending on property
+                switch (cssProperty) {
+                  case 'gradient':
+                    //Sort gradient items
+                    item[state][cssProperty].colors.forEach((grad, i) => {
+                      let gradColIndex = i
+                      result.push({
+                        selectorIndex,
+                        screen,
+                        state,
+                        cssProperty,
+                        gradColIndex,
+                      })
+                    })
+                    break
+                  case 'custom-css':
+                    var cssString = item[state][cssProperty]
+                    var cssArray = cssString
+                      .split(';')
+                      .map(function (line) {
+                        return line.trim()
+                      })
+                      .filter(function (line) {
+                        return line !== ''
+                      })
+                    //loop through the css array and place values into array of objects with propery value pairs for each css rule
+                    cssArray.map(function (rule) {
+                      var keyValue = rule.split(':')
+                      const css = {
+                        customProperty: keyValue[0],
+                        customValue: keyValue[1],
+                      }
+                      result.push({
+                        selectorIndex,
+                        screen,
+                        state,
+                        cssProperty,
+                        css,
+                      })
+                    })
+                    break
+                  default:
+                    result.push({
+                      selectorIndex,
+                      screen,
+                      state,
+                      cssProperty,
+                    })
+                }
+              }
+              if (cssProperty === 'custom-css') {
+                var cssString2 = item[state][cssProperty]
+                var cssArray2 = cssString2
+                  .split(';')
+                  .map(function (line) {
+                    return line.trim()
+                  })
+                  .filter(function (line) {
+                    return line !== ''
+                  })
+                //loop through the css array and place values into array of objects with propery value pairs for each css rule
+                cssArray2.map(function (rule) {
+                  var keyValue = rule.split(':')
+                  const css = {
+                    customProperty: keyValue[0],
+                    customValue: keyValue[1],
+                  }
+                  if (css.customProperty.includes(query)) {
+                    result.push({
+                      selectorIndex,
+                      screen,
+                      state,
+                      cssProperty,
+                      css,
+                    })
+                  }
+                })
+              }
+            })
+            //if the key IS media
+          } else if (objKey === 'media') {
+            //get the screen sizes of each selector
+            Object.keys(item[objKey]).forEach((screenSize) => {
+              //get the state for each screen size
+              Object.keys(item[objKey][screenSize]).forEach((mediaState) => {
+                //get the css properties for each state
+                Object.keys(item[objKey][screenSize][mediaState]).forEach(
+                  (property) => {
+                    //define some constants for media screen size
+                    const screen = screenSize
+                    const state = mediaState
+                    const selectorIndex = index
+                    const cssProperty = property
+                    if (
+                      cssProperty.includes(query) &&
+                      cssProperty !== 'font-family'
+                    ) {
+                      // process items depending on property
+                      switch (cssProperty) {
+                        case 'gradient':
+                          //Sort gradient items
+                          item[objKey][screen][state][
+                            cssProperty
+                          ].colors.forEach((grad, i) => {
+                            let gradColIndex = i
+                            result.push({
+                              selectorIndex,
+                              screen,
+                              state,
+                              cssProperty,
+                              gradColIndex,
+                            })
+                          })
+                          break
+                        case 'custom-css':
+                          var cssString =
+                            item[objKey][screen][state][cssProperty]
+                          //split css string into individual lines and put in array
+                          var cssArray = cssString
+                            .split(';')
+                            .map(function (line) {
+                              return line.trim()
+                            })
+                            .filter(function (line) {
+                              return line !== ''
+                            })
+                          //loop through the css array and place values into array of objects with propery value pairs for each css rule
+                          cssArray.map(function (rule) {
+                            var keyValue = rule.split(':')
+                            const css = {
+                              customProperty: keyValue[0],
+                              customValue: keyValue[1],
+                            }
+                            result.push({
+                              selectorIndex,
+                              screen,
+                              state,
+                              cssProperty,
+                              css,
+                            })
+                          })
+                          break
+                        default:
+                          console.log(cssProperty)
+                          result.push({
+                            selectorIndex,
+                            screen,
+                            state,
+                            cssProperty,
+                          })
+                      }
+                    }
+                    if (cssProperty === 'custom-css') {
+                      var cssString2 = item[objKey][screen][state][cssProperty]
+                      var cssArray2 = cssString2
+                        .split(';')
+                        .map(function (line) {
+                          return line.trim()
+                        })
+                        .filter(function (line) {
+                          return line !== ''
+                        })
+                      //loop through the css array and place values into array of objects with propery value pairs for each css rule
+                      cssArray2.map(function (rule) {
+                        var keyValue = rule.split(':')
+                        const css = {
+                          customProperty: keyValue[0],
+                          customValue: keyValue[1],
+                        }
+                        if (css.customProperty.includes(query)) {
+                          result.push({
+                            selectorIndex,
+                            screen,
+                            state,
+                            cssProperty,
+                            css,
+                          })
+                        }
+                      })
+                    }
+                  }
+                )
+              })
+            })
+          }
+        }
+      })
+    })
+    console.log(result)
+    return result
   }
   return {
     searchSelectors,
-    searchProperties
+    searchProperties,
   }
 }

@@ -213,7 +213,7 @@ p {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  border: 1px solid var(--color-background-panel);
+  border: 1px solid var(--color-global-border);
   border-radius: var(--radius-m);
   margin-bottom: var(--global-space-s);
   padding: var(--global-space-s);

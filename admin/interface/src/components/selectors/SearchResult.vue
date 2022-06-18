@@ -54,16 +54,32 @@
     </div>
     <!-- Normal value -->
     <div class="value" v-else>
-      <span v-if="screen === ''">
+      <div class="unit-pair" v-if="screen === ''">
         {{ selectorStore.selectors[selectorIndex][stateKey][selProperty] }}
-      </span>
-      <span v-if="screen !== ''">
+        <BaseUnitSelect
+          v-if="showUnits"
+          v-model="
+            selectorStore.selectors[selectorIndex][stateKey][
+              `${selProperty}-unit`
+            ]
+          "
+        />
+      </div>
+      <div class="unit-pair" v-if="screen !== ''">
         {{
           selectorStore.selectors[selectorIndex].media[screen][stateKey][
             selProperty
           ]
         }}
-      </span>
+        <BaseUnitSelect
+          v-if="showUnits"
+          v-model="
+            selectorStore.selectors[selectorIndex].media[screen][stateKey][
+              `${selProperty}-unit`
+            ]
+          "
+        />
+      </div>
     </div>
 
     <div class="new-value">
@@ -86,21 +102,17 @@ import IconOxyPage from '@/components/icons/IconOxyPage.vue'
 import IconOxyTablet from '@/components/icons/IconOxyTablet.vue'
 import IconOxyLandscape from '@/components/icons/IconOxyLandscape.vue'
 import IconOxyPortrait from '@/components/icons/IconOxyPortrait.vue'
-import { computed, toRefs, ref, watchEffect } from 'vue'
+import BaseUnitSelect from '@/components/inputs/BaseUnitSelect.vue'
+import { computed, toRefs, ref, watchEffect, onMounted } from 'vue'
 /**
  * stores
  */
 const selectorStore = useSelectorStore()
 
 const { replaceAll } = toRefs(props)
-/**
- * Result
- */
-// const resultValue = computed(() =>{
-//   switch(property){
-//     case
-//   }
-// })
+
+const sizeUnit = ref('px')
+
 /**
  * props
  */
@@ -133,15 +145,35 @@ const props = defineProps({
 defineEmits(['update:modelValue'])
 const newValue = ref('')
 watchEffect(() => (newValue.value = replaceAll.value))
-// defineExpose({
-//   selectorIndex,
-//   screen,
-//   stateKey,
-//   selProperty,
-//   gradColIndex,
-//   css,
-//   newValue,
-// })
+/**
+ * Size unit setup
+ */
+const unitCheck = (value, array) => {
+  return array.indexOf(value) > -1
+}
+const allowedProperties = [
+  'font-size',
+  'padding-left',
+  'padding-right',
+  'padding-bottom',
+  'padding-top',
+  'margin-left',
+  'margin-right',
+  'margin-bottom',
+  'margin-top',
+  'border-radius',
+  'border-left-width',
+  'border-right-width',
+  'border-top-width',
+  'border-bottom-width',
+  'height',
+  'width',
+  'max-width',
+  'letter-spacing',
+]
+const showUnits = computed(() => {
+  return unitCheck(props.selProperty, allowedProperties)
+})
 </script>
 
 <style scoped>
@@ -169,5 +201,11 @@ watchEffect(() => (newValue.value = replaceAll.value))
   overflow: hidden;
   white-space: nowrap;
   max-width: 28ch;
+}
+.unit-pair {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

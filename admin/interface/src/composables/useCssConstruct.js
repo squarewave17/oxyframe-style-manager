@@ -1,6 +1,5 @@
 import { useSelectorStore } from '@/store/selectorStore'
 import { useGlobalStore } from '@/store/globalStore'
-import { computed } from 'vue'
 
 export default function cssConstruct() {
   const selectorStore = useSelectorStore()
@@ -67,6 +66,10 @@ export default function cssConstruct() {
     //for each property
     Object.keys(obj).forEach(function (key) {
       //If a key ends with -unit, it is oxygens unit declaration
+      //if value is a number and the key is not 'font-weight - add 'px to the end
+      if (/^\d+$/.test(obj[key]) && key !== 'font-weight') {
+        obj[key] = obj[key] + 'px'
+      }
       if (key.endsWith('-unit')) {
         //create a new key by removing '-unit'
         var newKey = key.replace('-unit', '')
@@ -74,10 +77,6 @@ export default function cssConstruct() {
         obj[newKey] += obj[key]
         //delete the original key
         delete obj[key]
-      }
-      //if value is a number and the key is not 'font-weight - add 'px to the end
-      if (/^\d+$/.test(obj[key]) && key !== 'font-weight') {
-        obj[key] = obj[key] + 'px'
       }
     })
     return obj
@@ -152,7 +151,6 @@ export default function cssConstruct() {
     'grid',
     'grid-child-rules',
     'grid-all-children-rule',
-
     // image element
     'image_type',
     'attachment_size',
@@ -160,7 +158,6 @@ export default function cssConstruct() {
     'video-background',
     'video-background-media',
     'video-background-hide',
-
     // shadows
     'box-shadow-horizontal-offset',
     'box-shadow-vertical-offset',
@@ -172,7 +169,6 @@ export default function cssConstruct() {
     'text-shadow-vertical-offset',
     'text-shadow-blur',
     'text-shadow-color',
-
     // filter
     'filter-amount-blur',
     'filter-amount-brightness',
@@ -226,6 +222,8 @@ export default function cssConstruct() {
     'button-color',
     'button-text-color',
     'tag',
+    //to fix
+    'font-family',
   ]
 
   const formatStyles = (className, styles, type) => {

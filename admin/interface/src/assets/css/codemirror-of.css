@@ -249,7 +249,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   background: rgba(255, 150, 0, 0.3);
 }
 .CodeMirror-activeline-background {
-  background: #e8f2ff;
+  background: #e8f2ff41;
 }
 
 /* STOP */
@@ -450,10 +450,10 @@ div.CodeMirror-dragcursors {
 }
 
 .CodeMirror-selected {
-  background: #d9d9d9;
+  background: var(--cm-selection);
 }
 .CodeMirror-focused .CodeMirror-selected {
-  background: #d7d4f0;
+  background: var(--cm-selection);
 }
 .CodeMirror-crosshair {
   cursor: crosshair;
@@ -461,12 +461,12 @@ div.CodeMirror-dragcursors {
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
-  background: #d7d4f0;
+  background: var(--cm-selection);
 }
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line > span::-moz-selection,
 .CodeMirror-line > span > span::-moz-selection {
-  background: #d7d4f0;
+  background: var(--cm-selection);
 }
 
 .cm-searching {
