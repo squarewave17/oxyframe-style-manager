@@ -37,15 +37,12 @@ export const useSelectorStore = defineStore('selectorStore', {
       const fileSystem = useFileSystem()
       let data
       if (!globalStore.fileAccess) {
-        console.log('no access')
         data = file
       } else {
-        console.log('yes access')
         data = await fileSystem.loadData()
       }
       data = JSON.parse(data)
       if (data.fileType === 'selector-store' || data.fileType === 'folder') {
-        console.log('data-to-set-local', data.data)
         this.setLocalData(data.data)
       } else {
         alert('Wrong file type')
@@ -59,7 +56,6 @@ export const useSelectorStore = defineStore('selectorStore', {
         data: this.getLocalData(),
       }
       if (!globalStore.fileAccess) {
-        console.log('download')
         data = JSON.stringify(data)
         let filename = name || 'export'
         let element = document.createElement('a')
@@ -86,7 +82,6 @@ export const useSelectorStore = defineStore('selectorStore', {
         data: this.getFolderData(),
       }
       if (!globalStore.fileAccess) {
-        console.log('download')
         data = JSON.stringify(data)
         let filename = name || 'export'
         let element = document.createElement('a')
@@ -110,10 +105,8 @@ export const useSelectorStore = defineStore('selectorStore', {
       const fileSystem = useFileSystem()
       let data
       if (!globalStore.fileAccess) {
-        console.log('no access')
         data = file
       } else {
-        console.log('yes access')
         data = await fileSystem.loadData()
       }
       data = JSON.parse(data)
@@ -161,16 +154,9 @@ export const useSelectorStore = defineStore('selectorStore', {
       return output
     },
     setLocalData(data) {
-      console.log('setLocalData', data)
       this.selectors = data.selectors
       this.styleFolders = data.styleFolders
       this.styleSets = data.styleSets
-      console.log(
-        'after set local',
-        this.selectors,
-        this.styleFolders,
-        this.styleSets
-      )
     },
     getLocalData() {
       const output = {

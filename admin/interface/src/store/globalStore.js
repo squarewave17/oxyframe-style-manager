@@ -4,7 +4,7 @@ import useSystemDetect from '@/composables/useSystemDetect'
 export const useGlobalStore = defineStore('globalStore', {
   state: () => {
     return {
-      version: '1.0.0',
+      version: '1.0.2',
       isLoading: true,
       isSaving: false,
       saved: false,

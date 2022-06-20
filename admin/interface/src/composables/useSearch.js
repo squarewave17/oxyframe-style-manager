@@ -370,7 +370,6 @@ export default function search() {
                           })
                           break
                         default:
-                          console.log(cssProperty)
                           result.push({
                             selectorIndex,
                             screen,
@@ -415,7 +414,6 @@ export default function search() {
         }
       })
     })
-    console.log(result)
     return result
   }
   return {

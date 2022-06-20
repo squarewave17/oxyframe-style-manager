@@ -15,7 +15,6 @@ export default function useApiController() {
     return apiDatabase.get('/sm')
   }
   const saveSettings = (data) => {
-    console.log(JSON.parse(JSON.stringify(data)))
     return apiDatabase.post('/sm', data)
   }
 

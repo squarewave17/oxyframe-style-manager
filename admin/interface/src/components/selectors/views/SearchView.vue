@@ -77,9 +77,6 @@ const replacementName = (r) => {
   if (searchResults.value !== '') {
     searchResults.value.forEach((value, index) => {
       newValues.value[index] = r
-      console.log(value)
-      console.log(newValues.value[index])
-      console.log(newValues.value)
     })
   }
 }

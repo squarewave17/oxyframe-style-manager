@@ -8,7 +8,6 @@ export default function SelectorHelpers() {
 
   //Process input data from DB
   const processInput = (data) => {
-    console.log('process input', data)
     let selectors
     let customSelectors
     let styleFolders
@@ -130,6 +129,10 @@ export default function SelectorHelpers() {
       //check for empty class and make a key with the classname
       if (!Object.prototype.hasOwnProperty.call(data, 'key')) {
         data[key].key = key
+      }
+      //Check if Selector content is undefined, and create empty object if so
+      if (data[key].original === undefined) {
+        data[key].original = {}
       }
       //check for empty class and convert 'original' array to object
       if (data[key].original.length === 0) {

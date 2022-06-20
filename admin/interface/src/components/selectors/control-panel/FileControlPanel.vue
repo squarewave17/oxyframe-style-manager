@@ -121,7 +121,6 @@ const mergeInput = ref(null)
 const mergeFile = (e) => {
   var files = e.target.files || e.dataTransfer.files
   let file = files[0]
-  console.log(file.type)
   if (file.type === 'application/json') {
     let reader = new FileReader()
     reader.readAsText(file)

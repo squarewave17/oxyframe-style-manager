@@ -1,7 +1,7 @@
 <template>
   <!-- <button @click="postData()" class="of-btn of-btn-default">Save</button> -->
   <button
-    :disabled="globalStore.isSaving === true"
+    :disabled="globalStore.working"
     class="control-icon save"
     @click="saveSettings"
   >

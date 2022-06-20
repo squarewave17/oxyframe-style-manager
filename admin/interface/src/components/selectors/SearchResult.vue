@@ -21,7 +21,7 @@
       <span>&nbsp;(custom css)</span>
     </div>
     <div class="property" v-else>
-      {{ selProperty }}
+      <p class="text-limit">{{ selProperty }}</p>
       <span v-if="selProperty === 'gradient'">
         &nbsp;(color {{ gradColIndex + 1 }})
       </span>

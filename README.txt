@@ -1,14 +1,16 @@
-=== Oxyframe Free ===
+=== Oxyframe Style Manager===
 
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A fluid font generator for the Oxygen builder.
+Advanced selector management for the Oxygen builder.
 
 Update v1.0.2
 
-*Changed the initialization to recursively update values - Less intrusive for existing installs
+*Fixed bug where a broken class with undefined properties could prevent the interface from loading
+*Fixed problem where 'special' OxyExtras css properties were overflowing the search result
+*Fixed issue where Quaraniting selectors lead to undesirable results in the CSS preview
+Update v1.0.1
 
-Update v0.0.1
-
-*Isolated module from main plugin
+*Fixed critical build issue 
+*Fixed styling on preview switch

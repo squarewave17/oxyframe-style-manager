@@ -38,7 +38,8 @@ export default function cssConstruct() {
           key !== 'parent' &&
           key !== 'type' &&
           key !== 'set_name' &&
-          key !== 'friendly_name'
+          key !== 'friendly_name' &&
+          key !== 'originalFolder'
         ) {
           full[key] = prepState(sel[key])
         }
@@ -252,7 +253,6 @@ export default function cssConstruct() {
               .split(';')
               .join(';\n')}`
           } else if (disallowed.indexOf(property) === -1) {
-            console.log(property)
             rule += `${screenSize !== 'full' ? '    ' : '  '}${property}: ${
               style[screenSize][state][property]
             };\n`

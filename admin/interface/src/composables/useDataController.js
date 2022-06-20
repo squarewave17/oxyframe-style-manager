@@ -41,7 +41,6 @@ export default function dataController() {
     }
     try {
       saveSettings(data).then((response) => {
-        console.log(response)
         //decode the css data again
         selectorStore.getSet(selectorStoreData)
 
