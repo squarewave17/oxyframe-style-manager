@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Process stylesheets.
+ * Process Oxy Class Data.
  *
  *
  * @package    Oxyframe-style-manager
@@ -13,6 +13,7 @@ class ClassData
 {
     public $query;
     public $classList;
+    public $oxyPosts;
 
     public function __construct()
     {
@@ -29,21 +30,33 @@ class ClassData
         );
         $this->query = new WP_Query($args);
         $this->classList = array();
-        $this->Process_Posts($this->query);
+        $this->oxyPosts = array();
+
+        // $this->Get_Posts($this->query);
     }
 
-    public function Process_Posts($obj)
+    public function process_posts($obj, $mode, $data)
     {
         if ($obj->have_posts()) {
             while ($obj->have_posts()) {
                 $obj->the_post();
-                $this->get_Classes(json_decode(get_post_meta(get_the_ID(), 'ct_builder_json', true)));
+                if ($mode == 'class-list') {
+                    $this->get_Classes(json_decode(get_post_meta(get_the_ID(), 'ct_builder_json', true)));
+                } elseif ($mode == 'replace') {
+                    foreach ($data as $value) {
+                        $this->replace_classes($value[0], $value[1]);
+                    }
+                    return;
+                } else {
+                    return;
+                }
             }
         }
     }
 
-    public function get_Classes($obj)
+    public function get_classes($obj)
     {
+
         if (isset($obj->options)) {
             if (isset($obj->options->classes)) {
                 foreach ($obj->options->classes as $class) {
@@ -55,13 +68,27 @@ class ClassData
         }
         if (isset($obj->children)) {
             foreach ($obj->children as $child) {
-                $this->get_Classes($child);
+                $this->get_classes($child);
             }
         }
     }
 
+    public function replace_classes($class, $newClass)
+    {
+        //for each array value, do a function call to replace the class name with the new class name
+
+
+    }
+
+    public function class_replace($replacements)
+    {
+        $this->process_posts($this->query, 'class-list', $replacements);
+        return;
+    }
+
     public function get_used()
     {
+        $this->process_posts($this->query, 'class-list', null);
         return $this->classList;
     }
 }

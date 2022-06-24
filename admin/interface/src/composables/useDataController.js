@@ -1,11 +1,12 @@
 import { useGlobalStore } from '@/store/globalStore'
 import { useSelectorStore } from '@/store/selectorStore'
+import { useOxyJSONStore } from '@/store/oxyJSONStore'
 import useApiController from '@/composables/useApiController'
-import { computed } from 'vue'
 
 export default function dataController() {
   const globalStore = useGlobalStore()
   const selectorStore = useSelectorStore()
+  const oxyJSONStore = useOxyJSONStore()
   const { getSettings, saveSettings } = useApiController()
   /**
    * initialize data
@@ -15,6 +16,7 @@ export default function dataController() {
       getSettings()
         .then((response) => {
           globalStore.initStore(response.data)
+          // oxyJSONStore.initStore(response.data)
           selectorStore.getSet(response.data)
         })
         .then(() => {
@@ -32,12 +34,14 @@ export default function dataController() {
   const saveData = () => {
     globalStore.isSaving = true
     let selectorStoreData = selectorStore.saveSet()
+    // console.log(JSON.stringify(oxyJSONStore.data))
     let data = {
       componentsClasses: selectorStoreData.componentsClasses,
       customSelectors: selectorStoreData.customSelectors,
       styleFolders: selectorStoreData.styleFolders,
       styleSets: selectorStoreData.styleSets,
       styleSheets: selectorStoreData.styleSheets,
+      // oxyJson: JSON.parse(JSON.stringify(oxyJSONStore.data)),
     }
     try {
       saveSettings(data).then((response) => {

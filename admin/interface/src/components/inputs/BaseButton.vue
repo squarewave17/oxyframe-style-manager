@@ -57,6 +57,12 @@ const props = defineProps({
   border-radius: var(--radius-m);
   cursor: pointer;
 }
+.btn.small {
+  padding: 5px;
+}
+.btn.small svg {
+  width: 10px;
+}
 .btn.full {
   width: 100%;
 }

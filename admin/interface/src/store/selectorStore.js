@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { useGlobalStore } from '@/store/globalStore'
+import { useOxyJSONStore } from '@/store/oxyJSONStore'
 import useSelectorHelpers from '@/composables/useSelectorHelpers'
 import useFileSystem from '@/composables/useFileSystem'
 
@@ -25,6 +26,7 @@ export const useSelectorStore = defineStore('selectorStore', {
      * Loading/Saving Data
      */
     getSet(data) {
+      console.log('getset')
       const { processInput } = useSelectorHelpers()
       this.setData(processInput(data))
     },
@@ -633,6 +635,7 @@ export const useSelectorStore = defineStore('selectorStore', {
     },
     //Return Selectors that aren't used in the project
     unusedClasses: (state) => {
+      // const oxyJSONStore = useOxyJSONStore()
       let unused = []
       if (state.usedClasses.length !== 0) {
         for (var i = 0; i < state.selectors.length; i++) {
@@ -654,6 +657,7 @@ export const useSelectorStore = defineStore('selectorStore', {
     },
     //Return Classes in the project that don't have Selector
     missingClasses: (state) => {
+      const oxyJSONStore = useOxyJSONStore()
       var missing = []
       if (state.usedClasses.length !== 0) {
         for (var i = 0; i < state.usedClasses.length; i++) {

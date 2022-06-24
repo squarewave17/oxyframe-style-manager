@@ -1,6 +1,6 @@
 <template>
-  <div class="selector-control-panel panel">
-    <h5>
+  <div class="selector-control-panel panel" ref="panel">
+    <h5 v-if="editClassName === false && editClassConfirm === false">
       <span v-if="isCustom">Custom</span>
       Selector
       <span
@@ -12,15 +12,62 @@
         (multi)
       </span>
     </h5>
-    <input
+    <h5 v-else>Replace Class Name</h5>
+    <div
+      class="class-name-container"
       v-if="
         selectorStore.classIsMulti === false &&
         selectorStore.selectorsEmpty === false &&
         selectorStore.typeSelected === 'selector'
       "
-      type="text"
-      v-model="selectorStore.selectors[selectorStore.currentClass].key"
-    />
+    >
+      <div
+        v-if="editClassName === true && editClassConfirm === false"
+        class="selector-name-input overlay-prompt"
+      >
+        <input
+          type="text"
+          :placeholder="selectorStore.selectors[selectorStore.currentClass].key"
+          v-model="newClassName"
+        />
+
+        <BaseButton
+          width="full"
+          @click="editClassConfirm = true"
+          :disabled="replaceNameValid === false"
+        >
+          Replace
+          <IconCheck class="icon" />
+        </BaseButton>
+        <BaseButton width="full" @click="editClassName = false">
+          Cancel
+          <IconClose class="icon" />
+        </BaseButton>
+      </div>
+      <div
+        v-if="editClassName === false && editClassConfirm === false"
+        class="selector-name"
+      >
+        <h5>
+          {{ selectorStore.selectors[selectorStore.currentClass].key }}
+        </h5>
+        <IconEdit class="edit-icon" @click="editClassName = true" />
+      </div>
+      <div v-if="editClassConfirm === true" class="class-confirm">
+        <h5>{{ selectorStore.selectors[selectorStore.currentClass].key }}</h5>
+        <IconDown class="icon" />
+        <h5>{{ newClassName }}</h5>
+        <p>
+          Are you sure you would like to change this class name and all
+          component instances of it? This cannot be undone.
+        </p>
+        <BaseButton width="full" @click="changeClassName">
+          Replace
+          <IconReplace class="icon" />
+        </BaseButton>
+      </div>
+    </div>
+
     <input
       v-if="
         selectorStore.classIsMulti === false &&
@@ -47,7 +94,8 @@
       v-if="
         selectorStore.classIsMulti === false &&
         selectorStore.selectorsEmpty === false &&
-        selectorStore.typeSelected === 'selector'
+        selectorStore.typeSelected === 'selector' &&
+        editClassName === false
       "
       :options="selectorStore.folderList"
       v-model="selectorStore.selectors[selectorStore.currentClass].parent"
@@ -84,7 +132,10 @@
       @change="styleSetFolders($event)"
     />
 
-    <div v-if="selectorStore.selectorsEmpty === false" class="icon-buttons">
+    <div
+      v-if="selectorStore.selectorsEmpty === false && editClassName === false"
+      class="icon-buttons"
+    >
       <!-- clone button -->
       <BaseIconButton
         class="clone"
@@ -114,7 +165,8 @@
     <div
       v-if="
         selectorStore.classIsMulti === false &&
-        selectorStore.selectorsEmpty === false
+        selectorStore.selectorsEmpty === false &&
+        editClassName === false
       "
       class="preview-switch"
     >
@@ -132,14 +184,14 @@
       </div>
     </div>
     <div
-      v-if="selectorStore.selectorsEmpty === false"
+      v-if="selectorStore.selectorsEmpty === false && editClassName === false"
       class="preview-panel"
       :class="{ preview: previewPanelpad }"
     >
       <component :is="previewPanel"></component>
     </div>
     <BaseButton
-      v-if="selectorStore.classIsMulti === false"
+      v-if="selectorStore.classIsMulti === false && editClassName === false"
       width="full"
       @click="showNewPrompt = true"
     >
@@ -205,6 +257,7 @@
  * import
  */
 import { useSelectorStore } from '@/store/selectorStore'
+import { useOxyJSONStore } from '@/store/oxyJSONStore'
 import BaseSelect from '@/components/inputs/BaseSelect'
 import { computed, ref, onMounted, onUpdated } from 'vue'
 import BaseIconButton from '@/components/inputs/BaseIconButton'
@@ -217,16 +270,22 @@ import IconLockOpen from '@/components/icons/IconLockOpen'
 import IconQuarantine from '@/components/icons/IconQuarantine'
 import IconAdd from '@/components/icons/IconAdd'
 import IconClose from '@/components/icons/IconClose'
+import IconCheck from '@/components/icons/IconCheck'
+import IconDown from '@/components/icons/IconDown'
+import IconEdit from '@/components/icons/IconEdit'
+import IconReplace from '@/components/icons/IconReplace'
 import StateOrder from '@/components/selectors/StateOrder'
 import CssPreview from '@/components/selectors/CssPreview'
 import PreviewSelectedList from '@/components/selectors/PreviewSelectedList'
 import useCssConstruct from '@/composables/useCssConstruct'
 import useFormatCheck from '@/composables/useFormatCheck'
+import { onClickOutside } from '@vueuse/core'
 const { checkOxyClass } = useFormatCheck()
 /**
  * stores
  */
 const selectorStore = useSelectorStore()
+const oxyJSONStore = useOxyJSONStore()
 const { constructSnippet } = useCssConstruct()
 
 /**
@@ -245,6 +304,42 @@ const styleSetFolders = (f) => {
   })
 }
 
+/**
+ * Edit Class name
+ */
+const editClassName = ref(false)
+const editClassConfirm = ref(false)
+const newClassName = ref('')
+const panel = ref(null)
+onClickOutside(panel, (event) => {
+  if (editClassName.value === true) {
+    editClassName.value = false
+    editClassConfirm.value = false
+    newClassName.value = ''
+  }
+})
+const replaceNameValid = computed(() => {
+  if (checkOxyClass(newClassName.value) === true) {
+    return true
+  } else {
+    return false
+  }
+})
+const changeClassName = async () => {
+  //when true is returned replaceClass completes, console.log('replaceClass completed')
+  if (
+    (await oxyJSONStore.replaceClass(
+      selectorStore.selectors[selectorStore.currentClass].key,
+      newClassName.value
+    )) === true
+  ) {
+    console.log('replaceClass completed')
+  }
+  selectorStore.selectors[selectorStore.currentClass].key = newClassName.value
+  editClassName.value = false
+  editClassConfirm.value = false
+  newClassName.value = ''
+}
 /**
  * Clone Class
  */
@@ -435,12 +530,14 @@ const previewPanelpad = computed(() => {
   margin-bottom: var(--global-space-m);
 }
 
-.icon-btn {
+.icon-btn,
+.edit-icon {
   align-items: center;
   position: relative;
   cursor: pointer;
 }
-.icon-btn:before {
+.icon-btn:before,
+.edit-icon:before {
   font-size: 12px;
   position: absolute;
   top: -20px;
@@ -448,7 +545,8 @@ const previewPanelpad = computed(() => {
   transition: opacity 0.1s ease-in;
 }
 
-.icon-btn:hover:before {
+.icon-btn:hover:before,
+.edit-icon:hover:before {
   opacity: 1;
 }
 
@@ -463,6 +561,9 @@ const previewPanelpad = computed(() => {
 }
 .icon-btn.quarantine:before {
   content: 'Quarantine';
+}
+.edit-icon:before {
+  content: 'Edit Classname';
 }
 input,
 .folder-select {
@@ -492,5 +593,23 @@ textarea {
 .preview-switch > div.active {
   background-color: var(--color-background-active);
   /* color: var(--color-background); */
+}
+.class-name-container {
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+.class-name-container h5 {
+  margin-bottom: 0;
+}
+.edit-icon {
+  width: 14px;
+}
+
+.selector-name {
+  display: flex;
+  justify-content: space-between;
+}
+.class-confirm {
+  text-align: center;
 }
 </style>
