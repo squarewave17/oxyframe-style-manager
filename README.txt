@@ -5,6 +5,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Advanced selector management for the Oxygen builder.
 
+Update v1.0.3
+
+*Added class rename Feature
+
+=====================================================
+
 Update v1.0.2
 
 *Fixed bug where a broken class with undefined properties could prevent the interface from loading

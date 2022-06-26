@@ -85,26 +85,26 @@ class Rest_Settings_sm extends WP_Rest_Controller
             'customSelectors' => $custom_selectors,
             'styleSheets' => $style_sheets,
             'usedClasses' => $meta_query->get_used(),
-            // 'oxyJson' => $meta_query->get_oxy_json()
+            'oxyJson' => $meta_query->get_oxy_json()
         );
         return rest_ensure_response($response);
     }
 
     public function save_settings($request)
     {
-        // $meta_query = new ClassData();
+        $meta_query = new ClassData();
         $components_classes = $request->get_json_params()["componentsClasses"];
         $style_folders = $request->get_json_params()["styleFolders"];
         $style_sets = $request->get_json_params()["styleSets"];
         $custom_selectors = $request->get_json_params()["customSelectors"];
         $style_sheets = $request->get_json_params()["styleSheets"];
-        $post_json = $request->get_json_params()["oxyJson"];
+        $post_json = $request->get_json_params()["replaceClasses"];
         update_option('ct_components_classes', $components_classes);
         update_option('ct_style_folders', $style_folders);
         update_option('ct_style_sets', $style_sets);
         update_option('ct_custom_selectors', $custom_selectors);
         update_option('ct_style_sheets', $style_sheets);
-        // $meta_query->Update_Oxy_Posts($post_json);
+        $meta_query->class_replace($post_json);
         // Send Success response
         $response = true;
         oxygen_vsb_cache_universal_css();

@@ -31,8 +31,18 @@ class ClassData
         $this->query = new WP_Query($args);
         $this->classList = array();
         $this->oxyPosts = array();
+    }
 
-        // $this->Get_Posts($this->query);
+    public function get_posts($obj)
+    {
+        if ($obj->have_posts()) {
+            while ($obj->have_posts()) {
+                $obj->the_post();
+                $postID = get_the_ID();
+                //add each post to $oxyPosts array as a key with the post ID as the value
+                $this->oxyPosts[$postID] = json_decode(get_post_meta($postID, 'ct_builder_json', true));
+            }
+        }
     }
 
     public function process_posts($obj, $mode, $data)
@@ -40,19 +50,20 @@ class ClassData
         if ($obj->have_posts()) {
             while ($obj->have_posts()) {
                 $obj->the_post();
+                $postID = get_the_ID();
                 if ($mode == 'class-list') {
-                    $this->get_Classes(json_decode(get_post_meta(get_the_ID(), 'ct_builder_json', true)));
+                    $this->get_Classes(json_decode(get_post_meta($postID, 'ct_builder_json', true)));
                 } elseif ($mode == 'replace') {
-                    foreach ($data as $value) {
-                        $this->replace_classes($value[0], $value[1]);
+                    if (!empty($postID)) {
+                        update_post_meta($postID, 'ct_builder_json',  $this->oxyPosts[$postID]);
                     }
-                    return;
                 } else {
                     return;
                 }
             }
         }
     }
+
 
     public function get_classes($obj)
     {
@@ -73,18 +84,50 @@ class ClassData
         }
     }
 
-    public function replace_classes($class, $newClass)
+    // Update all post
+    public function update_all_posts()
     {
-        //for each array value, do a function call to replace the class name with the new class name
-
-
+        $args = array(
+            'post_type' => array('page', 'ct_template'),
+            'numberposts' => -1
+        );
+        $all_posts = get_posts($args);
+        foreach ($all_posts as $single_post) {
+            $single_post->post_title = $single_post->post_title . '';
+            wp_update_post($single_post);
+        }
     }
+    public function replace_classes($data)
+    {
+
+        // $oxySave = new OXY_VSB_Connection();
+        foreach ($data as $key => $value) {
+            update_post_meta($key, 'ct_builder_json', addslashes(json_encode($value)));
+            // $oxySave->ct_connection_metabox_save($key);
+            ct_shortcodes_save_meta_box($key);
+        }
+        $this->update_all_posts();
+    }
+
+
 
     public function class_replace($replacements)
     {
-        $this->process_posts($this->query, 'class-list', $replacements);
+        $this->replace_classes($replacements);
         return;
     }
+
+    public function get_oxy_json()
+    {
+        $this->get_posts($this->query);
+        return $this->oxyPosts;
+    }
+
+    // public function class_replace($replacements)
+    // {
+    //     $this->process_posts($this->query, 'replace', $replacements);
+    //     return;
+    // }
 
     public function get_used()
     {

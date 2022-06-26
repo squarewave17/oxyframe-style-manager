@@ -327,14 +327,10 @@ const replaceNameValid = computed(() => {
 })
 const changeClassName = async () => {
   //when true is returned replaceClass completes, console.log('replaceClass completed')
-  if (
-    (await oxyJSONStore.replaceClass(
-      selectorStore.selectors[selectorStore.currentClass].key,
-      newClassName.value
-    )) === true
-  ) {
-    console.log('replaceClass completed')
-  }
+  oxyJSONStore.replaceClass(
+    selectorStore.selectors[selectorStore.currentClass].key,
+    newClassName.value
+  )
   selectorStore.selectors[selectorStore.currentClass].key = newClassName.value
   editClassName.value = false
   editClassConfirm.value = false

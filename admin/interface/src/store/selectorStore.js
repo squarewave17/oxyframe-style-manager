@@ -19,6 +19,7 @@ export const useSelectorStore = defineStore('selectorStore', {
       currentStyleSheetFolder: 0,
       typeSelected: 'selector',
       usedClasses: [],
+      replaceClasses: [],
     }
   },
   actions: {
@@ -152,6 +153,7 @@ export const useSelectorStore = defineStore('selectorStore', {
         styleSheets: this.styleSheets,
         styleSheetFolders: this.styleSheetFolders,
         usedClasses: this.usedClasses,
+        replaceClasses: this.replaceClasses,
       }
       return output
     },
