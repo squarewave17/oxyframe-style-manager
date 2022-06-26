@@ -16,6 +16,9 @@ Update v1.0.2
 *Fixed bug where a broken class with undefined properties could prevent the interface from loading
 *Fixed problem where 'special' OxyExtras css properties were overflowing the search result
 *Fixed issue where Quaraniting selectors lead to undesirable results in the CSS preview
+
+=====================================================
+
 Update v1.0.1
 
 *Fixed critical build issue 
