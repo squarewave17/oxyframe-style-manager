@@ -1,6 +1,6 @@
 <template>
   <draggable
-    class="dragArea folder-list"
+    class="dragArea folder-list folder-organiser"
     v-model="selectorStore.styleFolders"
     :sort="true"
     handle=".ssf-header"

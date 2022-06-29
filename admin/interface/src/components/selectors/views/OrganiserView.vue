@@ -4,13 +4,14 @@
       @viewSelect="viewSelect"
       :currentView="view"
     ></OrganiserToolbar>
-    <FolderList v-if="view === 'folder'" class="folder-organiser" />
+    <component :is="cp"></component
+    ><!-- cp is the control panel - must load first for teleports-->
+    <component :is="mode"></component>
+    <!-- <FolderList v-if="view === 'folder'" class="folder-organiser" />
 
-    <SelectorList v-if="view === 'selector'" class="selector-organiser" />
+    <SelectorList v-if="view === 'selector'" class="selector-organiser" /> -->
 
     <UncatSelectors v-if="view === 'folder'" class="organiser-uncat-list" />
-
-    <component :is="cp"></component>
   </div>
 </template>
 <script setup>
@@ -21,10 +22,13 @@ import { useSelectorStore } from '@/store/selectorStore'
 import OrganiserToolbar from '@/components/selectors/OrganiserToolbar'
 import SelectorList from '@/components/selectors/SelectorList'
 import UncatSelectors from '@/components/selectors/UncatSelectors'
+import OrganiserBulkRename from '@/components/selectors/OrganiserBulkRename'
 import FolderList from '@/components/selectors/FolderList'
 import FolderControlPanel from '@/components/selectors/control-panel/FolderControlPanel.vue'
 import SelectorControlPanel from '@/components/selectors/control-panel/SelectorControlPanel.vue'
+import BulkRenameControlPanel from '@/components/selectors/control-panel/BulkRenameControlPanel.vue'
 import { ref, computed, onMounted } from 'vue'
+
 /**
  * Conditions
  */
@@ -46,6 +50,20 @@ const cp = computed(() => {
     return FolderControlPanel
   } else if (view.value === 'selector') {
     return SelectorControlPanel
+  } else if (view.value === 'bulk') {
+    return BulkRenameControlPanel
+  } else {
+    return null
+  }
+})
+
+const mode = computed(() => {
+  if (view.value === 'folder') {
+    return FolderList
+  } else if (view.value === 'selector') {
+    return SelectorList
+  } else if (view.value === 'bulk') {
+    return OrganiserBulkRename
   } else {
     return null
   }
@@ -101,7 +119,8 @@ onMounted(() => {
   grid-area: 1 / 2 / 3 / 3;
 }
 .folder-control-panel,
-.selector-control-panel {
+.selector-control-panel,
+.bulk-rename-control-panel {
   grid-area: 1 / 3 / 3 / 4;
 }
 </style>

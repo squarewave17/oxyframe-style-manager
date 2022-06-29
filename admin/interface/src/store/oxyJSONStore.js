@@ -4,6 +4,7 @@ export const useOxyJSONStore = defineStore('oxyJSONStore', {
   state: () => {
     return {
       data: {},
+      dbClasses: [],
     }
   },
   actions: {
@@ -11,12 +12,11 @@ export const useOxyJSONStore = defineStore('oxyJSONStore', {
       this.data = data.oxyJson
       console.log(this.data)
     },
-    async replaceClass(currentClass, newClass) {
+    replaceClass(currentClass, newClass) {
       const searchForClasses = (obj) => {
         //if the obj has options key
         if (obj.options) {
           //if the options key has classes key
-          console.log(obj.options)
           if (obj.options.classes) {
             //for each class in the classes key
             obj.options.classes.forEach((className) => {
@@ -25,7 +25,7 @@ export const useOxyJSONStore = defineStore('oxyJSONStore', {
                 //replace the class with the newClass
                 obj.options.classes[obj.options.classes.indexOf(currentClass)] =
                   newClass
-
+                console.log(currentClass, newClass)
                 //replace active selector
                 obj.options.activeselector = newClass
               }
@@ -46,6 +46,7 @@ export const useOxyJSONStore = defineStore('oxyJSONStore', {
         //search for classes in the object
         searchForClasses(this.data[key])
       })
+
       return true
     },
   },

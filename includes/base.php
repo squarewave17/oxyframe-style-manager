@@ -13,7 +13,14 @@
 
 class Base_sm
 {
-
+    /**
+     * The colors currently in the database.
+     *
+     * @since    0.1.1
+     * @access   public
+     * @var      array    The colors currently in the database.
+     */
+    public $db_colors;
     /**
      * The stylesheets currently in the database.
      *
@@ -25,13 +32,17 @@ class Base_sm
 
     public function __construct()
     {
+        $this->db_colors = get_option('oxygen_vsb_global_colors');
         $this->db_style_sheets = get_option('ct_style_sheets');
         $this->oxy_max_screen = oxygen_vsb_get_page_width($only_global = false);
         $this->oxy_tab_screen = oxygen_vsb_get_breakpoint_width('tablet');
         $this->oxy_landscape_screen = oxygen_vsb_get_breakpoint_width('phone-landscape');
         $this->oxy_min_screen = oxygen_vsb_get_breakpoint_width('phone-portrait');
     }
-
+    public function getColorsAll()
+    {
+        return $this->db_colors;
+    }
     public function getStylesheets()
     {
         $output = $this->db_style_sheets;

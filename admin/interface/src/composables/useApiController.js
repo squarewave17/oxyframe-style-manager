@@ -17,9 +17,13 @@ export default function useApiController() {
   const saveSettings = (data) => {
     return apiDatabase.post('/sm', data)
   }
+  // const fnCall = (data) => {
+  //   return apiDatabase.get('/fn', data)
+  // }
 
   return {
     getSettings,
     saveSettings,
+    // fnCall,
   }
 }

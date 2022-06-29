@@ -64,6 +64,11 @@
             ]
           "
         />
+        <div
+          v-if="showSwatch"
+          class="swatch"
+          :style="{ backgroundColor: swatchBG }"
+        ></div>
       </div>
       <div class="unit-pair" v-if="screen !== ''">
         {{
@@ -79,6 +84,11 @@
             ]
           "
         />
+        <div
+          v-if="showSwatch"
+          class="swatch"
+          :style="{ backgroundColor: swatchBG }"
+        ></div>
       </div>
     </div>
 
@@ -97,6 +107,8 @@
  * Import
  */
 import { useSelectorStore } from '@/store/selectorStore'
+import { useColorStore } from '@/store/colorStore'
+import useDataController from '@/composables/useDataController'
 import IconOxyFull from '@/components/icons/IconOxyFull.vue'
 import IconOxyPage from '@/components/icons/IconOxyPage.vue'
 import IconOxyTablet from '@/components/icons/IconOxyTablet.vue'
@@ -104,14 +116,18 @@ import IconOxyLandscape from '@/components/icons/IconOxyLandscape.vue'
 import IconOxyPortrait from '@/components/icons/IconOxyPortrait.vue'
 import BaseUnitSelect from '@/components/inputs/BaseUnitSelect.vue'
 import { computed, toRefs, ref, watchEffect, onMounted } from 'vue'
+import { useAsyncState } from '@vueuse/core'
+import chroma from 'chroma-js'
 /**
  * stores
  */
 const selectorStore = useSelectorStore()
+const colorStore = useColorStore()
 
 const { replaceAll } = toRefs(props)
 
 const sizeUnit = ref('px')
+const { oxyFn } = useDataController()
 
 /**
  * props
@@ -146,11 +162,101 @@ defineEmits(['update:modelValue'])
 const newValue = ref('')
 watchEffect(() => (newValue.value = replaceAll.value))
 /**
+ * Value
+ */
+const currentValue = ref('')
+watchEffect(() => {
+  //if media screen
+  if (props.screen !== '') {
+    switch (props.selProperty) {
+      case 'gradient':
+        currentValue.value =
+          selectorStore.selectors[props.selectorIndex].media[props.screen][
+            props.stateKey
+          ][props.selProperty].colors[props.gradColIndex].value
+        break
+      case 'custom-css':
+        currentValue.value = props.css.customValue
+        break
+      default:
+        currentValue.value =
+          selectorStore.selectors[props.selectorIndex].media[props.screen][
+            props.stateKey
+          ][props.selProperty]
+    }
+  } else {
+    // full screen
+    switch (props.selProperty) {
+      case 'gradient':
+        currentValue.value =
+          selectorStore.selectors[props.selectorIndex][props.stateKey][
+            props.selProperty
+          ].colors[props.gradColIndex].value
+        break
+      case 'custom-css':
+        currentValue.value = props.css.customValue
+        break
+      default:
+        currentValue.value =
+          selectorStore.selectors[props.selectorIndex][props.stateKey][
+            props.selProperty
+          ]
+    }
+  }
+})
+
+/**
+ * Color setup
+ */
+
+const colorCheck = (value, array) => {
+  return array.indexOf(value) > -1
+}
+const colorProps = [
+  'color',
+  'background-color',
+  'icon-color',
+  'button-text-color',
+  'button-color',
+  'border-top-color',
+  'border-right-color',
+  'border-bottom-color',
+  'border-left-color',
+  'box-shadow-color',
+  'toggle_icon_color',
+]
+const showSwatch = computed(() => {
+  return colorCheck(props.selProperty, colorProps)
+})
+const swatchColor = ref('')
+watchEffect(() => {
+  if (showSwatch.value === true) {
+    if (chroma.valid(currentValue.value) === true) {
+      swatchColor.value = currentValue.value
+    } else {
+      swatchColor.value = colorStore.getColorById(currentValue.value)
+    }
+  } else {
+    return null
+  }
+})
+
+const swatchBG = ref('')
+watchEffect(() => {
+  swatchBG.value =
+    props.modelValue === '' || props.modelValue === undefined
+      ? swatchColor.value
+      : props.modelValue
+  console.log(swatchBG.value)
+})
+/**
  * Size unit setup
  */
+
 const unitCheck = (value, array) => {
   return array.indexOf(value) > -1
 }
+
 const allowedProperties = [
   'font-size',
   'padding-left',
@@ -208,4 +314,12 @@ const showUnits = computed(() => {
   justify-content: space-between;
   align-items: center;
 }
+.swatch {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-m);
+  margin-right: var(--global-space-s);
+  border: 1px solid var(--color-global-border);
+}
+/*end*/
 </style>

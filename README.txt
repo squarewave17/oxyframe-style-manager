@@ -8,6 +8,19 @@ Advanced selector management for the Oxygen builder.
 Update v1.0.3
 
 *Added class rename Feature
+*Added Color indicators on search/replace
+
+ToDo
+class rename Feature
+- Fix shortcode issue - these need to be changed with the JSON somehow
+- clear out new class new after cancel
+-- class bulk rename
+   - limit line height to selector amount
+change state order icons to something better
+truncate text - uncategorized selectors | Selector Name
+Folder name validation
+show real color in css preview
+
 
 =====================================================
 

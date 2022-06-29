@@ -699,6 +699,28 @@ label.btn svg {
   overflow-x: hidden;
 }
 
+/* Animations */
+.animate-spin {
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+@-webkit-keyframes spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+@keyframes spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=style&index=0&id=7ba5bd90&lang=css ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -1016,7 +1038,7 @@ svg[data-v-b52cdd6c] {
 .organiser-toolbar[data-v-54b01e44] {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -1031,7 +1053,7 @@ svg[data-v-b52cdd6c] {
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 250px;
+  width: 350px;
   height: 100%;
   border: 1px solid var(--color-form-control-alt);
   border-radius: var(--radius-m);
@@ -1180,382 +1202,6 @@ h6[data-v-5fc4922a] {
 .style-folder h5[data-v-62f1ac82] {
   color: var(--color-text);
   text-align: center;
-}
-
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/Folder.vue?vue&type=style&index=0&id=1bf5c3ce&scoped=true&lang=css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-.style-folder[data-v-1bf5c3ce] {
-  width: 100%;
-  height: 100%;
-  min-width: 250px;
-  background-color: var(--color-background-panel);
-  border: 1px solid var(--color-background-panel);
-  padding: var(--global-space-m);
-  border-radius: var(--radius-m);
-  /* overflow-y: hidden; */
-}
-.ssf-header[data-v-1bf5c3ce] {
-  cursor: pointer;
-}
-.style-folder h5[data-v-1bf5c3ce] {
-  padding: var(--global-space-s);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-}
-.style-folder-inner[data-v-1bf5c3ce] {
-  overflow-y: auto;
-  height: 85%;
-}
-.style-folder h5[data-v-1bf5c3ce] {
-  color: var(--color-text);
-  text-align: center;
-}
-.isselected[data-v-1bf5c3ce] {
-  background-color: var(--color-background-active);
-  border: 1px solid var(--color-global-border);
-}
-.isdisabled[data-v-1bf5c3ce] {
-  background: repeating-linear-gradient(
-    -55deg,
-    var(--color-background),
-    var(--color-background) 10px,
-    var(--color-background-soft) 10px,
-    var(--color-background-soft) 20px
-  );
-}
-h6[data-v-1bf5c3ce] {
-  cursor: pointer;
-}
-
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/FolderList.vue?vue&type=style&index=0&id=ec4de952&scoped=true&lang=css ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-.folder-list[data-v-ec4de952] {
-  width: 100%;
-  max-height: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-auto-rows: minmax(250px, 1fr);
-  grid-auto-flow: row;
-  gap: var(--global-space-s);
-  grid-area: 1 / 2 / 2 / 3;
-  overflow-y: auto;
-  padding-bottom: var(--global-space-s);
-}
-.isselected[data-v-ec4de952] {
-  background-color: var(--color-background-active);
-  border: 1px solid var(--color-global-border);
-}
-.isdisabled[data-v-ec4de952] {
-  background: repeating-linear-gradient(
-    -55deg,
-    var(--color-background),
-    var(--color-background) 10px,
-    var(--color-form-control-alt) 10px,
-    var(--color-form-control-alt) 20px
-  );
-}
-
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseSelect.vue?vue&type=style&index=0&id=615e345a&lang=css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-select.select {
-  width: 100%;
-
-  box-shadow: none;
-
-  -webkit-appearance: none;
-  background: var(--color-background)
-    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
-    no-repeat right 5px top 55%;
-  background-size: 16px 16px;
-  cursor: pointer;
-  vertical-align: middle;
-}
-select.select:hover {
-  color: var(--color-text);
-}
-option:hover {
-  color: var(--color-background) !important;
-  background: var(--color-text) !important;
-}
-
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseCheckbox.vue?vue&type=style&index=0&id=bd10054c&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-.form-control[data-v-bd10054c] {
-  text-align: left;
-}
-input[type='checkbox'][data-v-bd10054c] {
-  background: var(--color-background-panel);
-  position: relative;
-  border-radius: var(--radius-s);
-}
-input[type='checkbox'][data-v-bd10054c]:focus {
-  border-color: var(--color-text);
-  box-shadow: none;
-  outline: 2px solid transparent;
-}
-input[type='checkbox'][data-v-bd10054c]:checked::before {
-  position: absolute;
-  content: '';
-  background: var(--color-text);
-  border-radius: 2px;
-  height: 8px;
-  width: 8px;
-  bottom: 50%;
-  right: 50%;
-  transform: translate(50%, 50%);
-}
-
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpdateFolder.vue?vue&type=style&index=0&id=4a3a9896&scoped=true&lang=css ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-4a3a9896] {
-  fill: currentColor;
-}
-
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDeleteFolder.vue?vue&type=style&index=0&id=668063d2&scoped=true&lang=css ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-668063d2] {
-  fill: currentColor;
-}
-
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDelete.vue?vue&type=style&index=0&id=2311756e&scoped=true&lang=css ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-2311756e] {
-  fill: currentColor;
-}
-
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDisableFolder.vue?vue&type=style&index=0&id=4bfcc7c8&scoped=true&lang=css ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-4bfcc7c8] {
-  fill: currentColor;
-}
-
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAddFolder.vue?vue&type=style&index=0&id=77817741&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-77817741] {
-  fill: currentColor;
-}
-
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAdd.vue?vue&type=style&index=0&id=dd5cd41a&scoped=true&lang=css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-dd5cd41a] {
-  fill: currentColor;
-}
-
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconReplace.vue?vue&type=style&index=0&id=3f936186&scoped=true&lang=css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-3f936186] {
-  fill: currentColor;
-}
-
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconQuarantine.vue?vue&type=style&index=0&id=07baa14c&scoped=true&lang=css ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-07baa14c] {
-  fill: currentColor;
-}
-
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/FolderControlPanel.vue?vue&type=style&index=0&id=6d595d0a&scoped=true&lang=css ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-.folder-control-panel[data-v-6d595d0a] {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-.folder-control-panel input[data-v-6d595d0a],
-.folder-select[data-v-6d595d0a] {
-  width: 100%;
-  margin-bottom: var(--global-space-l);
-}
-.folder-control-panel button[data-v-6d595d0a],
-.file-input[data-v-6d595d0a] {
-  margin-bottom: var(--global-space-l);
-}
-.overlay-prompt[data-v-6d595d0a] {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-}
-.overlay-prompt h5[data-v-6d595d0a],
-.folder-control-panel h5[data-v-6d595d0a] {
-  padding: var(--global-space-s);
-  margin-bottom: var(--global-space-l);
-}
-.overlay-prompt input[data-v-6d595d0a] {
-  padding: var(--global-space-s);
-  margin-bottom: var(--global-space-l);
-}
-.overlay-prompt button[data-v-6d595d0a] {
-  margin-bottom: var(--global-space-l);
-}
-.temp-css[data-v-6d595d0a] {
-  color: var(--color-text);
-  width: 100%;
-  background-color: var(--color-background);
-  border-radius: var(--radius-m);
-  padding: var(--global-space-m);
-  min-height: 200px;
-}
-
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseIconButton.vue?vue&type=style&index=0&id=0763aa3c&scoped=true&lang=css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-.btn[data-v-0763aa3c] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  color: var(--color-button-outline);
-  background: var(--color-background-panel);
-  border: 1px solid var(--color-button-outline);
-  border-radius: var(--radius-m);
-  cursor: pointer;
-}
-.btn.full[data-v-0763aa3c] {
-  width: 100%;
-}
-.btn.big[data-v-0763aa3c] {
-  padding: 10px 10px;
-}
-.btn.primary[data-v-0763aa3c] {
-  color: var(--color-button-outline);
-  background: var(--color-background);
-}
-.btn.muted[data-v-0763aa3c] {
-  color: var(--color-button-outline);
-  background: var(--color-background-panel);
-  border: 1px solid var(--color-button-outline);
-}
-.btn[data-v-0763aa3c]:disabled {
-  color: var(--color-button-outline-disabled);
-  border: 1px solid var(--color-button-outline-disabled);
-}
-.btn.selected[data-v-0763aa3c] {
-  background-color: var(--color-button-background-selected);
-}
-.btn.mixed[data-v-0763aa3c] {
-  background: linear-gradient(
-    45deg,
-    var(--color-form-control-alt) 50%,
-    var(--color-background-panel) 50%
-  );
-}
-
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCopy.vue?vue&type=style&index=0&id=71fb38da&scoped=true&lang=css ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-71fb38da] {
-  fill: currentColor;
-}
-
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconPreDelete.vue?vue&type=style&index=0&id=0c531980&scoped=true&lang=css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-0c531980] {
-  fill: currentColor;
-}
-
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockClosed.vue?vue&type=style&index=0&id=35808d15&scoped=true&lang=css ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-35808d15] {
-  fill: currentColor;
-}
-
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockOpen.vue?vue&type=style&index=0&id=8240799a&scoped=true&lang=css ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-8240799a] {
-  fill: currentColor;
-}
-
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCheck.vue?vue&type=style&index=0&id=4c24df4c&scoped=true&lang=css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-4c24df4c] {
-  fill: currentColor;
-}
-
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDown.vue?vue&type=style&index=0&id=3a3a7a40&scoped=true&lang=css ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-3a3a7a40] {
-  fill: currentColor;
-}
-
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconEdit.vue?vue&type=style&index=0&id=44a7cfa8&scoped=true&lang=css ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-44a7cfa8] {
-  fill: currentColor;
-}
-
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpDownSmall.vue?vue&type=style&index=0&id=7fa93bfc&scoped=true&lang=css ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-svg[data-v-7fa93bfc] {
-  fill: currentColor;
-}
-
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StateOrder.vue?vue&type=style&index=0&id=ac327430&scoped=true&lang=css ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-
-h6[data-v-ac327430] {
-  margin-bottom: var(--global-space-s);
-}
-p[data-v-ac327430] {
-  margin: 0;
-  line-height: 1;
-  padding-left: var(--global-space-s);
-}
-.state-order-list-item[data-v-ac327430] {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border: 1px solid var(--color-global-border);
-  border-radius: var(--radius-m);
-  margin-bottom: var(--global-space-s);
-  padding: var(--global-space-s);
-  cursor: pointer;
 }
 
 /*!********************************************************************************************************************************************************************************!*\
@@ -2055,6 +1701,399 @@ span.CodeMirror-selectedtext {
   background: none;
 }
 
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCursorStart.vue?vue&type=style&index=0&id=c48ea704&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-c48ea704] {
+  fill: currentColor;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconReplace.vue?vue&type=style&index=0&id=3f936186&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-3f936186] {
+  fill: currentColor;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/OrganiserBulkRename.vue?vue&type=style&index=0&id=5276c95d&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.bulk-rename[data-v-5276c95d] {
+  font-size: 13px;
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/Folder.vue?vue&type=style&index=0&id=1bf5c3ce&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.style-folder[data-v-1bf5c3ce] {
+  width: 100%;
+  height: 100%;
+  min-width: 250px;
+  background-color: var(--color-background-panel);
+  border: 1px solid var(--color-background-panel);
+  padding: var(--global-space-m);
+  border-radius: var(--radius-m);
+  /* overflow-y: hidden; */
+}
+.ssf-header[data-v-1bf5c3ce] {
+  cursor: pointer;
+}
+.style-folder h5[data-v-1bf5c3ce] {
+  padding: var(--global-space-s);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.style-folder-inner[data-v-1bf5c3ce] {
+  overflow-y: auto;
+  height: 85%;
+}
+.style-folder h5[data-v-1bf5c3ce] {
+  color: var(--color-text);
+  text-align: center;
+}
+.isselected[data-v-1bf5c3ce] {
+  background-color: var(--color-background-active);
+  border: 1px solid var(--color-global-border);
+}
+.isdisabled[data-v-1bf5c3ce] {
+  background: repeating-linear-gradient(
+    -55deg,
+    var(--color-background),
+    var(--color-background) 10px,
+    var(--color-background-soft) 10px,
+    var(--color-background-soft) 20px
+  );
+}
+h6[data-v-1bf5c3ce] {
+  cursor: pointer;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/FolderList.vue?vue&type=style&index=0&id=ec4de952&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.folder-list[data-v-ec4de952] {
+  width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+  grid-auto-flow: row;
+  gap: var(--global-space-s);
+  grid-area: 1 / 2 / 2 / 3;
+  overflow-y: auto;
+  padding-bottom: var(--global-space-s);
+}
+.isselected[data-v-ec4de952] {
+  background-color: var(--color-background-active);
+  border: 1px solid var(--color-global-border);
+}
+.isdisabled[data-v-ec4de952] {
+  background: repeating-linear-gradient(
+    -55deg,
+    var(--color-background),
+    var(--color-background) 10px,
+    var(--color-form-control-alt) 10px,
+    var(--color-form-control-alt) 20px
+  );
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseSelect.vue?vue&type=style&index=0&id=615e345a&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+select.select {
+  width: 100%;
+
+  box-shadow: none;
+
+  -webkit-appearance: none;
+  background: var(--color-background)
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
+    no-repeat right 5px top 55%;
+  background-size: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+select.select:hover {
+  color: var(--color-text);
+}
+option:hover {
+  color: var(--color-background) !important;
+  background: var(--color-text) !important;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseCheckbox.vue?vue&type=style&index=0&id=bd10054c&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.form-control[data-v-bd10054c] {
+  text-align: left;
+}
+input[type='checkbox'][data-v-bd10054c] {
+  background: var(--color-background-panel);
+  position: relative;
+  border-radius: var(--radius-s);
+}
+input[type='checkbox'][data-v-bd10054c]:focus {
+  border-color: var(--color-text);
+  box-shadow: none;
+  outline: 2px solid transparent;
+}
+input[type='checkbox'][data-v-bd10054c]:checked::before {
+  position: absolute;
+  content: '';
+  background: var(--color-text);
+  border-radius: 2px;
+  height: 8px;
+  width: 8px;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpdateFolder.vue?vue&type=style&index=0&id=4a3a9896&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4a3a9896] {
+  fill: currentColor;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDeleteFolder.vue?vue&type=style&index=0&id=668063d2&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-668063d2] {
+  fill: currentColor;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDelete.vue?vue&type=style&index=0&id=2311756e&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-2311756e] {
+  fill: currentColor;
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDisableFolder.vue?vue&type=style&index=0&id=4bfcc7c8&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4bfcc7c8] {
+  fill: currentColor;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAddFolder.vue?vue&type=style&index=0&id=77817741&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-77817741] {
+  fill: currentColor;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAdd.vue?vue&type=style&index=0&id=dd5cd41a&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-dd5cd41a] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconQuarantine.vue?vue&type=style&index=0&id=07baa14c&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-07baa14c] {
+  fill: currentColor;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/FolderControlPanel.vue?vue&type=style&index=0&id=6d595d0a&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.folder-control-panel[data-v-6d595d0a] {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.folder-control-panel input[data-v-6d595d0a],
+.folder-select[data-v-6d595d0a] {
+  width: 100%;
+  margin-bottom: var(--global-space-l);
+}
+.folder-control-panel button[data-v-6d595d0a],
+.file-input[data-v-6d595d0a] {
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt[data-v-6d595d0a] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.overlay-prompt h5[data-v-6d595d0a],
+.folder-control-panel h5[data-v-6d595d0a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-6d595d0a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-6d595d0a] {
+  margin-bottom: var(--global-space-l);
+}
+.temp-css[data-v-6d595d0a] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  min-height: 200px;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseIconButton.vue?vue&type=style&index=0&id=0763aa3c&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.btn[data-v-0763aa3c] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+.btn.full[data-v-0763aa3c] {
+  width: 100%;
+}
+.btn.big[data-v-0763aa3c] {
+  padding: 10px 10px;
+}
+.btn.primary[data-v-0763aa3c] {
+  color: var(--color-button-outline);
+  background: var(--color-background);
+}
+.btn.muted[data-v-0763aa3c] {
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+}
+.btn[data-v-0763aa3c]:disabled {
+  color: var(--color-button-outline-disabled);
+  border: 1px solid var(--color-button-outline-disabled);
+}
+.btn.selected[data-v-0763aa3c] {
+  background-color: var(--color-button-background-selected);
+}
+.btn.mixed[data-v-0763aa3c] {
+  background: linear-gradient(
+    45deg,
+    var(--color-form-control-alt) 50%,
+    var(--color-background-panel) 50%
+  );
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCopy.vue?vue&type=style&index=0&id=71fb38da&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-71fb38da] {
+  fill: currentColor;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconPreDelete.vue?vue&type=style&index=0&id=0c531980&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-0c531980] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockClosed.vue?vue&type=style&index=0&id=35808d15&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-35808d15] {
+  fill: currentColor;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockOpen.vue?vue&type=style&index=0&id=8240799a&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-8240799a] {
+  fill: currentColor;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCheck.vue?vue&type=style&index=0&id=4c24df4c&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4c24df4c] {
+  fill: currentColor;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDown.vue?vue&type=style&index=0&id=3a3a7a40&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-3a3a7a40] {
+  fill: currentColor;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconEdit.vue?vue&type=style&index=0&id=44a7cfa8&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-44a7cfa8] {
+  fill: currentColor;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpDownSmall.vue?vue&type=style&index=0&id=7fa93bfc&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-7fa93bfc] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StateOrder.vue?vue&type=style&index=0&id=ac327430&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+h6[data-v-ac327430] {
+  margin-bottom: var(--global-space-s);
+}
+p[data-v-ac327430] {
+  margin: 0;
+  line-height: 1;
+  padding-left: var(--global-space-s);
+}
+.state-order-list-item[data-v-ac327430] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--global-space-s);
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/SelectorControlPanel.vue?vue&type=style&index=0&id=3466136c&scoped=true&lang=css ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -2208,6 +2247,163 @@ textarea[data-v-3466136c] {
   text-align: center;
 }
 
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/BulkRenameControlPanel.vue?vue&type=style&index=0&id=6a3388fd&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.bulk-rename-control-panel[data-v-6a3388fd] {
+  /* grid-area: 1 / 2 / 2 / 3; */
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 170px);
+}
+.bulk-rename-control-panel .friendly-name[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-m);
+}
+.bulk-rename-control-panel button[data-v-6a3388fd],
+.bulk-multi-button[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt[data-v-6a3388fd] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.overlay-prompt h5[data-v-6a3388fd],
+.bulk-rename-control-panel h5[data-v-6a3388fd] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-6a3388fd] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-l);
+}
+.preview-panel[data-v-6a3388fd] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  margin-bottom: var(--global-space-m);
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  flex-grow: 1;
+}
+.preview-panel.preview[data-v-6a3388fd] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: 0;
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  text-align: left;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: var(--global-space-m);
+  flex-grow: 1;
+}
+.icon-buttons[data-v-6a3388fd] {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.icon-btn[data-v-6a3388fd],
+.edit-icon[data-v-6a3388fd] {
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.icon-btn[data-v-6a3388fd]:before,
+.edit-icon[data-v-6a3388fd]:before {
+  font-size: 12px;
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+.icon-btn[data-v-6a3388fd]:hover:before,
+.edit-icon[data-v-6a3388fd]:hover:before {
+  opacity: 1;
+}
+.icon-btn.clone[data-v-6a3388fd]:before {
+  content: 'Clone';
+}
+.icon-btn.lock[data-v-6a3388fd]:before {
+  content: 'Lock';
+}
+.icon-btn.delete[data-v-6a3388fd]:before {
+  content: 'Delete';
+}
+.icon-btn.quarantine[data-v-6a3388fd]:before {
+  content: 'Quarantine';
+}
+.edit-icon[data-v-6a3388fd]:before {
+  content: 'Edit Classname';
+}
+input[data-v-6a3388fd],
+.folder-select[data-v-6a3388fd] {
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+textarea[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-m);
+}
+.preview-switch[data-v-6a3388fd] {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--global-space-m);
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  min-height: 34px;
+}
+.preview-switch > div[data-v-6a3388fd] {
+  width: 50%;
+  text-align: center;
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+.preview-switch > div.active[data-v-6a3388fd] {
+  background-color: var(--color-background-active);
+  /* color: var(--color-background); */
+}
+.class-name-container[data-v-6a3388fd] {
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+.class-name-container h5[data-v-6a3388fd] {
+  margin-bottom: 0;
+}
+.edit-icon[data-v-6a3388fd] {
+  width: 14px;
+}
+.selector-name[data-v-6a3388fd] {
+  display: flex;
+  justify-content: space-between;
+}
+.class-confirm[data-v-6a3388fd] {
+  text-align: center;
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/OrganiserView.vue?vue&type=style&index=0&id=5a16af31&scoped=true&lang=css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -2232,7 +2428,8 @@ textarea[data-v-3466136c] {
   grid-area: 1 / 2 / 3 / 3;
 }
 .folder-control-panel[data-v-5a16af31],
-.selector-control-panel[data-v-5a16af31] {
+.selector-control-panel[data-v-5a16af31],
+.bulk-rename-control-panel[data-v-5a16af31] {
   grid-area: 1 / 3 / 3 / 4;
 }
 
@@ -2374,6 +2571,14 @@ select.select[data-v-ad176212]:focus {
   justify-content: space-between;
   align-items: center;
 }
+.swatch[data-v-31f0e060] {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-m);
+  margin-right: var(--global-space-s);
+  border: 1px solid var(--color-global-border);
+}
+/*end*/
 
 /*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/SearchView.vue?vue&type=style&index=0&id=14edc499&scoped=true&lang=css ***!

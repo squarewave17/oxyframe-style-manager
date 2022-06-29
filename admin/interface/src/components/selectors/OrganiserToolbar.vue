@@ -13,6 +13,13 @@
       >
         Selectors
       </div>
+      <div
+        v-if="currentView !== 'folder'"
+        :class="{ active: currentView === 'bulk' }"
+        @click="$emit('viewSelect', 'bulk')"
+      >
+        Bulk Rename
+      </div>
     </div>
   </div>
 </template>
@@ -33,7 +40,7 @@ const props = defineProps({
 .organiser-toolbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   user-select: none;
 }
 .btn {
@@ -46,7 +53,7 @@ const props = defineProps({
   display: flex;
   align-items: center;
   overflow: hidden;
-  width: 250px;
+  width: 350px;
   height: 100%;
   border: 1px solid var(--color-form-control-alt);
   border-radius: var(--radius-m);

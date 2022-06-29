@@ -53,17 +53,24 @@
         </h5>
         <IconEdit class="edit-icon" @click="editClassName = true" />
       </div>
-      <div v-if="editClassConfirm === true" class="class-confirm">
+      <div
+        v-if="editClassConfirm === true"
+        class="class-confirm overlay-prompt"
+      >
         <h5>{{ selectorStore.selectors[selectorStore.currentClass].key }}</h5>
         <IconDown class="icon" />
         <h5>{{ newClassName }}</h5>
         <p>
           Are you sure you would like to change this class name and all
-          component instances of it? This cannot be undone.
+          component instances of it? This cannot be undone once saved.
         </p>
         <BaseButton width="full" @click="changeClassName">
           Replace
           <IconReplace class="icon" />
+        </BaseButton>
+        <BaseButton width="full" @click="editClassConfirm = false">
+          Cancel
+          <IconClose class="icon" />
         </BaseButton>
       </div>
     </div>

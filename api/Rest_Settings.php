@@ -17,12 +17,14 @@ class Rest_Settings_sm extends WP_Rest_Controller
 
     protected $namespace;
     protected $rest_base;
+    protected $fn_base;
 
     public function __construct()
     {
 
         $this->namespace = 'oxyframe-style-manager/v2';
         $this->rest_base = '/sm';
+        // $this->fn_base = '/fn';
     }
 
     public function register_routes()
@@ -44,6 +46,23 @@ class Rest_Settings_sm extends WP_Rest_Controller
                 ]
             ]
         );
+
+        // register_rest_route(
+        //     $this->namespace,
+        //     $this->fn_base,
+        //     [
+        //         [
+        //             'methods' => \WP_Rest_Server::READABLE,
+        //             'callback' => [$this, 'fn_call'],
+        //             'permission_callback' => [$this, 'get_route_access']
+        //         ],
+        //         // [
+        //         //     'methods' => \WP_Rest_Server::CREATABLE,
+        //         //     'callback' => [$this, 'save_settings'],
+        //         //     'permission_callback' => [$this, 'get_route_access']
+        //         // ]
+        //     ]
+        // );
     }
 
     /**
@@ -85,7 +104,8 @@ class Rest_Settings_sm extends WP_Rest_Controller
             'customSelectors' => $custom_selectors,
             'styleSheets' => $style_sheets,
             'usedClasses' => $meta_query->get_used(),
-            'oxyJson' => $meta_query->get_oxy_json()
+            'oxyJson' => $meta_query->get_oxy_json(),
+            'colors' => $base_set->getColorsAll(),
         );
         return rest_ensure_response($response);
     }
@@ -110,4 +130,20 @@ class Rest_Settings_sm extends WP_Rest_Controller
         oxygen_vsb_cache_universal_css();
         return rest_ensure_response($response);
     }
+
+    // public function fn_call(WP_REST_Request $request)
+    // {
+    //     $response = null;
+    //     //define function type
+    //     $fn = $request->get_param('fn');
+    //     //switch function type
+    //     switch ($fn) {
+    //         case "get_oxy_color":
+    //             $color = $request->get_param('param');
+    //             $response = oxygen_vsb_get_global_color_value($color);
+    //             break;
+    //     }
+
+    //     return rest_ensure_response($response);
+    // }
 }

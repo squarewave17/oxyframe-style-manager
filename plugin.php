@@ -88,5 +88,3 @@ function run_oxyframe_style_manager()
 	$plugin->run();
 }
 run_oxyframe_style_manager();
-
-// echo (get_post_meta(7, 'ct_builder_json', true));

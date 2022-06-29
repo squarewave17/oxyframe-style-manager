@@ -1,12 +1,14 @@
 import { useGlobalStore } from '@/store/globalStore'
 import { useSelectorStore } from '@/store/selectorStore'
 import { useOxyJSONStore } from '@/store/oxyJSONStore'
+import { useColorStore } from '@/store/colorStore'
 import useApiController from '@/composables/useApiController'
 
 export default function dataController() {
   const globalStore = useGlobalStore()
   const selectorStore = useSelectorStore()
   const oxyJSONStore = useOxyJSONStore()
+  const colorStore = useColorStore()
   const { getSettings, saveSettings } = useApiController()
   /**
    * initialize data
@@ -16,6 +18,7 @@ export default function dataController() {
       getSettings()
         .then((response) => {
           globalStore.initStore(response.data)
+          colorStore.initStore(response.data.colors)
           oxyJSONStore.initStore(response.data)
           selectorStore.getSet(response.data)
         })
@@ -57,8 +60,29 @@ export default function dataController() {
     }
   }
   // Save Data END
+
+  /**
+   * Oxy Functions
+   */
+  // const oxyFn = async (fn, param) => {
+  //   const data = {
+  //     params: {
+  //       fn: fn,
+  //       param: param,
+  //     },
+  //   }
+  //   try {
+  //     fnCall(data).then((response) => {
+  //       console.log(response.data)
+  //       return response.data
+  //     })
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
   return {
     initializeData,
     saveData,
+    // oxyFn,
   }
 }

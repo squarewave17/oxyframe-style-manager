@@ -1,6 +1,6 @@
 <template>
   <draggable
-    class="dragArea selector-list"
+    class="dragArea selector-list selector-organiser"
     v-model="selectorStore.selectors"
     :sort="true"
     :disabled="selectorStore.classIsMulti"
