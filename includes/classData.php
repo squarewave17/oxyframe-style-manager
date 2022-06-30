@@ -18,7 +18,7 @@ class ClassData
     public function __construct()
     {
         $args = array(
-            'post_type' => array('post', 'page', 'ct_template'),
+            'post_type' => array('post', 'page', 'ct_template', 'oxy_user_library'),
             'post_status' => 'any',
             'posts_per_page' => -1,
             'meta_query' => array(
@@ -88,7 +88,7 @@ class ClassData
     public function update_all_posts()
     {
         $args = array(
-            'post_type' => array('post', 'page', 'ct_template'),
+            'post_type' => array('post', 'page', 'ct_template', 'oxy_user_library'),
             'numberposts' => -1
         );
         $all_posts = get_posts($args);
