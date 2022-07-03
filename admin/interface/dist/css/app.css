@@ -1,3 +1,2861 @@
-@import url(https://fonts.googleapis.com/css2?family=Inter&family=Merriweather&family=Montserrat&family=Noto+Sans&family=Nunito&family=Oswald&family=PT+Sans&family=Playfair+Display&family=Poppins&family=Raleway&family=Roboto&family=Roboto+Condensed&family=Roboto+Mono&family=Roboto+Slab&family=Source+Sans+Pro&family=Ubuntu:ital@1&display=swap);.logo[data-v-a5459252]{max-width:70px;display:flex;align-items:center}button.save[data-v-7988c978]{border:none;background-color:var(--color-background)}button.save:disabled svg[data-v-7988c978]{fill:var(--color-form-control-alt)}svg[data-v-7988c978]{width:30px}input[data-v-604ba50c]{border-radius:6px;border:1px solid var(--color-text)}.knobs[data-v-604ba50c],.layer[data-v-604ba50c]{position:absolute;top:0;right:0;bottom:0;left:0;border-radius:var(--radius-s);border:1px solid var(--color-form-control-alt)}.toggle-switch[data-v-604ba50c]{width:80px;height:32px}.checkbox[data-v-604ba50c]{position:relative;width:100%;height:100%;padding:0;margin:0;opacity:0;cursor:pointer;z-index:3}.knobs[data-v-604ba50c]{z-index:2}.layer[data-v-604ba50c]{width:100%;background-color:var(--color-background);transition:all .3s ease;z-index:1}.toggle-switch .knobs span[data-v-604ba50c],.toggle-switch .knobs[data-v-604ba50c]:before{position:absolute;top:4px;width:35px;height:21px;font-size:9px;font-weight:700;text-align:center;line-height:1;padding:6px 5px;border-radius:2px;transition:all .3s ease}.toggle-switch .knobs[data-v-604ba50c]:before{content:"";left:4px;background-color:var(--color-text)}.toggle-switch .knobs span.false-label[data-v-604ba50c]{display:inline-block;left:4px;color:var(--color-background);z-index:1}.toggle-switch .knobs span.true-label[data-v-604ba50c]{display:inline-block;right:4px;color:var(--color-text);z-index:1}.toggle-switch .checkbox:checked+.knobs span.false-label[data-v-604ba50c]{color:var(--color-text)}.toggle-switch .checkbox:checked+.knobs[data-v-604ba50c]:before{left:38px;background-color:var(--color-text)}.toggle-switch .checkbox:checked+.knobs span.true-label[data-v-604ba50c]{color:var(--color-background)}.toggle-switch .checkbox:checked~.layer[data-v-604ba50c]{background-color:var(--color-background)}.label-container[data-v-604ba50c]{display:flex;width:100%;flex-direction:column;align-items:center}.toggle-switch label[data-v-604ba50c]{font-size:12px}nav{padding:var(--global-space-l) var(--global-space-l) var(--global-space-l) var(--global-space-l);display:flex;flex-direction:row;align-items:center;justify-content:space-between;height:100px}nav h3{margin:0;text-transform:capitalize}.nav-end{display:flex;flex-direction:row;align-items:center;justify-content:space-between}.nav h5{color:var(--color-text-muted)}.nav-links{padding-left:var(--global-space-l)}a.router-link-active,a:active,a:focus{color:var(--color-link-active)}a:focus{box-shadow:none}.controls{display:flex;align-items:center}.controls>*{margin-right:5px}.control-icon{display:flex;flex-direction:column;align-items:center;position:relative;cursor:pointer;color:var(--color-text)}.control-icon svg{fill:var(--color-text)}.control-icon:before{font-size:12px;position:absolute;bottom:-28px;opacity:0;transition:opacity .1s ease-in}.control-icon:hover:before{opacity:1}.control-icon.save:before{content:"Save"}.control-icon.preview-size:before{content:"Preview Size"}.control-icon.preview-type:before{content:"Preview"}.control-icon.font-unit:before{content:"Font Unit"}.control-icon.font-rounding:before{content:"Rounding"}.control-icon.dark-mode:before{content:"Theme"}.control-icon.color-library:before{content:"Library"}svg[data-v-5d5287c2]{fill:var(--color-text);margin-right:var(--global-space-xs)}.notification[data-v-5d5287c2]{color:var(--color-text);background:var(--color-background);font-family:nunito;font-weight:300;box-shadow:var(--global-shadow);border-radius:var(--radius-m);padding:50px;min-width:200px;position:absolute;right:50px;bottom:50px;display:flex;align-items:center;opacity:1;transition:all 1s;z-index:1000}.notification.hide[data-v-5d5287c2]{opacity:0;transform:translateX(310px)}:root{--of-primary-ghost:#776b7c59;--of-wp-icons:#9ca2a7;--of-light:#f0f0f1;--of-secondary:#8d8876;--of-primary:#776b7c;--of-tertiary:#8075ac;--of-dark:#1d2327;--of-light-50:#f7f7f7;--of-light-100:#efeff0;--of-light-200:#dfdfe0;--of-light-300:#c9c9ca;--of-light-400:#a8a8a9;--of-light-500:#878788;--of-light-600:#6c6c6d;--of-light-700:#5f5f5f;--of-light-800:#4a4a4b;--of-light-900:#3d3d3d;--of-secondary-50:#f7f7f5;--of-secondary-100:#f0efed;--of-secondary-200:#e0dfda;--of-secondary-300:#cccac2;--of-secondary-400:#aca89b;--of-secondary-500:#8d8876;--of-secondary-600:#716d5e;--of-secondary-700:#635f52;--of-secondary-800:#4d4b41;--of-secondary-900:#3f3d35;--of-primary-50:#f7f6f7;--of-primary-100:#f0eff0;--of-primary-200:#e1dee2;--of-primary-300:#cdc8ce;--of-primary-400:#ada6b0;--of-primary-500:#8e8492;--of-primary-600:#746979;--of-primary-700:#665c6a;--of-primary-800:#504853;--of-primary-900:#423b44;--of-tertiary-50:#f7f6fa;--of-tertiary-100:#f0eef5;--of-tertiary-200:#e0ddeb;--of-tertiary-300:#cbc7dd;--of-tertiary-400:#aba4c8;--of-tertiary-500:#8b81b3;--of-tertiary-600:#706696;--of-tertiary-700:#625983;--of-tertiary-800:#4d4667;--of-tertiary-900:#3f3a55;--of-dark-50:#f6f7f7;--of-dark-100:#efefef;--of-dark-200:#dedfe0;--of-dark-300:#c8cacb;--of-dark-400:#a6a9aa;--of-dark-500:#85888a;--of-dark-600:#696d70;--of-dark-700:#5b6063;--of-dark-800:#464b4e;--of-dark-900:#393e41;--of-white:#fff;--of-gray-50:#f7f7f7;--of-gray-100:#efefef;--of-gray-200:#dfdfdf;--of-gray-300:#cacaca;--of-gray-400:#a8a8a8;--of-gray-500:#878787;--of-gray-600:#6d6d6d;--of-gray-700:#5f5f5f;--of-gray-800:#4a4a4a;--of-gray-900:#3d3d3d;--of-black:#141414;--of-danger-light:#f66a5f;--of-danger:#f44336;--of-danger-dark:#e31b0c;--of-warning-light:#ccac6b;--of-warning:#bf9747;--of-warning-dark:#9b7936;--of-success-light:#61c29b;--of-success:#41a87f;--of-success-dark:#358867;--white:#f0f0f1;--light:#c8e8e8;--dark:#1d2327;--primary:#776b7c;--secondary:#42494c;--info:#316d8d;--success:#239662;--warning:#d8ca26;--danger:#e23213;--oxy-dark:#2b2b2b;--oxy-mid:#404040;--oxy-light:#7b66ff;--oxy-active:#7b66ff;--oxy-active-text:#fff;--oxy-hover:#000;--oxy-dark-transparent:rgba(0,0,0,.25);--oxy-destructive:#ff5656;--oxy-light-text:#fff;--oxy-small-text-size:12px;--oxy-medium-text-size:14px;--oxy-big-text-size:16px;--oxy-small-line-height:1.2;--oxy-big-line-height:1.6;--oxy-regular-font-weight:400;--oxy-bold-font-weight:700;--oxy-ui-font-family:"Geomanist","system-ui",sans-serif;--oxy-code-font-family:monospace;--oxy-wide-letter-spacing:0.1em;--oxy-border-radius:4px;--radius-s:3px;--radius-m:6px;--radius-l:15px;--global-space-xs:4px;--global-space-s:6px;--global-space-m:15px;--global-space-l:30px;--global-space-xl:50px;--section-gap:160px;--global-font:Nunito,"Helvetica Neue",sans-serif;--global-font-size:16px;--global-shadow:0.8px 0.8px 2.2px rgba(0,0,0,.02),2px 2px 5.3px rgba(0,0,0,.028),3.8px 3.8px 10px rgba(0,0,0,.035),6.7px 6.7px 17.9px rgba(0,0,0,.042),12.5px 12.5px 33.4px rgba(0,0,0,.05),30px 30px 80px rgba(0,0,0,.07);--of-font-1-fix:2.4375rem;--of-font-2-fix:1.9375rem;--of-font-3-fix:1.5625rem;--of-font-4-fix:1.25rem;--of-font-5-fix:1rem;--of-font-6-fix:0.8125rem;--of-font-1:clamp(1.8125rem,1.344rem + 1.563vw,2.4375rem);--of-font-2:clamp(1.5rem,1.172rem + 1.094vw,1.9375rem);--of-font-3:clamp(1.25rem,1.016rem + 0.781vw,1.5625rem);--of-font-4:clamp(1.0625rem,0.922rem + 0.469vw,1.25rem);--of-font-5:clamp(0.875rem,0.781rem + 0.313vw,1rem);--of-font-6:clamp(0.75rem,0.703rem + 0.156vw,0.8125rem)}body.dark{--color-background:var(--of-dark);--color-background-primary:var(--of-primary);--color-background-panel:var(--of-dark-900);--color-background-active:var(--of-dark-800);--color-background-soft:var(--of-dark-800);--color-heading:var(--of-light-400);--color-text:var(--of-light-400);--color-text-muted:var(--of-primary-500);--color-link:var(--of-wp-icons);--color-link-hover:var(--of-primary);--color-link-active:var(--of-primary);--color-form-control:var(--of-primary);--color-form-control-alt:var(--of-primary-ghost);--color-global-border:var(--color-form-control-alt);--color-button-outline:var(--of-primary-400);--color-button-outline-disabled:var(--color-form-control-alt);--color-button-background:var(--color-background-panel);--color-button-background-selected:var(--color-form-control-alt);--color-button-background-hover:var(--of-primary);--scrollbar-color-track:var(--color-background);--scrollbar-color-thumb:var(--color-background-panel);--color-active-text:var(--of-primary);--cm-var:#ddd6a3;--cm-var-2:#9cdcfe;--cm-comment:#505050;--cm-keyword:#569cd6;--cm-number:#b5cea8;--cm-psuedo:#a9b7c6;--cm-class:#d7ba7d;--cm-tag:#569cd6;--cm-property:#9cdcfe;--cm-value:#dba185;--cm-gutter:var(--color-background-panel);--cm-line-number:var(--of-primary);--cm-def:#9cdcfe;--cm-string:#ce9178;--cm-string-2:#6a8759;--cm-meta:#569cd6;--cm-error:#bc3f3c;--cm-bracket:grey;--cm-attribute:#9cdcfe;--cm-selection:hsla(0,0%,100%,.12)}:root{--color-background:var(--of-light);--color-background-panel:var(--of-light-50);--color-background-soft:var(--of-light-200);--color-background-active:var(--of-white);--color-heading:var(--of-primary);--color-text:var(--of-primary);--color-text-muted:var(--of-primary-500);--color-link:var(--of-primary);--color-link-hover:var(--of-primary-400);--color-link-active:var(--of-primary-400);--color-button-outline:var(--of-primary-400);--color-button-outline-disabled:var(--color-form-control-alt);--color-button-background:var(--color-background-panel);--color-button-background-selected:var(--color-form-control-alt);--color-button-background-hover:var(--of-primary);--color-form-control:var(--of-primary);--color-form-control-alt:var(--of-light-200);--color-global-border:var(--color-form-control-alt);--scrollbar-color-track:var(--color-global-border);--scrollbar-color-thumb:var(--color-background-panel);--color-active-background:var(--color-background-panel);--color-active-text:var(--of-primary);--cm-var:#e36209;--cm-var-2:#7c9944;--cm-comment:#6a737d;--cm-keyword:#d73a49;--cm-number:#6dafdd;--cm-psuedo:#adadad;--cm-class:#d7ba7d;--cm-tag:#569cd6;--cm-property:#414141;--cm-value:#40894c;--cm-gutter:var(--color-background-panel);--cm-line-number:var(--of-primary);--cm-def:#363636;--cm-string:#032f62;--cm-string-2:#6a8759;--cm-meta:#313131;--cm-error:#bc3f3c;--cm-bracket:#353535;--cm-attribute:#272727;--cm-selection:rgba(0,0,0,.1)}*,:after,:before{box-sizing:border-box;margin:0;position:relative;font-weight:400}*{scrollbar-width:thin;scrollbar-color:var(--scrollbar-color-thumb) var(--scrollbar-color-track)}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--scrollbar-color-track);border-radius:var(--radius-l)}::-webkit-scrollbar-thumb{background-color:var(--scrollbar-color-thumb);border-radius:var(--radius-l);border:4px solid var(--scrollbar-color-track)}::-webkit-scrollbar-corner{background:transparent}body{overflow-x:hidden;color:var(--color-text);background:var(--color-background)}#oxyframe-app{font-family:var(--global-font);min-height:calc(100vh - 32px);line-height:1.6;font-size:15px;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative}h1,h2,h3,h4,h5,h6{color:var(--color-heading);margin:0;font-weight:400}h1{font-size:var(--of-font-1)}h2{font-size:var(--of-font-2)}h3{font-size:var(--of-font-3)}h4{font-size:var(--of-font-4)}h5{font-size:var(--of-font-5)}h6{font-size:var(--of-font-6)}a{color:var(--color-link);text-decoration:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}a:hover{color:var(--color-link-hover)}.container{padding:10px 35px 35px 35px;height:100%}input[type=select],input[type=text],select.select,textarea{font-family:var(--global-font);font-size:var(--global-font-size);padding:var(--global-space-s);min-height:auto;line-height:normal;border:1px solid var(--color-form-control-alt);border-radius:var(--radius-m);background-color:var(--color-background);color:var(--color-text)}input[type=select],select.select{margin-left:0}input[type=select]:focus,input[type=text]:focus,select.select:focus,textarea:focus{border-color:var(--of-color-text);color:var(--color-text);box-shadow:none}button.btn svg,label.btn svg{padding:4px;-webkit-user-select:none;-moz-user-select:none;user-select:none}.panel{background:var(--color-background-panel);border:1px solid var(--color-global-border);border-radius:var(--radius-m);padding:var(--global-space-m)}.icon{height:24px;width:24px;margin:var(--global-space-s)}.icon-s{height:20px;width:20px}#wpfooter{display:none}#wpbody-content{padding:0;position:relative;overflow-x:hidden}.animate-spin{-webkit-animation:spin 1s linear infinite;animation:spin 1s linear infinite}@-webkit-keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.non-desktop{height:100vh;display:grid;place-items:center}.non-desktop-container{display:flex;flex-direction:column;align-items:center}.logo-not-dt{max-width:200px;margin-bottom:var(--global-space-xs)}.btn[data-v-e8274062]{display:flex;align-items:center;justify-content:center;color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline);padding:var(--global-space-s) var(--global-space-m);border-radius:var(--radius-m);cursor:pointer}.btn.small[data-v-e8274062]{padding:5px}.btn.small svg[data-v-e8274062]{width:10px}.btn.full[data-v-e8274062]{width:100%}.btn.big[data-v-e8274062]{padding:10px 10px}.btn.primary[data-v-e8274062]{color:var(--color-button-outline);background:var(--color-background-primary)}.btn.muted[data-v-e8274062]{color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline)}.btn[data-v-e8274062]:disabled{color:var(--color-button-outline-disabled);border:1px solid var(--color-button-outline-disabled)}.btn.selected[data-v-e8274062]{background-color:var(--color-button-background-selected)}.btn svg[data-v-e8274062]{padding:4px}.selectors.container{height:calc(100vh - 132px)}.view-switch{overflow:hidden;width:600px;height:32px;border:1px solid var(--color-form-control-alt);border-radius:var(--radius-m)}.view-switch,.view-switch>a{display:flex;align-items:center}.view-switch>a{justify-content:center;flex-grow:1;height:100%;text-align:center;font-size:var(--of-font-6);cursor:pointer;-webkit-user-select:none;-moz-user-select:none;user-select:none}.view-switch>a.router-link-active{color:var(--color-text)}.view-switch>a.router-link-exact-active{background-color:var(--color-background-panel);color:var(--color-text)}.view-switch>a.router-link-exact-active:focus,.view-switch>a.router-link-exact-active:target{box-shadow:none;border:none;outline:none}.btn[data-v-664ba19c]{position:relative;display:flex;align-items:center;justify-content:center;color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline);padding:var(--global-space-s) var(--global-space-m);border-radius:var(--radius-m);cursor:pointer}.btn.full[data-v-664ba19c]{width:100%}.btn.big[data-v-664ba19c]{padding:10px 10px}.btn.primary[data-v-664ba19c]{color:var(--color-button-outline);background:var(--color-background-primary)}.btn.muted[data-v-664ba19c]{color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline)}.btn[data-v-664ba19c]:disabled{color:var(--color-button-outline-disabled);border:1px solid var(--color-button-outline-disabled)}.btn.selected[data-v-664ba19c]{background-color:var(--color-button-background-selected)}label>svg[data-v-664ba19c]{padding:4px}input[data-v-664ba19c]{position:absolute;opacity:0;top:0;bottom:0;left:0;right:0}svg[data-v-3270d71c],svg[data-v-34a63e38],svg[data-v-68bf4829],svg[data-v-bd57c208]{fill:currentColor}.file-control-panel[data-v-00dc49e4]{position:relative;overflow:hidden;text-align:center}.file-control-panel h5[data-v-00dc49e4]{padding:var(--global-space-s)}.file-control-panel input[data-v-00dc49e4]{width:100%;margin-bottom:var(--global-space-l)}.import-section[data-v-00dc49e4]{padding:var(--global-space-m) 0}.import-section p[data-v-00dc49e4]{padding:var(--global-space-s) 0}.overlay-prompt[data-v-00dc49e4]{position:absolute;top:0;bottom:0;left:0;right:0;z-index:5}.file-control-panel h5[data-v-00dc49e4],.overlay-prompt h5[data-v-00dc49e4],.overlay-prompt input[data-v-00dc49e4]{padding:var(--global-space-s);margin-bottom:var(--global-space-l)}.overlay-prompt button[data-v-00dc49e4]{margin-bottom:var(--global-space-l)}.selector-preview[data-v-06e7f124]{grid-area:1/1/3/2;padding:var(--global-space-m)}.selector-list[data-v-06e7f124]{height:100%;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;gap:var(--global-space-xs);overflow-x:auto}.selector-preview h5[data-v-06e7f124]{padding:var(--global-space-s) 0 var(--global-space-m) 0}.selector-item[data-v-06e7f124]{padding-right:var(--global-space-m)}.text-limit[data-v-06e7f124]{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:28ch}.overview[data-v-6845714d]{height:100%;display:grid;grid-template-columns:1fr 300px 300px;grid-template-rows:1fr 2fr;gap:var(--global-space-m);grid-auto-flow:row}.info[data-v-6845714d]{grid-area:1/2/2/3;padding:var(--global-space-m)}.info p[data-v-6845714d]{cursor:pointer}.info h5[data-v-6845714d]{padding:var(--global-space-s) 0 var(--global-space-m) 0}.info p span[data-v-6845714d]{color:var(--color-text-muted)}.options[data-v-6845714d]{grid-area:2/2/3/3;padding:var(--global-space-m)}.options h5[data-v-6845714d]{padding:var(--global-space-s) 0 var(--global-space-m) 0}.options button[data-v-6845714d]{margin:var(--global-space-m) 0}.file-control-panel[data-v-6845714d]{grid-area:1/3/3/4}.organiser-toolbar[data-v-30ab38b0]{display:flex;align-items:center;justify-content:flex-start;-webkit-user-select:none;-moz-user-select:none;user-select:none}.btn[data-v-30ab38b0]{margin-left:var(--global-space-s)}.btn-grp[data-v-30ab38b0]{display:flex}.view-switch[data-v-30ab38b0]{display:flex;align-items:center;overflow:hidden;width:350px;height:100%;border:1px solid var(--color-form-control-alt);border-radius:var(--radius-m)}.view-switch>div[data-v-30ab38b0]{display:flex;align-items:center;justify-content:center;width:50%;height:100%;text-align:center;cursor:pointer}.view-switch>div.active[data-v-30ab38b0]{background-color:var(--color-background-panel)}svg[data-v-5f7ef2bb],svg[data-v-92db845c]{fill:currentColor}.component-class[data-v-58bfceca]{display:flex;align-items:center;justify-content:space-between;padding:10px;cursor:pointer;min-width:250px;height:6.66%}.order-selector[data-v-58bfceca]{border-radius:var(--radius-m);border:1px solid var(--color-background-panel);background-color:var(--color-background-panel)}.order-selector p[data-v-58bfceca]{-webkit-user-select:none;-moz-user-select:none;user-select:none}.icon-grid[data-v-58bfceca]{display:grid;grid-template-columns:1fr;grid-template-rows:1fr 1fr 1fr}.icon-lock[data-v-58bfceca]{grid-area:1/1/2/2}.icon-disabled[data-v-58bfceca]{grid-area:3/1/4/2}.isselected[data-v-58bfceca]{border:1px solid var(--color-global-border);background-color:var(--color-background-active)}.text-limit[data-v-58bfceca]{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:28ch}p span[data-v-58bfceca]{margin-right:var(--global-space-s)}.indicator[data-v-58bfceca]{width:11px;height:11px}.selector-list[data-v-077e113a]{height:100%;display:flex;flex-direction:column;flex-wrap:wrap;align-content:flex-start;gap:var(--global-space-xs);overflow-x:auto}h6[data-v-7deb5500]{margin:0;cursor:pointer}.custom-folder-header[data-v-7deb5500]{font-size:var(--of-font-6);text-align:center;margin-bottom:var(--global-space-s);padding:var(--global-space-s);border-bottom:1px solid var(--color-global-border)}.custom-folder-inner[data-v-7deb5500]{margin-top:var(--global-space-m);padding:0 var(--global-space-m) var(--global-space-m) var(--global-space-m);border:1px solid var(--color-global-border)}.custom-folder-inner.isSelected[data-v-7deb5500]{border:1px solid var(--color-text-muted)}.custom-folder-inner[data-v-7deb5500]{padding-bottom:var(--global-space-s);border-radius:var(--radius-m)}.uncategorised-selectors[data-v-3bc414d4]{padding-top:var(--global-space-m);overflow-y:auto;height:80%}.uncategorised-selectors h5[data-v-3bc414d4]{text-align:center;padding:var(--global-space-s) 0}.style-folder h5[data-v-3bc414d4]{color:var(--color-text);text-align:center}.CodeMirror{height:300px;color:#000}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:#fff}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7}.CodeMirror-linenumber{color:#999}.CodeMirror-cursor{border-left:1px solid #000}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-type,.cm-s-default .cm-variable-3{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta,.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{background:#fff}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.CodeMirror-merge{position:relative;border:1px solid #ddd;white-space:pre}.CodeMirror-merge,.CodeMirror-merge .CodeMirror{height:350px}.CodeMirror-merge-2pane .CodeMirror-merge-pane{width:47%}.CodeMirror-merge-2pane .CodeMirror-merge-gap{width:6%}.CodeMirror-merge-3pane .CodeMirror-merge-pane{width:31%}.CodeMirror-merge-3pane .CodeMirror-merge-gap{width:3.5%}.CodeMirror-merge-pane{display:inline-block;white-space:normal;vertical-align:top}.CodeMirror-merge-pane-rightmost{position:absolute;right:0;z-index:1}.CodeMirror-merge-gap{z-index:2;display:inline-block;height:100%;box-sizing:border-box;overflow:hidden;border-left:1px solid #ddd;border-right:1px solid #ddd;position:relative;background:#f8f8f8}.CodeMirror-merge-scrolllock-wrap{position:absolute;bottom:0;left:50%}.CodeMirror-merge-scrolllock{position:relative;left:-50%;cursor:pointer;color:#555;line-height:1}.CodeMirror-merge-scrolllock:after{content:"\21db\00a0\00a0\21da"}.CodeMirror-merge-scrolllock.CodeMirror-merge-scrolllock-enabled:after{content:"\21db\21da"}.CodeMirror-merge-copybuttons-left,.CodeMirror-merge-copybuttons-right{position:absolute;left:0;top:0;right:0;bottom:0;line-height:1}.CodeMirror-merge-copy{z-index:3}.CodeMirror-merge-copy,.CodeMirror-merge-copy-reverse{position:absolute;cursor:pointer;color:#44c}.CodeMirror-merge-copybuttons-left .CodeMirror-merge-copy{left:2px}.CodeMirror-merge-copybuttons-right .CodeMirror-merge-copy{right:2px}.CodeMirror-merge-l-inserted,.CodeMirror-merge-r-inserted{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAGUlEQVQI12MwuCXy3+CWyH8GBgYGJgYkAABZbAQ9ELXurwAAAABJRU5ErkJggg==);background-position:0 100%;background-repeat:repeat-x}.CodeMirror-merge-l-deleted,.CodeMirror-merge-r-deleted{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAACCAYAAACddGYaAAAAGUlEQVQI12M4Kyb2/6yY2H8GBgYGJgYkAABURgPz6Ks7wQAAAABJRU5ErkJggg==);background-position:0 100%;background-repeat:repeat-x}.CodeMirror-merge-r-chunk{background:#ffffe0}.CodeMirror-merge-r-chunk-start{border-top:1px solid #ee8}.CodeMirror-merge-r-chunk-end{border-bottom:1px solid #ee8}.CodeMirror-merge-r-connect{fill:#ffffe0;stroke:#ee8;stroke-width:1px}.CodeMirror-merge-l-chunk{background:#eef}.CodeMirror-merge-l-chunk-start{border-top:1px solid #88e}.CodeMirror-merge-l-chunk-end{border-bottom:1px solid #88e}.CodeMirror-merge-l-connect{fill:#eef;stroke:#88e;stroke-width:1px}.CodeMirror-merge-l-chunk.CodeMirror-merge-r-chunk{background:#dfd}.CodeMirror-merge-l-chunk-start.CodeMirror-merge-r-chunk-start{border-top:1px solid #4e4}.CodeMirror-merge-l-chunk-end.CodeMirror-merge-r-chunk-end{border-bottom:1px solid #4e4}.CodeMirror-merge-collapsed-widget:before{content:"(...)"}.CodeMirror-merge-collapsed-widget{cursor:pointer;color:#88b;background:#eef;border:1px solid #ddf;font-size:90%;padding:0 3px;border-radius:4px}.CodeMirror-merge-collapsed-line .CodeMirror-gutter-elt{display:none}.CodeMirror{font-family:monospace;color:var(--cm-property);direction:ltr;border-radius:var(--radius-m)}.CodeMirror-lines{padding:4px 0}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{padding:0 4px}.CodeMirror-gutter-filler,.CodeMirror-scrollbar-filler{background-color:var(
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./src/assets/css/base.css ***!
+  \*************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Inter&family=Merriweather&family=Montserrat&family=Noto+Sans&family=Nunito&family=Oswald&family=PT+Sans&family=Playfair+Display&family=Poppins&family=Raleway&family=Roboto&family=Roboto+Condensed&family=Roboto+Mono&family=Roboto+Slab&family=Source+Sans+Pro&family=Ubuntu:ital@1&display=swap);
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/global/LogoSpinner.vue?vue&type=style&index=0&id=db07431c&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.logo[data-v-db07431c] {
+  max-width: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/global/SaveButton.vue?vue&type=style&index=0&id=2cb2588a&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+button.save[data-v-2cb2588a] {
+  border: none;
+  background-color: var(--color-background);
+}
+button.save:disabled svg[data-v-2cb2588a] {
+  fill: var(--color-form-control-alt);
+}
+
+/* button.save,
+button.save:disabled svg {
+  transition: fill 0.5s, background-color 0.5s;
+} */
+svg[data-v-2cb2588a] {
+  width: 30px;
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseToggleSwitch.vue?vue&type=style&index=0&id=5f5ac182&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+input[data-v-5f5ac182] {
+  border-radius: 6px;
+  border: 1px solid var(--color-text);
+}
+.knobs[data-v-5f5ac182],
+.layer[data-v-5f5ac182] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--color-form-control-alt);
+}
+.toggle-switch[data-v-5f5ac182] {
+  /* position: relative;
+    top: 50%; */
+  width: 80px;
+  height: 32px;
+  /* margin: -20px auto 0 auto;
+    overflow: hidden; */
+}
+.checkbox[data-v-5f5ac182] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.knobs[data-v-5f5ac182] {
+  z-index: 2;
+}
+.layer[data-v-5f5ac182] {
+  width: 100%;
+  background-color: var(--color-background);
+  transition: 0.3s ease all;
+  z-index: 1;
+  /* transition: background-color 0.5s; */
+}
+/* toggle-switch 10 */
+.toggle-switch .knobs[data-v-5f5ac182]:before,
+
+.toggle-switch .knobs span[data-v-5f5ac182] {
+  position: absolute;
+  top: 4px;
+  width: 35px;
+  height: 21px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 5px;
+  border-radius: 2px;
+  transition: 0.3s ease all;
+}
+.toggle-switch .knobs[data-v-5f5ac182]:before {
+  content: '';
+  left: 4px;
+  background-color: var(--color-text);
+}
+
+/* .toggle-switch .knobs:after {
+  content: '';
+  right: 4px;
+  color: var(--color-text);
+} */
+.toggle-switch .knobs span.false-label[data-v-5f5ac182] {
+  display: inline-block;
+  left: 4px;
+  color: var(--color-background);
+  z-index: 1;
+}
+.toggle-switch .knobs span.true-label[data-v-5f5ac182] {
+  display: inline-block;
+  right: 4px;
+  color: var(--color-text);
+  z-index: 1;
+}
+.toggle-switch .checkbox:checked + .knobs span.false-label[data-v-5f5ac182] {
+  color: var(--color-text);
+}
+.toggle-switch .checkbox:checked + .knobs[data-v-5f5ac182]:before {
+  left: 38px;
+  background-color: var(--color-text);
+}
+.toggle-switch .checkbox:checked + .knobs span.true-label[data-v-5f5ac182] {
+  color: var(--color-background);
+}
+.toggle-switch .checkbox:checked ~ .layer[data-v-5f5ac182] {
+  background-color: var(--color-background);
+}
+.label-container[data-v-5f5ac182] {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.toggle-switch label[data-v-5f5ac182] {
+  font-size: 12px;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/global/NavBar.vue?vue&type=style&index=0&id=fb21f3c8&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Navigation Bar */
+nav {
+  padding: var(--global-space-l) var(--global-space-l) var(--global-space-l)
+    var(--global-space-l);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+}
+nav h3 {
+  margin: 0;
+  text-transform: capitalize;
+}
+.nav-end {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 35%; */
+}
+.nav h5 {
+  color: var(--color-text-muted);
+}
+/* Navigation Links */
+.nav-links {
+  padding-left: var(--global-space-l);
+}
+a {
+  color: var(--color-link);
+}
+a.router-link-active,
+a:active {
+  color: var(--color-link-active);
+}
+a:focus {
+  box-shadow: none;
+  color: var(--color-link-active);
+}
+/* End of Navigation Links */
+
+/*Controls*/
+.controls {
+  display: flex;
+  align-items: center;
+}
+.controls > * {
+  margin-right: 5px;
+}
+.control-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  color: var(--color-text);
+}
+.control-icon svg {
+  fill: var(--color-text);
+}
+.control-icon:before {
+  font-size: 12px;
+  position: absolute;
+  bottom: -28px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+.control-icon:hover:before {
+  opacity: 1;
+}
+.control-icon.save:before {
+  content: 'Save';
+}
+.control-icon.preview-size:before {
+  content: 'Preview Size';
+}
+.control-icon.preview-type:before {
+  content: 'Preview';
+}
+.control-icon.font-unit:before {
+  content: 'Font Unit';
+}
+.control-icon.font-rounding:before {
+  content: 'Rounding';
+}
+.control-icon.dark-mode:before {
+  content: 'Theme';
+}
+.control-icon.color-library:before {
+  content: 'Library';
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/global/NotificationCard.vue?vue&type=style&index=0&id=eaa89372&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-eaa89372] {
+  fill: var(--color-text);
+  margin-right: var(--global-space-xs);
+}
+.notification[data-v-eaa89372] {
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: nunito;
+  font-weight: 300;
+  box-shadow: var(--global-shadow);
+  border-radius: var(--radius-m);
+  padding: 50px;
+  min-width: 200px;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: all 1s;
+  z-index: 1000;
+}
+.notification.hide[data-v-eaa89372] {
+  opacity: 0;
+  transform: translateX(310px);
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./src/assets/css/base.css (1) ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/* Color Palette */
+:root {
+  --of-primary-ghost: #776b7c59;
+  --of-wp-icons: #9ca2a7;
+  --of-light: #f0f0f1;
+  --of-secondary: #8d8876;
+  --of-primary: #776b7c;
+  --of-tertiary: #8075ac;
+  --of-dark: #1d2327;
+  --of-light-50: #f7f7f7;
+  --of-light-100: #efeff0;
+  --of-light-200: #dfdfe0;
+  --of-light-300: #c9c9ca;
+  --of-light-400: #a8a8a9;
+  --of-light-500: #878788;
+  --of-light-600: #6c6c6d;
+  --of-light-700: #5f5f5f;
+  --of-light-800: #4a4a4b;
+  --of-light-900: #3d3d3d;
+  --of-secondary-50: #f7f7f5;
+  --of-secondary-100: #f0efed;
+  --of-secondary-200: #e0dfda;
+  --of-secondary-300: #cccac2;
+  --of-secondary-400: #aca89b;
+  --of-secondary-500: #8d8876;
+  --of-secondary-600: #716d5e;
+  --of-secondary-700: #635f52;
+  --of-secondary-800: #4d4b41;
+  --of-secondary-900: #3f3d35;
+  --of-primary-50: #f7f6f7;
+  --of-primary-100: #f0eff0;
+  --of-primary-200: #e1dee2;
+  --of-primary-300: #cdc8ce;
+  --of-primary-400: #ada6b0;
+  --of-primary-500: #8e8492;
+  --of-primary-600: #746979;
+  --of-primary-700: #665c6a;
+  --of-primary-800: #504853;
+  --of-primary-900: #423b44;
+  --of-tertiary-50: #f7f6fa;
+  --of-tertiary-100: #f0eef5;
+  --of-tertiary-200: #e0ddeb;
+  --of-tertiary-300: #cbc7dd;
+  --of-tertiary-400: #aba4c8;
+  --of-tertiary-500: #8b81b3;
+  --of-tertiary-600: #706696;
+  --of-tertiary-700: #625983;
+  --of-tertiary-800: #4d4667;
+  --of-tertiary-900: #3f3a55;
+  --of-dark-50: #f6f7f7;
+  --of-dark-100: #efefef;
+  --of-dark-200: #dedfe0;
+  --of-dark-300: #c8cacb;
+  --of-dark-400: #a6a9aa;
+  --of-dark-500: #85888a;
+  --of-dark-600: #696d70;
+  --of-dark-700: #5b6063;
+  --of-dark-800: #464b4e;
+  --of-dark-900: #393e41;
+  --of-white: #ffffff;
+  --of-gray-50: #f7f7f7;
+  --of-gray-100: #efefef;
+  --of-gray-200: #dfdfdf;
+  --of-gray-300: #cacaca;
+  --of-gray-400: #a8a8a8;
+  --of-gray-500: #878787;
+  --of-gray-600: #6d6d6d;
+  --of-gray-700: #5f5f5f;
+  --of-gray-800: #4a4a4a;
+  --of-gray-900: #3d3d3d;
+  --of-black: #141414;
+  --of-danger-light: #f66a5f;
+  --of-danger: #f44336;
+  --of-danger-dark: #e31b0c;
+  --of-warning-light: #ccac6b;
+  --of-warning: #bf9747;
+  --of-warning-dark: #9b7936;
+  --of-success-light: #61c29b;
+  --of-success: #41a87f;
+  --of-success-dark: #358867;
+
+  /*newai*/
+  --white: #f0f0f1;
+  --light: #c8e8e8;
+  --dark: #1d2327;
+  --primary: #776b7c;
+  --secondary: #42494c;
+  --info: #316d8d;
+  --success: #239662;
+  --warning: #d8ca26;
+  --danger: #e23213;
+
+  /*oxy*/
+  --oxy-dark: #2b2b2b;
+  --oxy-mid: #404040;
+  --oxy-light: #7b66ff;
+  --oxy-active: #7b66ff;
+  --oxy-active-text: white;
+  --oxy-hover: #000000;
+  --oxy-dark-transparent: rgba(0, 0, 0, 0.25);
+  --oxy-destructive: #ff5656;
+  --oxy-light-text: white;
+  --oxy-small-text-size: 12px;
+  --oxy-medium-text-size: 14px;
+  --oxy-big-text-size: 16px;
+  --oxy-small-line-height: 1.2;
+  --oxy-big-line-height: 1.6;
+  --oxy-regular-font-weight: 400;
+  --oxy-bold-font-weight: 700;
+  --oxy-ui-font-family: 'Geomanist', 'system-ui', sans-serif;
+  --oxy-code-font-family: monospace;
+  --oxy-wide-letter-spacing: 0.1em;
+  --oxy-border-radius: 4px;
+}
+:root {
+  --radius-s: 3px;
+  --radius-m: 6px;
+  --radius-l: 15px;
+  --global-space-xs: 4px;
+  --global-space-s: 6px;
+  --global-space-m: 15px;
+  --global-space-l: 30px;
+  --global-space-xl: 50px;
+  --section-gap: 160px;
+  --global-font: Nunito, 'Helvetica Neue', sans-serif;
+  --global-font-size: 16px;
+  --global-shadow: 0.8px 0.8px 2.2px rgba(0, 0, 0, 0.02),
+    2px 2px 5.3px rgba(0, 0, 0, 0.028), 3.8px 3.8px 10px rgba(0, 0, 0, 0.035),
+    6.7px 6.7px 17.9px rgba(0, 0, 0, 0.042),
+    12.5px 12.5px 33.4px rgba(0, 0, 0, 0.05), 30px 30px 80px rgba(0, 0, 0, 0.07);
+  /* Fixed Font Sizes */
+  --of-font-1-fix: 2.4375rem;
+  --of-font-2-fix: 1.9375rem;
+  --of-font-3-fix: 1.5625rem;
+  --of-font-4-fix: 1.25rem;
+  --of-font-5-fix: 1rem;
+  --of-font-6-fix: 0.8125rem;
+  /* Fluid Font Sizes */
+  --of-font-1: clamp(1.8125rem, 1.344rem + 1.563vw, 2.4375rem);
+  --of-font-2: clamp(1.5rem, 1.172rem + 1.094vw, 1.9375rem);
+  --of-font-3: clamp(1.25rem, 1.016rem + 0.781vw, 1.5625rem);
+  --of-font-4: clamp(1.0625rem, 0.922rem + 0.469vw, 1.25rem);
+  --of-font-5: clamp(0.875rem, 0.781rem + 0.313vw, 1rem);
+  --of-font-6: clamp(0.75rem, 0.703rem + 0.156vw, 0.8125rem);
+}
+body.dark {
+  --color-background: var(--of-dark);
+  --color-background-primary: var(--of-primary);
+  --color-background-panel: var(--of-dark-900);
+  --color-background-active: var(--of-dark-800);
+  --color-background-soft: var(--of-dark-800);
+  --color-heading: var(--of-light-400);
+  --color-text: var(--of-light-400);
+  --color-text-muted: var(--of-primary-500);
+  --color-link: var(--of-wp-icons);
+  --color-link-hover: var(--of-primary);
+  --color-link-active: var(--of-primary);
+  --color-form-control: var(--of-primary);
+  --color-form-control-alt: var(--of-primary-ghost);
+  --color-global-border: var(--color-form-control-alt);
+  --color-button-outline: var(--of-primary-400);
+  --color-button-outline-disabled: var(--color-form-control-alt);
+  --color-button-background: var(--color-background-panel);
+  --color-button-background-selected: var(--color-form-control-alt);
+  --color-button-background-hover: var(--of-primary);
+  --scrollbar-color-track: var(--color-background);
+  --scrollbar-color-thumb: var(--color-background-panel);
+  --color-active-text: var(--of-primary);
+  /*codemirror*/
+  /*vars*/
+  --cm-var: #ddd6a3;
+  --cm-var-2: #9cdcfe;
+  /*comments*/
+  --cm-comment: #505050;
+  /*keyword*/
+  --cm-keyword: #569cd6;
+  /*numbers*/
+  --cm-number: #b5cea8;
+  /*:selectors*/
+  --cm-psuedo: #a9b7c6;
+  /*.class*/
+  --cm-class: #d7ba7d;
+  /* div body etc*/
+  --cm-tag: #569cd6;
+  /*property*/
+  --cm-property: #9cdcfe;
+  /*value*/
+  --cm-value: #dba185;
+  /*gutters*/
+  --cm-gutter: var(--color-background-panel);
+  --cm-line-number: var(--of-primary);
+  /*@stuff*/
+  --cm-def: #9cdcfe;
+  /*strings*/
+  --cm-string: #ce9178;
+  --cm-string-2: #6a8759;
+  /*-webkit etc*/
+  --cm-meta: #569cd6;
+  /*errors*/
+  --cm-error: #bc3f3c;
+
+  --cm-bracket: #808080;
+
+  --cm-attribute: #9cdcfe;
+
+  --cm-selection: rgb(255 255 255 / 12%);
+}
+
+/* semantic color variables for this project */
+:root {
+  /* Background */
+  --color-background: var(--of-light);
+  --color-background-panel: var(--of-light-50);
+  --color-background-soft: var(--of-light-200);
+  --color-background-active: var(--of-white);
+  /* Text */
+  --color-heading: var(--of-primary);
+  --color-text: var(--of-primary);
+  --color-text-muted: var(--of-primary-500);
+  --color-link: var(--of-primary);
+  --color-link-hover: var(--of-primary-400);
+  --color-link-active: var(--of-primary-400);
+  /*Buttons*/
+  --color-button-outline: var(--of-primary-400);
+  --color-button-outline-disabled: var(--color-form-control-alt);
+  --color-button-background: var(--color-background-panel);
+  --color-button-background-selected: var(--color-form-control-alt);
+  --color-button-background-hover: var(--of-primary);
+  --color-form-control: var(--of-primary);
+  --color-form-control-alt: var(--of-light-200);
+  --color-global-border: var(--color-form-control-alt);
+  --scrollbar-color-track: var(--color-global-border);
+  --scrollbar-color-thumb: var(--color-background-panel);
+  --color-active-background: var(--color-background-panel);
+  --color-active-text: var(--of-primary);
+  /*codemirror*/
+  /*vars*/
+  --cm-var: #e36209;
+  --cm-var-2: #7c9944;
+  /*comments*/
+  --cm-comment: #6a737d;
+  /*keyword*/
+  --cm-keyword: #d73a49;
+  /*numbers*/
+  --cm-number: #6dafdd;
+  /*:selectors*/
+  --cm-psuedo: #adadad;
+  /*.class*/
+  --cm-class: #d7ba7d;
+  /* div body etc*/
+  --cm-tag: #569cd6;
+  /*property*/
+  --cm-property: #414141;
+  /*value*/
+  --cm-value: #40894c;
+  /*gutters*/
+  --cm-gutter: var(--color-background-panel);
+  --cm-line-number: var(--of-primary);
+  /*@stuff*/
+  --cm-def: #363636;
+  /*strings*/
+  --cm-string: #032f62;
+  --cm-string-2: #6a8759;
+  /*-webkit etc*/
+  --cm-meta: #313131;
+  /*errors*/
+  --cm-error: #bc3f3c;
+
+  --cm-bracket: #353535;
+
+  --cm-attribute: #272727;
+  --cm-selection: rgb(0 0 0 / 10%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-color-track);
+  border-radius: var(--radius-l);
+  /* transition: color 0.5s, background-color 0.5s; */
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color-thumb);
+  border-radius: var(--radius-l);
+  border: 4px solid var(--scrollbar-color-track);
+  /* transition: color 0.5s, background-color 0.5s; */
+}
+::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+body {
+  overflow-x: hidden;
+  color: var(--color-text);
+  background: var(--color-background);
+  /* transition: color 0.5s, background-color 0.5s; */
+}
+#oxyframe-app {
+  font-family: var(--global-font);
+  min-height: calc(100vh - 32px);
+
+  line-height: 1.6;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  /* overflow-x: hidden; */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-heading);
+  margin: 0;
+  font-weight: normal;
+}
+h1 {
+  font-size: var(--of-font-1);
+}
+h2 {
+  font-size: var(--of-font-2);
+}
+h3 {
+  font-size: var(--of-font-3);
+}
+h4 {
+  font-size: var(--of-font-4);
+}
+h5 {
+  font-size: var(--of-font-5);
+}
+h6 {
+  font-size: var(--of-font-6);
+}
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+a:hover {
+  color: var(--color-link-hover);
+}
+.container {
+  padding: 10px 35px 35px 35px;
+  height: 100%;
+}
+
+/* Inputs */
+input[type='text'],
+input[type='select'],
+textarea,
+select.select {
+  font-family: var(--global-font);
+  font-size: var(--global-font-size);
+  padding: var(--global-space-s);
+  min-height: initial;
+  line-height: initial;
+  border: 1px solid var(--color-form-control-alt);
+  border-radius: var(--radius-m);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  /* transition: color 0.5s, background-color 0.5s; */
+}
+input[type='select'],
+select.select {
+  margin-left: 0;
+}
+input[type='text']:focus,
+input[type='select']:focus,
+input[type='text']:focus,
+textarea:focus,
+select.select:focus {
+  border-color: var(--of-color-text);
+  color: var(--color-text);
+  box-shadow: none;
+}
+button.btn svg,
+label.btn svg {
+  padding: 4px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+/* Panels */
+.panel {
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  /* transition: background-color 0.5s; */
+}
+/* Icons */
+.icon {
+  height: 24px;
+  width: 24px;
+  margin: var(--global-space-s);
+}
+.icon-s {
+  height: 20px;
+  width: 20px;
+}
+/* WP Overrides */
+#wpfooter {
+  display: none;
+}
+#wpbody-content {
+  padding: 0px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animations */
+.animate-spin {
+  -webkit-animation: spin 1s infinite linear;
+          animation: spin 1s infinite linear;
+}
+@-webkit-keyframes spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+@keyframes spin {
+from {
+    transform: rotate(0deg);
+}
+to {
+    transform: rotate(360deg);
+}
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/App.vue?vue&type=style&index=0&id=7ba5bd90&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.non-desktop {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.non-desktop-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo-not-dt {
+  max-width: 200px;
+  margin-bottom: var(--global-space-xs);
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseButton.vue?vue&type=style&index=0&id=4763cd09&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.btn[data-v-4763cd09] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+  padding: var(--global-space-s) var(--global-space-m);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+.btn.small[data-v-4763cd09] {
+  padding: 5px;
+}
+.btn.small svg[data-v-4763cd09] {
+  width: 10px;
+}
+.btn.full[data-v-4763cd09] {
+  width: 100%;
+}
+.btn.big[data-v-4763cd09] {
+  padding: 10px 10px;
+}
+.btn.primary[data-v-4763cd09] {
+  color: var(--color-button-outline);
+  background: var(--color-background-primary);
+}
+.btn.muted[data-v-4763cd09] {
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+}
+.btn[data-v-4763cd09]:disabled {
+  color: var(--color-button-outline-disabled);
+  border: 1px solid var(--color-button-outline-disabled);
+}
+.btn.selected[data-v-4763cd09] {
+  background-color: var(--color-button-background-selected);
+}
+.btn svg[data-v-4763cd09] {
+  padding: 4px;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/views/SelectorsView.vue?vue&type=style&index=0&id=ac783e22&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Layout */
+.selectors.container {
+  height: calc(100vh - 132px);
+}
+.view-switch {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  width: 600px;
+  height: 32px;
+  border: 1px solid var(--color-form-control-alt);
+  border-radius: var(--radius-m);
+}
+.view-switch > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  height: 100%;
+  text-align: center;
+  font-size: var(--of-font-6);
+  /* padding: var(--global-space-s); */
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.view-switch > a.router-link-active {
+  color: var(--color-text);
+}
+.view-switch > a.router-link-exact-active {
+  background-color: var(--color-background-panel);
+  color: var(--color-text);
+}
+.view-switch > a.router-link-exact-active:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+.view-switch > a.router-link-exact-active:target {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseFileInput.vue?vue&type=style&index=0&id=86e21ab2&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.btn[data-v-86e21ab2] {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+  padding: var(--global-space-s) var(--global-space-m);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+.btn.full[data-v-86e21ab2] {
+  width: 100%;
+}
+.btn.big[data-v-86e21ab2] {
+  padding: 10px 10px;
+}
+.btn.primary[data-v-86e21ab2] {
+  color: var(--color-button-outline);
+  background: var(--color-background-primary);
+}
+.btn.muted[data-v-86e21ab2] {
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+}
+.btn[data-v-86e21ab2]:disabled {
+  color: var(--color-button-outline-disabled);
+  border: 1px solid var(--color-button-outline-disabled);
+}
+.btn.selected[data-v-86e21ab2] {
+  background-color: var(--color-button-background-selected);
+}
+label > svg[data-v-86e21ab2] {
+  padding: 4px;
+}
+input[data-v-86e21ab2] {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDownload.vue?vue&type=style&index=0&id=47cf6fb4&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-47cf6fb4] {
+  fill: currentColor;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpload.vue?vue&type=style&index=0&id=76ccb29f&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-76ccb29f] {
+  fill: currentColor;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconMerge.vue?vue&type=style&index=0&id=2326378a&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-2326378a] {
+  fill: currentColor;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconClose.vue?vue&type=style&index=0&id=b52cdd6c&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-b52cdd6c] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconQuarantine.vue?vue&type=style&index=0&id=07baa14c&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-07baa14c] {
+  fill: currentColor;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDelete.vue?vue&type=style&index=0&id=2311756e&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-2311756e] {
+  fill: currentColor;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/FileControlPanel.vue?vue&type=style&index=0&id=18504209&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.file-control-panel[data-v-18504209] {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.file-control-panel h5[data-v-18504209] {
+  padding: var(--global-space-s);
+}
+.file-control-panel input[data-v-18504209] {
+  width: 100%;
+  margin-bottom: var(--global-space-l);
+}
+.import-section[data-v-18504209] {
+  padding: var(--global-space-m) 0;
+}
+.import-section p[data-v-18504209] {
+  padding: var(--global-space-s) 0;
+}
+.overlay-prompt[data-v-18504209] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.overlay-prompt h5[data-v-18504209] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.overlay-prompt input[data-v-18504209] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-18504209] {
+  margin-bottom: var(--global-space-l);
+}
+.options h5[data-v-18504209] {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.options button[data-v-18504209] {
+  margin: var(--global-space-m) 0;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/OverviewSelectorPreview.vue?vue&type=style&index=0&id=6b8a95d6&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.selector-preview[data-v-6b8a95d6] {
+  grid-area: 1 / 1 / 3 / 2;
+  padding: var(--global-space-m);
+}
+.selector-list[data-v-6b8a95d6] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--global-space-xs);
+  overflow-x: auto;
+}
+.selector-preview h5[data-v-6b8a95d6] {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.selector-item[data-v-6b8a95d6] {
+  padding-right: var(--global-space-m);
+}
+.text-limit[data-v-6b8a95d6] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 28ch;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconForward.vue?vue&type=style&index=0&id=ef0c5dd2&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-ef0c5dd2] {
+  fill: currentColor;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconBack.vue?vue&type=style&index=0&id=6395b005&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-6395b005] {
+  fill: currentColor;
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/OverView.vue?vue&type=style&index=0&id=e3deb676&scoped=true&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Layout */
+.overview[data-v-e3deb676] {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 300px 300px;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--global-space-m);
+  grid-auto-flow: row;
+}
+.info[data-v-e3deb676] {
+  grid-area: 1 / 2 / 2 / 3;
+  padding: var(--global-space-m);
+}
+.info p[data-v-e3deb676] {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.info h5[data-v-e3deb676] {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.info p span[data-v-e3deb676],
+.selector-info p span[data-v-e3deb676] {
+  color: var(--color-text-muted);
+}
+.selector-info[data-v-e3deb676] {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--global-space-m);
+}
+.selector-info p[data-v-e3deb676] {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.selector-info h5[data-v-e3deb676] {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.selector-info button[data-v-e3deb676] {
+  margin: var(--global-space-m) 0;
+}
+.selector-nav[data-v-e3deb676] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.file-control-panel[data-v-e3deb676] {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/OrganiserToolbar.vue?vue&type=style&index=0&id=54b01e44&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.organiser-toolbar[data-v-54b01e44] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.btn[data-v-54b01e44] {
+  margin-left: var(--global-space-s);
+}
+.btn-grp[data-v-54b01e44] {
+  display: flex;
+}
+.view-switch[data-v-54b01e44] {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 350px;
+  height: 100%;
+  border: 1px solid var(--color-form-control-alt);
+  border-radius: var(--radius-m);
+}
+.view-switch > div[data-v-54b01e44] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  /* padding: var(--global-space-s); */
+  cursor: pointer;
+}
+.view-switch > div.active[data-v-54b01e44] {
+  background-color: var(--color-background-panel);
+  /* color: var(--color-background); */
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockClosedSmall.vue?vue&type=style&index=0&id=9ec690bc&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-9ec690bc] {
+  fill: currentColor;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDisabled.vue?vue&type=style&index=0&id=5f71a01a&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-5f71a01a] {
+  fill: currentColor;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/SelectorItem.vue?vue&type=style&index=0&id=613f90fd&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.component-class[data-v-613f90fd] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  min-width: 250px;
+  height: 6.66%;
+}
+.order-selector[data-v-613f90fd] {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-background-panel);
+  background-color: var(--color-background-panel);
+}
+.order-selector p[data-v-613f90fd] {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.icon-grid[data-v-613f90fd] {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.icon-lock[data-v-613f90fd] {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.icon-disabled[data-v-613f90fd] {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.isselected[data-v-613f90fd] {
+  border: 1px solid var(--color-global-border);
+  background-color: var(--color-background-active);
+}
+.text-limit[data-v-613f90fd] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 28ch;
+}
+p span[data-v-613f90fd] {
+  margin-right: var(--global-space-s);
+}
+.indicator[data-v-613f90fd] {
+  width: 11px;
+  height: 11px;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/SelectorList.vue?vue&type=style&index=0&id=6b450908&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.selector-list[data-v-6b450908] {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: var(--global-space-xs);
+  overflow-x: auto;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/CustomFolder.vue?vue&type=style&index=0&id=5fc4922a&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+h6[data-v-5fc4922a] {
+  margin: 0;
+  cursor: pointer;
+}
+.custom-folder-header[data-v-5fc4922a] {
+  font-size: var(--of-font-6);
+  text-align: center;
+  margin-bottom: var(--global-space-s);
+  padding: var(--global-space-s);
+  border-bottom: 1px solid var(--color-global-border);
+}
+.custom-folder-inner[data-v-5fc4922a] {
+  margin-top: var(--global-space-m);
+  padding: 0 var(--global-space-m) var(--global-space-m) var(--global-space-m);
+  border: 1px solid var(--color-global-border);
+}
+.custom-folder-inner.isSelected[data-v-5fc4922a] {
+  /* background: var(--color-form-control-alt); */
+  border: 1px solid var(--color-text-muted);
+}
+.custom-folder-inner[data-v-5fc4922a] {
+  padding-bottom: var(--global-space-s);
+  border-radius: var(--radius-m);
+}
+.custom-folder[data-v-5fc4922a] {
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/UncatSelectors.vue?vue&type=style&index=0&id=62f1ac82&scoped=true&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.uncategorised-selectors[data-v-62f1ac82] {
+  padding-top: var(--global-space-m);
+  overflow-y: auto;
+  height: 80%;
+}
+.uncategorised-selectors h5[data-v-62f1ac82] {
+  text-align: center;
+  padding: var(--global-space-s) 0;
+}
+.style-folder h5[data-v-62f1ac82] {
+  color: var(--color-text);
+  text-align: center;
+}
+
+/*!********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-14.use[1]!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-14.use[2]!./src/assets/css/codemirror-of.css ***!
+  \********************************************************************************************************************************************************************************/
+/* BASICS */
+
+.CodeMirror {
+  /* Set height, width, borders, and global font properties here */
+  font-family: monospace;
+  color: var(--cm-property);
+  direction: ltr;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  position: relative;
+}
+
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 4px 0; /* Vertical padding around content */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  padding: 0 4px; /* Horizontal padding of content */
+}
+
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+  background-color: var(
     --color-background
-  )}.CodeMirror-gutters{border-right:1px solid var(--color-background);background-color:var(--cm-gutter);white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:var(--cm-line-number);white-space:nowrap}.CodeMirror-guttermarker{color:#000}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid var(--color-text);border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-fat-cursor .CodeMirror-line::selection,.cm-fat-cursor .CodeMirror-line>span::selection,.cm-fat-cursor .CodeMirror-line>span>span::selection{background:transparent}.cm-fat-cursor .CodeMirror-line::-moz-selection,.cm-fat-cursor .CodeMirror-line>span::-moz-selection,.cm-fat-cursor .CodeMirror-line>span>span::-moz-selection{background:transparent}.cm-fat-cursor{caret-color:transparent}@-webkit-keyframes blink{50%{background-color:transparent}}@keyframes blink{50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:0;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:blue}.cm-s-default .cm-quote{color:#24c2c7}.cm-negative,.cm-positive{color:#000}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:var(--cm-keyword);line-height:1em;font-weight:700}.cm-s-default .cm-atom{color:var(--cm-value)}.cm-s-default .cm-number{color:var(--cm-number)}.cm-s-default .cm-def{color:var(--cm-def)}.cm-s-default .cm-property,.cm-s-default .cm-punctuation,.cm-s-default .cm-variable{color:var(--cm-var)}.cm-s-default .cm-operator{color:#d4d4d4}.cm-s-default .cm-variable-2{color:var(--cm-var-2)}.cm-s-default .cm-type,.cm-s-default .cm-variable-3{color:var(--cm-psuedo)}.cm-s-default .cm-comment{color:var(--cm-comment)}.cm-s-default .cm-string{color:var(--cm-string)}.cm-s-default .cm-string-2{color:var(--cm-string-2)}.cm-s-default .cm-meta{color:var(--cm-meta)}.cm-s-default .cm-qualifier{color:var(--cm-class)}.cm-s-default .cm-builtin{color:#99c}.cm-s-default .cm-bracket{color:var(--cm-bracket)}.cm-s-default .cm-tag{color:var(--cm-tag)}.cm-s-default .cm-attribute{color:var(--cm-attribute)}.cm-s-default .cm-hr{color:#fff}.cm-s-default .cm-link{color:#287bde}.cm-s-default .cm-error{color:var(--cm-error)}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0b0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#a22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff41}.CodeMirror{position:relative;overflow:hidden;background:var(--color-background)}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-50px;margin-right:-50px;padding-bottom:50px;height:100%;outline:none;position:relative;z-index:0}.CodeMirror-sizer{position:relative;border-right:50px solid transparent}.CodeMirror-gutter-filler,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-vscrollbar{position:absolute;z-index:6;display:none;outline:none}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-50px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:none!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre.CodeMirror-line,.CodeMirror pre.CodeMirror-line-like{border-radius:0;border-width:0;background:transparent;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;font-variant-ligatures:contextual}.CodeMirror-wrap pre.CodeMirror-line,.CodeMirror-wrap pre.CodeMirror-line-like{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;padding:.1px}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:none}.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber,.CodeMirror-scroll,.CodeMirror-sizer{box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}.CodeMirror-focused div.CodeMirror-cursors,div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused .CodeMirror-selected,.CodeMirror-selected{background:var(--cm-selection)}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:var(--cm-selection)}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:var(--cm-selection)}.cm-searching{background-color:#ffa;background-color:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:""}span.CodeMirror-selectedtext{background:none}svg[data-v-83a86970],svg[data-v-c659a76c]{fill:currentColor}.bulk-rename[data-v-1b22bad6]{font-size:13px;grid-area:2/1/3/3}.style-folder[data-v-59e388ae]{width:100%;height:100%;min-width:250px;background-color:var(--color-background-panel);border:1px solid var(--color-background-panel);padding:var(--global-space-m);border-radius:var(--radius-m)}.ssf-header[data-v-59e388ae]{cursor:pointer}.style-folder h5[data-v-59e388ae]{padding:var(--global-space-s);-webkit-user-select:none;-moz-user-select:none;user-select:none}.style-folder-inner[data-v-59e388ae]{overflow-y:auto;height:85%}.style-folder h5[data-v-59e388ae]{color:var(--color-text);text-align:center}.isselected[data-v-59e388ae]{background-color:var(--color-background-active);border:1px solid var(--color-global-border)}.isdisabled[data-v-59e388ae]{background:repeating-linear-gradient(-55deg,var(--color-background),var(--color-background) 10px,var(--color-background-soft) 10px,var(--color-background-soft) 20px)}h6[data-v-59e388ae]{cursor:pointer}.folder-list[data-v-2ddc18a8]{width:100%;max-height:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));grid-auto-rows:minmax(250px,1fr);grid-auto-flow:row;gap:var(--global-space-s);grid-area:1/2/2/3;overflow-y:auto;padding-bottom:var(--global-space-s)}.isselected[data-v-2ddc18a8]{background-color:var(--color-background-active);border:1px solid var(--color-global-border)}.isdisabled[data-v-2ddc18a8]{background:repeating-linear-gradient(-55deg,var(--color-background),var(--color-background) 10px,var(--color-form-control-alt) 10px,var(--color-form-control-alt) 20px)}select.select{width:100%;box-shadow:none;-webkit-appearance:none;background:var(--color-background) url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E") no-repeat right 5px top 55%;background-size:16px 16px;cursor:pointer;vertical-align:middle}select.select:hover{color:var(--color-text)}option:hover{color:var(--color-background)!important;background:var(--color-text)!important}.form-control[data-v-41eabd9a]{text-align:left}input[type=checkbox][data-v-41eabd9a]{background:var(--color-background-panel);position:relative;border-radius:var(--radius-s)}input[type=checkbox][data-v-41eabd9a]:focus{border-color:var(--color-text);box-shadow:none;outline:2px solid transparent}input[type=checkbox][data-v-41eabd9a]:checked:before{position:absolute;content:"";background:var(--color-text);border-radius:2px;height:8px;width:8px;bottom:50%;right:50%;transform:translate(50%,50%)}svg[data-v-2095b1f5],svg[data-v-464ecc17],svg[data-v-49d7f594],svg[data-v-6a116107],svg[data-v-9b687834],svg[data-v-aaa8dc5c],svg[data-v-c3bd2d22]{fill:currentColor}.folder-control-panel[data-v-60e40791]{position:relative;overflow:hidden;text-align:center}.folder-control-panel input[data-v-60e40791],.folder-select[data-v-60e40791]{width:100%;margin-bottom:var(--global-space-l)}.file-input[data-v-60e40791],.folder-control-panel button[data-v-60e40791]{margin-bottom:var(--global-space-l)}.overlay-prompt[data-v-60e40791]{position:absolute;top:0;bottom:0;left:0;right:0;z-index:5}.folder-control-panel h5[data-v-60e40791],.overlay-prompt h5[data-v-60e40791],.overlay-prompt input[data-v-60e40791]{padding:var(--global-space-s);margin-bottom:var(--global-space-l)}.overlay-prompt button[data-v-60e40791]{margin-bottom:var(--global-space-l)}.temp-css[data-v-60e40791]{color:var(--color-text);width:100%;background-color:var(--color-background);border-radius:var(--radius-m);padding:var(--global-space-m);min-height:200px}.btn[data-v-7bdfef12]{display:flex;align-items:center;justify-content:center;height:100%;color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline);border-radius:var(--radius-m);cursor:pointer}.btn.full[data-v-7bdfef12]{width:100%}.btn.big[data-v-7bdfef12]{padding:10px 10px}.btn.primary[data-v-7bdfef12]{color:var(--color-button-outline);background:var(--color-background)}.btn.muted[data-v-7bdfef12]{color:var(--color-button-outline);background:var(--color-background-panel);border:1px solid var(--color-button-outline)}.btn[data-v-7bdfef12]:disabled{color:var(--color-button-outline-disabled);border:1px solid var(--color-button-outline-disabled)}.btn.selected[data-v-7bdfef12]{background-color:var(--color-button-background-selected)}.btn.mixed[data-v-7bdfef12]{background:linear-gradient(45deg,var(--color-form-control-alt) 50%,var(--color-background-panel) 50%)}svg[data-v-12f6e8c0],svg[data-v-382dc3ab],svg[data-v-4a704a38],svg[data-v-56a292d9],svg[data-v-5ce1f9b7],svg[data-v-666dd989],svg[data-v-77be0820],svg[data-v-ae05a2a2]{fill:currentColor}h6[data-v-7d0401c3]{margin-bottom:var(--global-space-s)}p[data-v-7d0401c3]{margin:0;line-height:1;padding-left:var(--global-space-s)}.state-order-list-item[data-v-7d0401c3]{display:flex;justify-content:space-between;align-items:center;width:100%;border:1px solid var(--color-global-border);border-radius:var(--radius-m);margin-bottom:var(--global-space-s);padding:var(--global-space-s);cursor:pointer}.selector-control-panel[data-v-d21b59bc]{grid-area:1/2/2/3;position:relative;overflow:hidden;text-align:center;max-height:100%;display:flex;flex-direction:column;height:calc(100vh - 170px)}.selector-control-panel .friendly-name[data-v-d21b59bc]{margin-bottom:var(--global-space-m)}.overlay-prompt[data-v-d21b59bc]{position:absolute;top:0;bottom:0;left:0;right:0;z-index:10}.overlay-prompt h5[data-v-d21b59bc],.overlay-prompt input[data-v-d21b59bc],.selector-control-panel h5[data-v-d21b59bc]{padding:var(--global-space-s);margin-bottom:var(--global-space-l)}.overlay-prompt button[data-v-d21b59bc]{margin-bottom:var(--global-space-l)}.preview-panel[data-v-d21b59bc]{padding:var(--global-space-m);overflow-y:scroll;overflow-x:scroll}.preview-panel.preview[data-v-d21b59bc],.preview-panel[data-v-d21b59bc]{color:var(--color-text);width:100%;background-color:var(--color-background);border-radius:var(--radius-m);min-height:200px;margin-bottom:var(--global-space-m);text-align:left;flex-grow:1}.preview-panel.preview[data-v-d21b59bc]{padding:0;overflow-y:hidden;overflow-x:hidden}.icon-buttons[data-v-d21b59bc]{display:flex;justify-content:space-between;gap:var(--global-space-s);margin-bottom:var(--global-space-m)}.edit-icon[data-v-d21b59bc],.icon-btn[data-v-d21b59bc]{align-items:center;position:relative;cursor:pointer}.edit-icon[data-v-d21b59bc]:before,.icon-btn[data-v-d21b59bc]:before{font-size:12px;position:absolute;top:-20px;opacity:0;transition:opacity .1s ease-in}.edit-icon[data-v-d21b59bc]:hover:before,.icon-btn[data-v-d21b59bc]:hover:before{opacity:1}.icon-btn.clone[data-v-d21b59bc]:before{content:"Clone"}.icon-btn.lock[data-v-d21b59bc]:before{content:"Lock"}.icon-btn.delete[data-v-d21b59bc]:before{content:"Delete"}.icon-btn.quarantine[data-v-d21b59bc]:before{content:"Quarantine"}.edit-icon[data-v-d21b59bc]:before{content:"Edit Classname"}.folder-select[data-v-d21b59bc],input[data-v-d21b59bc]{width:100%;text-align:left;margin-bottom:var(--global-space-l)}.preview-switch[data-v-d21b59bc],textarea[data-v-d21b59bc]{margin-bottom:var(--global-space-m)}.preview-switch[data-v-d21b59bc]{display:flex;width:100%;border:1px solid var(--color-global-border);border-radius:var(--radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;overflow:hidden;min-height:34px}.preview-switch>div[data-v-d21b59bc]{width:50%;text-align:center;padding:var(--global-space-s);cursor:pointer}.preview-switch>div.active[data-v-d21b59bc]{background-color:var(--color-background-active)}.class-name-container[data-v-d21b59bc]{text-align:left;margin-bottom:var(--global-space-l)}.class-name-container h5[data-v-d21b59bc]{margin-bottom:0}.edit-icon[data-v-d21b59bc]{width:14px}.selector-name[data-v-d21b59bc]{display:flex;justify-content:space-between}.class-confirm[data-v-d21b59bc]{text-align:center}.bulk-rename-control-panel[data-v-ce8e39be]{position:relative;overflow:hidden;text-align:center;max-height:100%;display:flex;flex-direction:column;height:calc(100vh - 170px)}.bulk-rename-control-panel .friendly-name[data-v-ce8e39be]{margin-bottom:var(--global-space-m)}.bulk-multi-button[data-v-ce8e39be],.bulk-rename-control-panel button[data-v-ce8e39be]{margin-bottom:var(--global-space-l)}.overlay-prompt[data-v-ce8e39be]{position:absolute;top:0;bottom:0;left:0;right:0;z-index:10}.bulk-rename-control-panel h5[data-v-ce8e39be],.overlay-prompt h5[data-v-ce8e39be],.overlay-prompt input[data-v-ce8e39be]{padding:var(--global-space-s);margin-bottom:var(--global-space-l)}.overlay-prompt button[data-v-ce8e39be]{margin-bottom:var(--global-space-l)}.preview-panel[data-v-ce8e39be]{padding:var(--global-space-m);overflow-y:scroll;overflow-x:scroll}.preview-panel.preview[data-v-ce8e39be],.preview-panel[data-v-ce8e39be]{color:var(--color-text);width:100%;background-color:var(--color-background);border-radius:var(--radius-m);min-height:200px;margin-bottom:var(--global-space-m);text-align:left;flex-grow:1}.preview-panel.preview[data-v-ce8e39be]{padding:0;overflow-y:hidden;overflow-x:hidden}.icon-buttons[data-v-ce8e39be]{display:flex;justify-content:space-between;gap:var(--global-space-s);margin-bottom:var(--global-space-m)}.edit-icon[data-v-ce8e39be],.icon-btn[data-v-ce8e39be]{align-items:center;position:relative;cursor:pointer}.edit-icon[data-v-ce8e39be]:before,.icon-btn[data-v-ce8e39be]:before{font-size:12px;position:absolute;top:-20px;opacity:0;transition:opacity .1s ease-in}.edit-icon[data-v-ce8e39be]:hover:before,.icon-btn[data-v-ce8e39be]:hover:before{opacity:1}.icon-btn.clone[data-v-ce8e39be]:before{content:"Clone"}.icon-btn.lock[data-v-ce8e39be]:before{content:"Lock"}.icon-btn.delete[data-v-ce8e39be]:before{content:"Delete"}.icon-btn.quarantine[data-v-ce8e39be]:before{content:"Quarantine"}.edit-icon[data-v-ce8e39be]:before{content:"Edit Classname"}.folder-select[data-v-ce8e39be],input[data-v-ce8e39be]{width:100%;text-align:left;margin-bottom:var(--global-space-l)}.preview-switch[data-v-ce8e39be],textarea[data-v-ce8e39be]{margin-bottom:var(--global-space-m)}.preview-switch[data-v-ce8e39be]{display:flex;width:100%;border:1px solid var(--color-global-border);border-radius:var(--radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;overflow:hidden;min-height:34px}.preview-switch>div[data-v-ce8e39be]{width:50%;text-align:center;padding:var(--global-space-s);cursor:pointer}.preview-switch>div.active[data-v-ce8e39be]{background-color:var(--color-background-active)}.class-name-container[data-v-ce8e39be]{text-align:left;margin-bottom:var(--global-space-l)}.class-name-container h5[data-v-ce8e39be]{margin-bottom:0}.edit-icon[data-v-ce8e39be]{width:14px}.selector-name[data-v-ce8e39be]{display:flex;justify-content:space-between}.class-confirm[data-v-ce8e39be]{text-align:center}.organiser-view[data-v-fc5dfb90]{height:100%;display:grid;grid-template-columns:5fr 200px 300px;grid-template-rows:31px 1fr;gap:var(--global-space-m)}.organiser-toolbar[data-v-fc5dfb90]{grid-area:1/1/2/2}.folder-organiser[data-v-fc5dfb90]{grid-area:2/1/3/2}.selector-organiser[data-v-fc5dfb90]{grid-area:2/1/3/3}.organiser-uncat-list[data-v-fc5dfb90]{grid-area:1/2/3/3}.bulk-rename-control-panel[data-v-fc5dfb90],.folder-control-panel[data-v-fc5dfb90],.selector-control-panel[data-v-fc5dfb90]{grid-area:1/3/3/4}.search-control-panel[data-v-d2d929bc]{position:relative;overflow:hidden;text-align:center}.search-control-panel h5[data-v-d2d929bc]{padding:var(--global-space-s);margin-bottom:var(--global-space-m)}.search-control-panel input[data-v-d2d929bc]{width:100%;margin-bottom:var(--global-space-l)}.search-control-panel button[data-v-d2d929bc]{margin-bottom:var(--global-space-l)}.search-mode-switch[data-v-d2d929bc]{display:flex;width:100%;margin-bottom:var(--global-space-m);border:1px solid var(--color-global-border);border-radius:var(--radius-m);-webkit-user-select:none;-moz-user-select:none;user-select:none;overflow:hidden}.search-mode-switch>div[data-v-d2d929bc]{width:50%;text-align:center;padding:var(--global-space-s);cursor:pointer}.search-mode-switch>div.active[data-v-d2d929bc]{background-color:var(--color-background-active)}svg[data-v-19f40631],svg[data-v-22fb8d62],svg[data-v-2e388e1a],svg[data-v-72d8d435],svg[data-v-c39116ba]{fill:currentColor}select.select[data-v-d62d24c0]{width:65px;box-shadow:none;-webkit-appearance:none;background:var(--color-background) url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E") no-repeat right 5px top 55%;background-size:16px 16px;cursor:pointer;vertical-align:middle}select.select[data-v-d62d24c0]:active,select.select[data-v-d62d24c0]:focus{border-color:transparent;box-shadow:none}.search-result[data-v-163ae44c]{display:flex;align-items:center;justify-content:space-between;padding:var(--global-space-s);margin-bottom:var(--global-space-s);min-height:50px;border-radius:var(--radius-m);background-color:var(--color-background-panel);font-size:var(--of-font-6)}.search-result>div[data-v-163ae44c]{width:20%;display:flex;align-items:center}.icon-s[data-v-163ae44c]{padding-right:4px}.text-limit[data-v-163ae44c]{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:28ch}.unit-pair[data-v-163ae44c]{display:flex;width:100%;justify-content:space-between;align-items:center}.swatch[data-v-163ae44c]{height:32px;width:32px;border-radius:var(--radius-m);margin-right:var(--global-space-s);border:1px solid var(--color-global-border)}.search-view[data-v-52874c10]{height:100%;display:grid;grid-template-columns:5fr 300px;grid-template-rows:1fr;gap:var(--global-space-m);grid-auto-flow:row}.search-control-panel[data-v-52874c10]{grid-area:1/2/2/3}.search-results[data-v-52874c10]{grid-area:1/1/2/2;overflow:auto}.search-results-header[data-v-52874c10]{display:flex;align-items:center;justify-content:space-between;padding:var(--global-space-s);margin-bottom:var(--global-space-s)}.search-results-header>div[data-v-52874c10]{width:20%}.codemirror-container[data-v-c4026524]{font-size:15px}svg[data-v-4683d9f2]{fill:currentColor}.style-sheet-order[data-v-e6e22e38]{overflow-y:auto;padding-bottom:var(--global-space-s);padding:var(--global-space-m) 0;text-align:center}.style-sheet-order h5[data-v-e6e22e38]{padding:var(--global-space-s);margin-bottom:var(--global-space-m)}.list-group-item[data-v-e6e22e38]{max-height:40px;margin-bottom:var(--global-space-s);width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px;cursor:pointer;border-radius:var(--radius-m);border:1px solid var(--color-global-border);background-color:var(--color-background-panel)}p[data-v-e6e22e38]{font-size:var(--of-font-6)}.text-limit[data-v-e6e22e38]{text-overflow:ellipsis;overflow:hidden;max-width:16ch}.list-group-item.sheet.isselected[data-v-e6e22e38]{border:1px solid var(--color-global-border);background-color:var(--color-background-active)}.ssf-header[data-v-3e6409ea]{width:100%;padding:var(--global-space-s);background:var(--color-background-panel);border-radius:var(--radius-m) var(--radius-m) 0 0;border-top:1px solid var(--color-global-border);cursor:pointer}.ssf-content[data-v-3e6409ea],.ssf-header[data-v-3e6409ea]{text-align:left;border-left:1px solid var(--color-global-border);border-right:1px solid var(--color-global-border)}.ssf-content[data-v-3e6409ea]{padding:var(--global-space-m);margin-bottom:var(--global-space-s);border-bottom:1px solid var(--color-global-border);border-radius:0 0 var(--radius-m) var(--radius-m)}.ssf-content.isDisabled[data-v-3e6409ea]{background:repeating-linear-gradient(-55deg,var(--color-background),var(--color-background) 10px,var(--color-form-control-alt) 10px,var(--color-form-control-alt) 20px)}.ssf-sheet[data-v-3e6409ea]{padding-bottom:var(--global-space-s);cursor:pointer}.ssf-sheet.isselected h6[data-v-3e6409ea]{color:var(--color-text-muted)}.style-sheet-menu[data-v-17b4cf28]{width:100%;height:100%;background-color:var(--color-background);padding:var(--global-space-m) 0;border-radius:var(--radius-m);border:1px var(--color-background-panel);overflow-y:auto;text-align:center;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.style-sheet-menu h5[data-v-17b4cf28]{padding:var(--global-space-s);margin-bottom:var(--global-space-m)}.style-sheet-control-panel[data-v-7d98d8ba]{position:relative;overflow:hidden;text-align:center;max-height:100%;display:flex;flex-direction:column;justify-content:space-between;height:calc(100vh - 170px)}.style-sheet-control-panel h5[data-v-7d98d8ba]{padding:var(--global-space-s);margin-bottom:var(--global-space-m)}.style-sheet-control-panel h6[data-v-7d98d8ba]{padding:var(--global-space-s);margin-bottom:var(--global-space-s)}.overlay-prompt[data-v-7d98d8ba]{position:absolute;top:0;bottom:0;left:0;right:0;z-index:5}.overlay-prompt h5[data-v-7d98d8ba],.overlay-prompt input[data-v-7d98d8ba]{padding:var(--global-space-s);margin-bottom:var(--global-space-l)}.overlay-prompt button[data-v-7d98d8ba],button[data-v-7d98d8ba]{margin-bottom:var(--global-space-l)}.folder-select[data-v-7d98d8ba],input[data-v-7d98d8ba]{width:100%;text-align:left;margin-bottom:var(--global-space-l)}.stylesheet-editor[data-v-8cf81222]{grid-area:2/2/3/3}.editor-toolbar[data-v-8cf81222]{grid-area:1/2/2/3}.stylsheet-view[data-v-8cf81222]{height:100%;display:grid;grid-template-columns:.5fr 3fr 300px 300px;grid-template-rows:45px 1fr;gap:var(--global-space-m);grid-auto-flow:row}.style-sheet-order[data-v-8cf81222]{grid-area:1/1/3/2}.style-sheet-menu[data-v-8cf81222]{grid-area:1/3/3/4}.style-sheet-control-panel[data-v-8cf81222]{grid-area:1/4/3/5}.editor-toolbar[data-v-8cf81222]{padding-top:var(--global-space-m)}.editor-toolbar h5[data-v-8cf81222]{padding:var(--global-space-s)}
+  ); /* The little square between H and V scrollbars */
+}
+
+/* GUTTER */
+
+.CodeMirror-gutters {
+  border-right: 1px solid var(--color-background);
+  background-color: var(--cm-gutter);
+  white-space: nowrap;
+}
+.CodeMirror-linenumbers {
+}
+.CodeMirror-linenumber {
+  padding: 0 3px 0 5px;
+  min-width: 20px;
+  text-align: right;
+  color: var(--cm-line-number);
+  white-space: nowrap;
+}
+
+.CodeMirror-guttermarker {
+  color: black;
+}
+.CodeMirror-guttermarker-subtle {
+  color: #999;
+}
+
+/* CURSOR */
+
+.CodeMirror-cursor {
+  border-left: 1px solid var(--color-text);
+  border-right: none;
+  width: 0;
+}
+/* Shown when moving in bi-directional text */
+.CodeMirror div.CodeMirror-secondarycursor {
+  border-left: 1px solid silver;
+}
+.cm-fat-cursor .CodeMirror-cursor {
+  width: auto;
+  border: 0 !important;
+  background: #7e7;
+}
+.cm-fat-cursor div.CodeMirror-cursors {
+  z-index: 1;
+}
+.cm-fat-cursor .CodeMirror-line::-moz-selection, .cm-fat-cursor .CodeMirror-line > span::-moz-selection, .cm-fat-cursor .CodeMirror-line > span > span::-moz-selection {
+  background: transparent;
+}
+.cm-fat-cursor .CodeMirror-line::selection,
+.cm-fat-cursor .CodeMirror-line > span::selection,
+.cm-fat-cursor .CodeMirror-line > span > span::selection {
+  background: transparent;
+}
+.cm-fat-cursor .CodeMirror-line::-moz-selection,
+.cm-fat-cursor .CodeMirror-line > span::-moz-selection,
+.cm-fat-cursor .CodeMirror-line > span > span::-moz-selection {
+  background: transparent;
+}
+.cm-fat-cursor {
+  caret-color: transparent;
+}
+@-webkit-keyframes blink {
+  0% {
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+  }
+}
+@keyframes blink {
+  0% {
+  }
+  50% {
+    background-color: transparent;
+  }
+  100% {
+  }
+}
+
+/* Can style cursor different in overwrite (non-insert) mode */
+.CodeMirror-overwrite .CodeMirror-cursor {
+}
+
+.cm-tab {
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.CodeMirror-rulers {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  bottom: 0;
+  overflow: hidden;
+}
+.CodeMirror-ruler {
+  border-left: 1px solid #ccc;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+/* DEFAULT THEME */
+
+.cm-s-default .cm-header {
+  color: blue;
+}
+.cm-s-default .cm-quote {
+  color: #24c2c7;
+}
+.cm-negative {
+  color: rgb(0, 0, 0);
+}
+.cm-positive {
+  color: rgb(0, 0, 0);
+}
+.cm-header,
+.cm-strong {
+  font-weight: bold;
+}
+.cm-em {
+  font-style: italic;
+}
+.cm-link {
+  text-decoration: underline;
+}
+.cm-strikethrough {
+  text-decoration: line-through;
+}
+
+.cm-s-default .cm-keyword {
+  color: var(--cm-keyword);
+  line-height: 1em;
+  font-weight: bold;
+}
+.cm-s-default .cm-atom {
+  color: var(--cm-value);
+}
+.cm-s-default .cm-number {
+  color: var(--cm-number);
+}
+.cm-s-default .cm-def {
+  color: var(--cm-def);
+}
+.cm-s-default .cm-variable,
+.cm-s-default .cm-punctuation,
+.cm-s-default .cm-property {
+  color: var(--cm-var);
+}
+.cm-s-default .cm-operator {
+  color: #d4d4d4;
+}
+.cm-s-default .cm-variable-2 {
+  color: var(--cm-var-2);
+}
+.cm-s-default .cm-variable-3,
+.cm-s-default .cm-type {
+  color: var(--cm-psuedo);
+}
+.cm-s-default .cm-comment {
+  color: var(--cm-comment);
+}
+.cm-s-default .cm-string {
+  color: var(--cm-string);
+}
+.cm-s-default .cm-string-2 {
+  color: var(--cm-string-2);
+}
+.cm-s-default .cm-meta {
+  color: var(--cm-meta);
+}
+.cm-s-default .cm-qualifier {
+  color: var(--cm-class);
+}
+.cm-s-default .cm-builtin {
+  color: #9999cc;
+}
+.cm-s-default .cm-bracket {
+  color: var(--cm-bracket);
+}
+.cm-s-default .cm-tag {
+  color: var(--cm-tag);
+}
+.cm-s-default .cm-attribute {
+  color: var(--cm-attribute);
+}
+.cm-s-default .cm-hr {
+  color: rgb(255, 255, 255);
+}
+.cm-s-default .cm-link {
+  color: #287bde;
+}
+
+.cm-s-default .cm-error {
+  color: var(--cm-error);
+}
+.cm-invalidchar {
+  color: #f00;
+}
+
+.CodeMirror-composing {
+  border-bottom: 2px solid;
+}
+
+/* Default styles for common addons */
+
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0b0;
+}
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #a22;
+}
+.CodeMirror-matchingtag {
+  background: rgba(255, 150, 0, 0.3);
+}
+.CodeMirror-activeline-background {
+  background: #e8f2ff41;
+}
+
+/* STOP */
+
+/* The rest of this file contains styles related to the mechanics of
+       the editor. You probably shouldn't touch them. */
+
+.CodeMirror {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.CodeMirror-scroll {
+  overflow: scroll !important; /* Things will break if this is overridden */
+  /* 50px is the magic margin used to hide the element's real scrollbars */
+  /* See overflow: hidden in .CodeMirror */
+  margin-bottom: -50px;
+  margin-right: -50px;
+  padding-bottom: 50px;
+  height: 100%;
+  outline: none; /* Prevent dragging from highlighting the element */
+  position: relative;
+  z-index: 0;
+}
+.CodeMirror-sizer {
+  position: relative;
+  border-right: 50px solid transparent;
+}
+
+/* The fake, visible scrollbars. Used to force redraw during scrolling
+       before actual scrolling happens, thus preventing shaking and
+       flickering artifacts. */
+.CodeMirror-vscrollbar,
+.CodeMirror-hscrollbar,
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+  position: absolute;
+  z-index: 6;
+  display: none;
+  outline: none;
+}
+.CodeMirror-vscrollbar {
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.CodeMirror-hscrollbar {
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.CodeMirror-scrollbar-filler {
+  right: 0;
+  bottom: 0;
+}
+.CodeMirror-gutter-filler {
+  left: 0;
+  bottom: 0;
+}
+
+.CodeMirror-gutters {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  z-index: 3;
+}
+.CodeMirror-gutter {
+  white-space: normal;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: -50px;
+}
+.CodeMirror-gutter-wrapper {
+  position: absolute;
+  z-index: 4;
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-gutter-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 4;
+}
+.CodeMirror-gutter-elt {
+  position: absolute;
+  cursor: default;
+  z-index: 4;
+}
+.CodeMirror-gutter-wrapper ::-moz-selection {
+  background-color: transparent;
+}
+.CodeMirror-gutter-wrapper ::selection {
+  background-color: transparent;
+}
+.CodeMirror-gutter-wrapper ::-moz-selection {
+  background-color: transparent;
+}
+
+.CodeMirror-lines {
+  cursor: text;
+  min-height: 1px; /* prevents collapsing before first draw */
+}
+.CodeMirror pre.CodeMirror-line,
+.CodeMirror pre.CodeMirror-line-like {
+  /* Reset some styles that the rest of the page might have set */
+  border-radius: 0;
+  border-width: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+  z-index: 2;
+  position: relative;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  font-variant-ligatures: contextual;
+}
+.CodeMirror-wrap pre.CodeMirror-line,
+.CodeMirror-wrap pre.CodeMirror-line-like {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+.CodeMirror-linebackground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.CodeMirror-linewidget {
+  position: relative;
+  z-index: 2;
+  padding: 0.1px; /* Force widget margins to stay inside of the container */
+}
+
+.CodeMirror-widget {
+}
+
+.CodeMirror-rtl pre {
+  direction: rtl;
+}
+
+.CodeMirror-code {
+  outline: none;
+}
+
+/* Force content-box sizing for the elements where we expect it */
+.CodeMirror-scroll,
+.CodeMirror-sizer,
+.CodeMirror-gutter,
+.CodeMirror-gutters,
+.CodeMirror-linenumber {
+  box-sizing: content-box;
+}
+
+.CodeMirror-measure {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.CodeMirror-cursor {
+  position: absolute;
+  pointer-events: none;
+}
+.CodeMirror-measure pre {
+  position: static;
+}
+
+div.CodeMirror-cursors {
+  visibility: hidden;
+  position: relative;
+  z-index: 3;
+}
+div.CodeMirror-dragcursors {
+  visibility: visible;
+}
+
+.CodeMirror-focused div.CodeMirror-cursors {
+  visibility: visible;
+}
+
+.CodeMirror-selected {
+  background: var(--cm-selection);
+}
+.CodeMirror-focused .CodeMirror-selected {
+  background: var(--cm-selection);
+}
+.CodeMirror-crosshair {
+  cursor: crosshair;
+}
+.CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection {
+  background: var(--cm-selection);
+}
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background: var(--cm-selection);
+}
+.CodeMirror-line::-moz-selection,
+.CodeMirror-line > span::-moz-selection,
+.CodeMirror-line > span > span::-moz-selection {
+  background: var(--cm-selection);
+}
+
+.cm-searching {
+  background-color: #ffa;
+  background-color: rgba(255, 255, 0, 0.4);
+}
+
+/* Used to force a border model for a node */
+.cm-force-border {
+  padding-right: 0.1px;
+}
+
+@media print {
+  /* Hide the cursor when printing */
+  .CodeMirror div.CodeMirror-cursors {
+    visibility: hidden;
+  }
+}
+
+/* See issue #2901 */
+.cm-tab-wrap-hack:after {
+  content: '';
+}
+
+/* Help users use markselection to safely style text background */
+span.CodeMirror-selectedtext {
+  background: none;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCursorStart.vue?vue&type=style&index=0&id=c48ea704&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-c48ea704] {
+  fill: currentColor;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconReplace.vue?vue&type=style&index=0&id=3f936186&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-3f936186] {
+  fill: currentColor;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/OrganiserBulkRename.vue?vue&type=style&index=0&id=5276c95d&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.bulk-rename[data-v-5276c95d] {
+  font-size: 13px;
+  grid-area: 2 / 1 / 3 / 3;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/Folder.vue?vue&type=style&index=0&id=1bf5c3ce&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.style-folder[data-v-1bf5c3ce] {
+  width: 100%;
+  height: 100%;
+  min-width: 250px;
+  background-color: var(--color-background-panel);
+  border: 1px solid var(--color-background-panel);
+  padding: var(--global-space-m);
+  border-radius: var(--radius-m);
+  /* overflow-y: hidden; */
+}
+.ssf-header[data-v-1bf5c3ce] {
+  cursor: pointer;
+}
+.style-folder h5[data-v-1bf5c3ce] {
+  padding: var(--global-space-s);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.style-folder-inner[data-v-1bf5c3ce] {
+  overflow-y: auto;
+  height: 85%;
+}
+.style-folder h5[data-v-1bf5c3ce] {
+  color: var(--color-text);
+  text-align: center;
+}
+.isselected[data-v-1bf5c3ce] {
+  background-color: var(--color-background-active);
+  border: 1px solid var(--color-global-border);
+}
+.isdisabled[data-v-1bf5c3ce] {
+  background: repeating-linear-gradient(
+    -55deg,
+    var(--color-background),
+    var(--color-background) 10px,
+    var(--color-background-soft) 10px,
+    var(--color-background-soft) 20px
+  );
+}
+h6[data-v-1bf5c3ce] {
+  cursor: pointer;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/FolderList.vue?vue&type=style&index=0&id=ec4de952&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.folder-list[data-v-ec4de952] {
+  width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+  grid-auto-flow: row;
+  gap: var(--global-space-s);
+  grid-area: 1 / 2 / 2 / 3;
+  overflow-y: auto;
+  padding-bottom: var(--global-space-s);
+}
+.isselected[data-v-ec4de952] {
+  background-color: var(--color-background-active);
+  border: 1px solid var(--color-global-border);
+}
+.isdisabled[data-v-ec4de952] {
+  background: repeating-linear-gradient(
+    -55deg,
+    var(--color-background),
+    var(--color-background) 10px,
+    var(--color-form-control-alt) 10px,
+    var(--color-form-control-alt) 20px
+  );
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseSelect.vue?vue&type=style&index=0&id=615e345a&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+select.select {
+  width: 100%;
+
+  box-shadow: none;
+
+  -webkit-appearance: none;
+  background: var(--color-background)
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
+    no-repeat right 5px top 55%;
+  background-size: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+select.select:hover {
+  color: var(--color-text);
+}
+option:hover {
+  color: var(--color-background) !important;
+  background: var(--color-text) !important;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseCheckbox.vue?vue&type=style&index=0&id=bd10054c&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.form-control[data-v-bd10054c] {
+  text-align: left;
+}
+input[type='checkbox'][data-v-bd10054c] {
+  background: var(--color-background-panel);
+  position: relative;
+  border-radius: var(--radius-s);
+}
+input[type='checkbox'][data-v-bd10054c]:focus {
+  border-color: var(--color-text);
+  box-shadow: none;
+  outline: 2px solid transparent;
+}
+input[type='checkbox'][data-v-bd10054c]:checked::before {
+  position: absolute;
+  content: '';
+  background: var(--color-text);
+  border-radius: 2px;
+  height: 8px;
+  width: 8px;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpdateFolder.vue?vue&type=style&index=0&id=4a3a9896&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4a3a9896] {
+  fill: currentColor;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDeleteFolder.vue?vue&type=style&index=0&id=668063d2&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-668063d2] {
+  fill: currentColor;
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDisableFolder.vue?vue&type=style&index=0&id=4bfcc7c8&scoped=true&lang=css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4bfcc7c8] {
+  fill: currentColor;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAddFolder.vue?vue&type=style&index=0&id=77817741&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-77817741] {
+  fill: currentColor;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconAdd.vue?vue&type=style&index=0&id=dd5cd41a&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-dd5cd41a] {
+  fill: currentColor;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/FolderControlPanel.vue?vue&type=style&index=0&id=6d595d0a&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.folder-control-panel[data-v-6d595d0a] {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.folder-control-panel input[data-v-6d595d0a],
+.folder-select[data-v-6d595d0a] {
+  width: 100%;
+  margin-bottom: var(--global-space-l);
+}
+.folder-control-panel button[data-v-6d595d0a],
+.file-input[data-v-6d595d0a] {
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt[data-v-6d595d0a] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.overlay-prompt h5[data-v-6d595d0a],
+.folder-control-panel h5[data-v-6d595d0a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-6d595d0a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-6d595d0a] {
+  margin-bottom: var(--global-space-l);
+}
+.temp-css[data-v-6d595d0a] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  min-height: 200px;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseIconButton.vue?vue&type=style&index=0&id=0763aa3c&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.btn[data-v-0763aa3c] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+  border-radius: var(--radius-m);
+  cursor: pointer;
+}
+.btn.full[data-v-0763aa3c] {
+  width: 100%;
+}
+.btn.big[data-v-0763aa3c] {
+  padding: 10px 10px;
+}
+.btn.primary[data-v-0763aa3c] {
+  color: var(--color-button-outline);
+  background: var(--color-background);
+}
+.btn.muted[data-v-0763aa3c] {
+  color: var(--color-button-outline);
+  background: var(--color-background-panel);
+  border: 1px solid var(--color-button-outline);
+}
+.btn[data-v-0763aa3c]:disabled {
+  color: var(--color-button-outline-disabled);
+  border: 1px solid var(--color-button-outline-disabled);
+}
+.btn.selected[data-v-0763aa3c] {
+  background-color: var(--color-button-background-selected);
+}
+.btn.mixed[data-v-0763aa3c] {
+  background: linear-gradient(
+    45deg,
+    var(--color-form-control-alt) 50%,
+    var(--color-background-panel) 50%
+  );
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCopy.vue?vue&type=style&index=0&id=71fb38da&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-71fb38da] {
+  fill: currentColor;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconPreDelete.vue?vue&type=style&index=0&id=0c531980&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-0c531980] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockClosed.vue?vue&type=style&index=0&id=35808d15&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-35808d15] {
+  fill: currentColor;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconLockOpen.vue?vue&type=style&index=0&id=8240799a&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-8240799a] {
+  fill: currentColor;
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconCheck.vue?vue&type=style&index=0&id=4c24df4c&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-4c24df4c] {
+  fill: currentColor;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconDown.vue?vue&type=style&index=0&id=3a3a7a40&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-3a3a7a40] {
+  fill: currentColor;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconEdit.vue?vue&type=style&index=0&id=44a7cfa8&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-44a7cfa8] {
+  fill: currentColor;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpDownSmall.vue?vue&type=style&index=0&id=7fa93bfc&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-7fa93bfc] {
+  fill: currentColor;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StateOrder.vue?vue&type=style&index=0&id=ac327430&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+h6[data-v-ac327430] {
+  margin-bottom: var(--global-space-s);
+}
+p[data-v-ac327430] {
+  margin: 0;
+  line-height: 1;
+  padding-left: var(--global-space-s);
+}
+.state-order-list-item[data-v-ac327430] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  margin-bottom: var(--global-space-s);
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/SelectorControlPanel.vue?vue&type=style&index=0&id=3466136c&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.selector-control-panel[data-v-3466136c] {
+  grid-area: 1 / 2 / 2 / 3;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 170px);
+}
+.selector-control-panel .friendly-name[data-v-3466136c] {
+  margin-bottom: var(--global-space-m);
+}
+.overlay-prompt[data-v-3466136c] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.overlay-prompt h5[data-v-3466136c],
+.selector-control-panel h5[data-v-3466136c] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-3466136c] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-3466136c] {
+  margin-bottom: var(--global-space-l);
+}
+.preview-panel[data-v-3466136c] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  margin-bottom: var(--global-space-m);
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  flex-grow: 1;
+}
+.preview-panel.preview[data-v-3466136c] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: 0;
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  text-align: left;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: var(--global-space-m);
+  flex-grow: 1;
+}
+.icon-buttons[data-v-3466136c] {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.icon-btn[data-v-3466136c],
+.edit-icon[data-v-3466136c] {
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.icon-btn[data-v-3466136c]:before,
+.edit-icon[data-v-3466136c]:before {
+  font-size: 12px;
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+.icon-btn[data-v-3466136c]:hover:before,
+.edit-icon[data-v-3466136c]:hover:before {
+  opacity: 1;
+}
+.icon-btn.clone[data-v-3466136c]:before {
+  content: 'Clone';
+}
+.icon-btn.lock[data-v-3466136c]:before {
+  content: 'Lock';
+}
+.icon-btn.delete[data-v-3466136c]:before {
+  content: 'Delete';
+}
+.icon-btn.quarantine[data-v-3466136c]:before {
+  content: 'Quarantine';
+}
+.edit-icon[data-v-3466136c]:before {
+  content: 'Edit Classname';
+}
+input[data-v-3466136c],
+.folder-select[data-v-3466136c] {
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+textarea[data-v-3466136c] {
+  margin-bottom: var(--global-space-m);
+}
+.preview-switch[data-v-3466136c] {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--global-space-m);
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  min-height: 34px;
+}
+.preview-switch > div[data-v-3466136c] {
+  width: 50%;
+  text-align: center;
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+.preview-switch > div.active[data-v-3466136c] {
+  background-color: var(--color-background-active);
+  /* color: var(--color-background); */
+}
+.class-name-container[data-v-3466136c] {
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+.class-name-container h5[data-v-3466136c] {
+  margin-bottom: 0;
+}
+.edit-icon[data-v-3466136c] {
+  width: 14px;
+}
+.selector-name[data-v-3466136c] {
+  display: flex;
+  justify-content: space-between;
+}
+.class-confirm[data-v-3466136c] {
+  text-align: center;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/BulkRenameControlPanel.vue?vue&type=style&index=0&id=6a3388fd&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.bulk-rename-control-panel[data-v-6a3388fd] {
+  /* grid-area: 1 / 2 / 2 / 3; */
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 170px);
+}
+.bulk-rename-control-panel .friendly-name[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-m);
+}
+.bulk-rename-control-panel button[data-v-6a3388fd],
+.bulk-multi-button[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt[data-v-6a3388fd] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.overlay-prompt h5[data-v-6a3388fd],
+.bulk-rename-control-panel h5[data-v-6a3388fd] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-6a3388fd] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-l);
+}
+.preview-panel[data-v-6a3388fd] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: var(--global-space-m);
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  margin-bottom: var(--global-space-m);
+  text-align: left;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  flex-grow: 1;
+}
+.preview-panel.preview[data-v-6a3388fd] {
+  color: var(--color-text);
+  width: 100%;
+  background-color: var(--color-background);
+  border-radius: var(--radius-m);
+  padding: 0;
+  min-height: 200px;
+  /* transition: color 0.5s, background-color 0.5s; */
+  text-align: left;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-bottom: var(--global-space-m);
+  flex-grow: 1;
+}
+.icon-buttons[data-v-6a3388fd] {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.icon-btn[data-v-6a3388fd],
+.edit-icon[data-v-6a3388fd] {
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.icon-btn[data-v-6a3388fd]:before,
+.edit-icon[data-v-6a3388fd]:before {
+  font-size: 12px;
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+}
+.icon-btn[data-v-6a3388fd]:hover:before,
+.edit-icon[data-v-6a3388fd]:hover:before {
+  opacity: 1;
+}
+.icon-btn.clone[data-v-6a3388fd]:before {
+  content: 'Clone';
+}
+.icon-btn.lock[data-v-6a3388fd]:before {
+  content: 'Lock';
+}
+.icon-btn.delete[data-v-6a3388fd]:before {
+  content: 'Delete';
+}
+.icon-btn.quarantine[data-v-6a3388fd]:before {
+  content: 'Quarantine';
+}
+.edit-icon[data-v-6a3388fd]:before {
+  content: 'Edit Classname';
+}
+input[data-v-6a3388fd],
+.folder-select[data-v-6a3388fd] {
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+textarea[data-v-6a3388fd] {
+  margin-bottom: var(--global-space-m);
+}
+.preview-switch[data-v-6a3388fd] {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--global-space-m);
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  min-height: 34px;
+}
+.preview-switch > div[data-v-6a3388fd] {
+  width: 50%;
+  text-align: center;
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+.preview-switch > div.active[data-v-6a3388fd] {
+  background-color: var(--color-background-active);
+  /* color: var(--color-background); */
+}
+.class-name-container[data-v-6a3388fd] {
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+.class-name-container h5[data-v-6a3388fd] {
+  margin-bottom: 0;
+}
+.edit-icon[data-v-6a3388fd] {
+  width: 14px;
+}
+.selector-name[data-v-6a3388fd] {
+  display: flex;
+  justify-content: space-between;
+}
+.class-confirm[data-v-6a3388fd] {
+  text-align: center;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/OrganiserView.vue?vue&type=style&index=0&id=5a16af31&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.organiser-view[data-v-5a16af31] {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 5fr 200px 300px;
+  grid-template-rows: 31px 1fr;
+  gap: var(--global-space-m);
+}
+.organiser-toolbar[data-v-5a16af31] {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.folder-organiser[data-v-5a16af31] {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.selector-organiser[data-v-5a16af31] {
+  grid-area: 2 / 1 / 3 / 3;
+}
+.organiser-uncat-list[data-v-5a16af31] {
+  grid-area: 1 / 2 / 3 / 3;
+}
+.folder-control-panel[data-v-5a16af31],
+.selector-control-panel[data-v-5a16af31],
+.bulk-rename-control-panel[data-v-5a16af31] {
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/SearchControlPanel.vue?vue&type=style&index=0&id=888a3296&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.search-control-panel[data-v-888a3296] {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.search-control-panel h5[data-v-888a3296] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.search-control-panel input[data-v-888a3296] {
+  width: 100%;
+  margin-bottom: var(--global-space-l);
+}
+.search-control-panel button[data-v-888a3296] {
+  margin-bottom: var(--global-space-l);
+}
+.search-mode-switch[data-v-888a3296] {
+  display: flex;
+  width: 100%;
+  margin-bottom: var(--global-space-m);
+  border: 1px solid var(--color-global-border);
+  border-radius: var(--radius-m);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  overflow: hidden;
+}
+.search-mode-switch > div[data-v-888a3296] {
+  width: 50%;
+  text-align: center;
+  padding: var(--global-space-s);
+  cursor: pointer;
+}
+.search-mode-switch > div.active[data-v-888a3296] {
+  background-color: var(--color-background-active);
+  /* color: var(--color-background); */
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconOxyFull.vue?vue&type=style&index=0&id=c1e2609e&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-c1e2609e] {
+  fill: currentColor;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconOxyPage.vue?vue&type=style&index=0&id=fa19e09e&scoped=true&lang=css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-fa19e09e] {
+  fill: currentColor;
+}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconOxyTablet.vue?vue&type=style&index=0&id=2c17cd88&scoped=true&lang=css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-2c17cd88] {
+  fill: currentColor;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconOxyLandscape.vue?vue&type=style&index=0&id=8284a7ee&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-8284a7ee] {
+  fill: currentColor;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconOxyPortrait.vue?vue&type=style&index=0&id=2f9aedbd&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-2f9aedbd] {
+  fill: currentColor;
+}
+
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/inputs/BaseUnitSelect.vue?vue&type=style&index=0&id=ad176212&scoped=true&lang=css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+select.select[data-v-ad176212] {
+  width: 65px;
+  box-shadow: none;
+  -webkit-appearance: none;
+  background: var(--color-background)
+    url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E")
+    no-repeat right 5px top 55%;
+  background-size: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+select.select[data-v-ad176212]:active,
+select.select[data-v-ad176212]:focus {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/SearchResult.vue?vue&type=style&index=0&id=31f0e060&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.search-result[data-v-31f0e060] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-s);
+  min-height: 50px;
+  border-radius: var(--radius-m);
+  background-color: var(--color-background-panel);
+  font-size: var(--of-font-6);
+}
+.search-result > div[data-v-31f0e060] {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.icon-s[data-v-31f0e060] {
+  padding-right: 4px;
+}
+.text-limit[data-v-31f0e060] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 28ch;
+}
+.unit-pair[data-v-31f0e060] {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.swatch[data-v-31f0e060] {
+  height: 32px;
+  width: 32px;
+  border-radius: var(--radius-m);
+  margin-right: var(--global-space-s);
+  border: 1px solid var(--color-global-border);
+}
+/*end*/
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/SearchView.vue?vue&type=style&index=0&id=14edc499&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Layout */
+.search-view[data-v-14edc499] {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 5fr 300px;
+  grid-template-rows: 1fr;
+  gap: var(--global-space-m);
+  grid-auto-flow: row;
+}
+.search-control-panel[data-v-14edc499] {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.search-results[data-v-14edc499] {
+  grid-area: 1 / 1 / 2 / 2;
+  overflow: auto;
+}
+.search-results-header[data-v-14edc499] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-s);
+}
+.search-results-header > div[data-v-14edc499] {
+  width: 20%;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StyleSheetEditor.vue?vue&type=style&index=0&id=5b9300a6&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.codemirror-container[data-v-5b9300a6] {
+  font-size: 15px;
+}
+
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconUpDown.vue?vue&type=style&index=0&id=61b5387b&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+svg[data-v-61b5387b] {
+  fill: currentColor;
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StyleSheetOrder.vue?vue&type=style&index=0&id=126660b6&scoped=true&lang=css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.style-sheet-order[data-v-126660b6] {
+  overflow-y: auto;
+  padding-bottom: var(--global-space-s);
+  padding: var(--global-space-m) 0;
+  text-align: center;
+}
+.style-sheet-order h5[data-v-126660b6] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.list-group-item[data-v-126660b6] {
+  max-height: 40px;
+  margin-bottom: var(--global-space-s);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: var(--radius-m);
+  border: 1px solid var(--color-global-border);
+  background-color: var(--color-background-panel);
+}
+p[data-v-126660b6] {
+  font-size: var(--of-font-6);
+}
+.text-limit[data-v-126660b6] {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 16ch;
+}
+.list-group-item.sheet.isselected[data-v-126660b6] {
+  border: 1px solid var(--color-global-border);
+  background-color: var(--color-background-active);
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StyleSheetFolder.vue?vue&type=style&index=0&id=f206d9b2&scoped=true&lang=css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.ssf-header[data-v-f206d9b2] {
+  text-align: left;
+  width: 100%;
+  padding: var(--global-space-s);
+  background: var(--color-background-panel);
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+  border-top: 1px solid var(--color-global-border);
+  border-left: 1px solid var(--color-global-border);
+  border-right: 1px solid var(--color-global-border);
+  cursor: pointer;
+}
+.ssf-content[data-v-f206d9b2] {
+  text-align: left;
+  padding: var(--global-space-m);
+  margin-bottom: var(--global-space-s);
+  border-bottom: 1px solid var(--color-global-border);
+  border-left: 1px solid var(--color-global-border);
+  border-right: 1px solid var(--color-global-border);
+  border-radius: 0 0 var(--radius-m) var(--radius-m);
+}
+.ssf-content.isDisabled[data-v-f206d9b2] {
+  background: repeating-linear-gradient(
+    -55deg,
+    var(--color-background),
+    var(--color-background) 10px,
+    var(--color-form-control-alt) 10px,
+    var(--color-form-control-alt) 20px
+  );
+}
+.ssf-sheet[data-v-f206d9b2] {
+  padding-bottom: var(--global-space-s);
+  cursor: pointer;
+}
+.ssf-sheet.isselected h6[data-v-f206d9b2] {
+  color: var(--color-text-muted);
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/StyleSheetMenu.vue?vue&type=style&index=0&id=99c60050&scoped=true&lang=css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.style-sheet-menu[data-v-99c60050] {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-background);
+  padding: var(--global-space-m) 0;
+  border-radius: var(--radius-m);
+  border: 1px var(--color-background-panel);
+  overflow-y: auto;
+  text-align: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.style-sheet-menu h5[data-v-99c60050] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.list-group-item[data-v-99c60050] {
+  /* border: 1px solid white; */
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/control-panel/StyleSheetControlPanel.vue?vue&type=style&index=0&id=d9b2b78a&scoped=true&lang=css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.style-sheet-control-panel[data-v-d9b2b78a] {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 170px);
+}
+.style-sheet-control-panel h5[data-v-d9b2b78a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-m);
+}
+.style-sheet-control-panel h6[data-v-d9b2b78a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-s);
+}
+.overlay-prompt[data-v-d9b2b78a] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+}
+.overlay-prompt h5[data-v-d9b2b78a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt input[data-v-d9b2b78a] {
+  padding: var(--global-space-s);
+  margin-bottom: var(--global-space-l);
+}
+.overlay-prompt button[data-v-d9b2b78a],
+button[data-v-d9b2b78a] {
+  margin-bottom: var(--global-space-l);
+}
+input[data-v-d9b2b78a],
+.folder-select[data-v-d9b2b78a] {
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--global-space-l);
+}
+
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/StylesheetView.vue?vue&type=style&index=0&id=5c13553f&scoped=true&lang=css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+/* Layout */
+.stylesheet-editor[data-v-5c13553f] {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.editor-toolbar[data-v-5c13553f] {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.stylsheet-view[data-v-5c13553f] {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 300px 300px;
+  grid-template-rows: 45px 1fr;
+  gap: var(--global-space-m);
+  grid-auto-flow: row;
+}
+.style-sheet-order[data-v-5c13553f] {
+  grid-area: 1 / 1 / 3 / 2;
+}
+.style-sheet-menu[data-v-5c13553f] {
+  grid-area: 1 / 3 / 3 / 4;
+}
+.style-sheet-control-panel[data-v-5c13553f] {
+  grid-area: 1 / 4 / 3 / 5;
+}
+
+/*To Move*/
+.editor-toolbar[data-v-5c13553f] {
+  padding-top: var(--global-space-m);
+}
+.editor-toolbar h5[data-v-5c13553f] {
+  padding: var(--global-space-s);
+}
+

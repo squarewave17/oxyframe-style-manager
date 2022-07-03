@@ -20,6 +20,8 @@ change state order icons to something better
 truncate text - uncategorized selectors | Selector Name
 Folder name validation
 show real color in css preview
+search on organiser view
+Delete inactive confirmation
 
 
 =====================================================

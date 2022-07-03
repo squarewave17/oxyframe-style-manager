@@ -16,8 +16,7 @@
           <span>Import Selectors</span>
           <IconUpload class="icon" />
         </BaseFileInput>
-      </div>
-      <div class="import-section">
+
         <p>Export selectors to a file on your machine</p>
         <BaseButton
           width="full"
@@ -31,8 +30,7 @@
           <span>Export Selectors</span>
           <IconDownload class="icon" />
         </BaseButton>
-      </div>
-      <div class="import-section">
+
         <p>
           Import selectors and merge them with the current selectors. If a
           duplicate selector is found, the original selector will be kept
@@ -50,6 +48,19 @@
           <span>Merge Selectors</span>
           <IconMerge class="icon" />
         </BaseFileInput>
+      </div>
+      <div class="options cleanup-section">
+        <h5>Project Cleanup</h5>
+        <p>Quarantine unused Selectors</p>
+        <BaseButton width="full" @click="selectorStore.quarantineUnused()">
+          <span>Quarantine Unused</span>
+          <IconQuarantine class="icon" />
+        </BaseButton>
+        <p>Permanently delete inactive selectors</p>
+        <BaseButton width="full" @click="selectorStore.deleteInactive()">
+          <span>Delete Inactive</span>
+          <IconDelete class="icon" />
+        </BaseButton>
       </div>
     </div>
     <!-- Export Overlay -->
@@ -83,6 +94,8 @@ import IconDownload from '@/components/icons/IconDownload'
 import IconUpload from '@/components/icons/IconUpload'
 import IconMerge from '@/components/icons/IconMerge'
 import IconClose from '@/components/icons/IconClose'
+import IconQuarantine from '@/components/icons/IconQuarantine'
+import IconDelete from '@/components/icons/IconDelete'
 import useCssConstruct from '@/composables/useCssConstruct'
 import { ref, watch } from 'vue'
 import { useSelectorStore } from '@/store/selectorStore'
@@ -170,10 +183,9 @@ const exportSelectors = () => {
   right: 0;
   z-index: 5;
 }
-.overlay-prompt h5,
-.file-control-panel h5 {
+.overlay-prompt h5 {
   padding: var(--global-space-s);
-  margin-bottom: var(--global-space-l);
+  margin-bottom: var(--global-space-m);
 }
 .overlay-prompt input {
   padding: var(--global-space-s);
@@ -181,5 +193,11 @@ const exportSelectors = () => {
 }
 .overlay-prompt button {
   margin-bottom: var(--global-space-l);
+}
+.options h5 {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.options button {
+  margin: var(--global-space-m) 0;
 }
 </style>

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia'
 import { useGlobalStore } from '@/store/globalStore'
 import { useOxyJSONStore } from '@/store/oxyJSONStore'
 import useSelectorHelpers from '@/composables/useSelectorHelpers'
+import useClassCompiler from '@/composables/useClassCompiler'
 import useFileSystem from '@/composables/useFileSystem'
 
 export const useSelectorStore = defineStore('selectorStore', {
@@ -19,6 +20,9 @@ export const useSelectorStore = defineStore('selectorStore', {
       currentStyleSheetFolder: 0,
       typeSelected: 'selector',
       usedClasses: [],
+      usedClassData: [],
+      codeBlockClasses: [],
+      styleSheetClasses: [],
       replaceClasses: [],
     }
   },
@@ -29,6 +33,7 @@ export const useSelectorStore = defineStore('selectorStore', {
     getSet(data) {
       console.log('getset')
       const { processInput } = useSelectorHelpers()
+
       this.setData(processInput(data))
     },
     saveSet() {
@@ -143,7 +148,13 @@ export const useSelectorStore = defineStore('selectorStore', {
       this.styleSets = data.styleSets
       this.styleSheets = data.styleSheets
       this.styleSheetFolders = data.styleSheetFolders
-      this.usedClasses = data.usedClasses
+      // this.usedClasses = data.usedClasses
+      const { compile } = useClassCompiler()
+      const compiled = compile()
+      this.usedClasses = compiled.usedClassList
+      this.usedClassData = compiled.usedClassData
+      this.styleSheetClasses = compiled.styleSheetClasses
+      this.codeBlockClasses = compiled.codeBlockClasses
     },
     getData() {
       const output = {
@@ -152,7 +163,7 @@ export const useSelectorStore = defineStore('selectorStore', {
         styleSets: this.styleSets,
         styleSheets: this.styleSheets,
         styleSheetFolders: this.styleSheetFolders,
-        usedClasses: this.usedClasses,
+        // usedClasses: this.usedClasses,
         replaceClasses: this.replaceClasses,
       }
       return output
@@ -350,9 +361,10 @@ export const useSelectorStore = defineStore('selectorStore', {
       }
     },
     quarantineUnused() {
+      const oxyJSONStore = useOxyJSONStore()
       let toQ = []
       for (var i = 0; i < this.selectors.length; i++) {
-        if (this.usedClasses.indexOf(this.selectors[i].key) === -1) {
+        if (oxyJSONStore.getUsedClasses.indexOf(this.selectors[i].key) === -1) {
           if (this.selectors[i].type === 'selector') {
             if (
               this.disabledFolderList.indexOf(this.selectors[i].parent) === -1
@@ -635,9 +647,11 @@ export const useSelectorStore = defineStore('selectorStore', {
       const folder = state.styleSheetFolders.length
       return sheets + folder
     },
+    /**
+     * Project info
+     */
     //Return Selectors that aren't used in the project
     unusedClasses: (state) => {
-      // const oxyJSONStore = useOxyJSONStore()
       let unused = []
       if (state.usedClasses.length !== 0) {
         for (var i = 0; i < state.selectors.length; i++) {
@@ -659,7 +673,7 @@ export const useSelectorStore = defineStore('selectorStore', {
     },
     //Return Classes in the project that don't have Selector
     missingClasses: (state) => {
-      const oxyJSONStore = useOxyJSONStore()
+      // const oxyJSONStore = useOxyJSONStore()
       var missing = []
       if (state.usedClasses.length !== 0) {
         for (var i = 0; i < state.usedClasses.length; i++) {

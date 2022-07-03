@@ -31,14 +31,21 @@
         <span>{{ selectorStore.styleSheets.length }}</span>
       </p>
     </div>
-    <div class="options panel">
-      <h5>Project Cleanup</h5>
-      <BaseButton width="full" @click="selectorStore.quarantineUnused()">
-        Quarantine Unused
-      </BaseButton>
-      <BaseButton width="full" @click="selectorStore.deleteInactive()">
-        Delete Inactive
-      </BaseButton>
+    <div class="selector-info panel">
+      <div>
+        <h5>Selector Info</h5>
+        <p>Class Name: <span>class</span></p>
+        <p>Instances: <span>10</span></p>
+        <p>Page: <span>Home</span></p>
+        <p>Component type: <span>Div</span></p>
+        <p>Component Name: <span>nice Name</span></p>
+        <p>In Code Block: <span>True</span></p>
+      </div>
+      <div class="selector-nav">
+        <IconBack class="icon" />
+        1/28
+        <IconForward class="icon" />
+      </div>
     </div>
     <OverviewSelectorPreview :view="selectorPreview" />
     <!-- <pre>{{ selectorStore.selectors }}</pre> -->
@@ -54,6 +61,8 @@
 import FileControlPanel from '@/components/selectors/control-panel/FileControlPanel.vue'
 import OverviewSelectorPreview from '@/components/selectors/OverviewSelectorPreview.vue'
 import BaseButton from '@/components/inputs/BaseButton.vue'
+import IconForward from '@/components/icons/IconForward'
+import IconBack from '@/components/icons/IconBack'
 import { useSelectorStore } from '@/store/selectorStore'
 import { ref, computed } from 'vue'
 
@@ -71,7 +80,7 @@ const selectorPreview = ref('')
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 300px 300px;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1fr;
   gap: var(--global-space-m);
   grid-auto-flow: row;
 }
@@ -82,23 +91,40 @@ const selectorPreview = ref('')
 }
 .info p {
   cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .info h5 {
   padding: var(--global-space-s) 0 var(--global-space-m) 0;
 }
-.info p span {
+.info p span,
+.selector-info p span {
   color: var(--color-text-muted);
 }
 
-.options {
+.selector-info {
   grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: var(--global-space-m);
 }
-.options h5 {
+.selector-info p {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.selector-info h5 {
   padding: var(--global-space-s) 0 var(--global-space-m) 0;
 }
-.options button {
+.selector-info button {
   margin: var(--global-space-m) 0;
+}
+.selector-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .file-control-panel {
   grid-area: 1 / 3 / 3 / 4;

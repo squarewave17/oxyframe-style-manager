@@ -28,20 +28,26 @@
     </div>
     <!-- Gradient Value -->
     <div class="value" v-if="selProperty === 'gradient'">
-      <span v-if="screen === ''">
-        {{
-          selectorStore.selectors[selectorIndex][stateKey][selProperty].colors[
-            gradColIndex
-          ].value
-        }}
-      </span>
-      <span v-if="screen !== ''">
-        {{
-          selectorStore.selectors[selectorIndex].media[screen][stateKey][
-            selProperty
-          ].colors[gradColIndex].value
-        }}
-      </span>
+      <div class="unit-pair">
+        <span v-if="screen === ''">
+          {{
+            selectorStore.selectors[selectorIndex][stateKey][selProperty]
+              .colors[gradColIndex].value
+          }}
+        </span>
+        <span v-if="screen !== ''">
+          {{
+            selectorStore.selectors[selectorIndex].media[screen][stateKey][
+              selProperty
+            ].colors[gradColIndex].value
+          }}
+        </span>
+        <div
+          v-if="showSwatch"
+          class="swatch"
+          :style="{ backgroundColor: swatchBG }"
+        ></div>
+      </div>
     </div>
     <!-- Custom CSS -->
     <div class="value" v-else-if="selProperty === 'custom-css'">
@@ -213,6 +219,7 @@ const colorCheck = (value, array) => {
   return array.indexOf(value) > -1
 }
 const colorProps = [
+  'gradient',
   'color',
   'background-color',
   'icon-color',
@@ -224,6 +231,13 @@ const colorProps = [
   'border-left-color',
   'box-shadow-color',
   'toggle_icon_color',
+  'icon-background-color',
+  'icon_box_heading_typography_color',
+  'icon_box_text_typography_color',
+  'progress_bar_bar_color',
+  'progress_bar_background_color',
+  'progress_bar_right_text_typography_color',
+  'progress_bar_left_text_typography_color',
 ]
 const showSwatch = computed(() => {
   return colorCheck(props.selProperty, colorProps)

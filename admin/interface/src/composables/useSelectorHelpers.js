@@ -56,7 +56,7 @@ export default function SelectorHelpers() {
         styleSheets.styleSheetFolders,
         'stylesheet-folder'
       ),
-      usedClasses: data.usedClasses,
+      // usedClasses: data.usedClasses,
     }
     return output
   }
@@ -89,7 +89,7 @@ export default function SelectorHelpers() {
       styleFolders: reKey(styleFolders),
       styleSets: reKey(styleSets),
       styleSheets: styleSheets,
-      usedClasses: data.usedClasses,
+      // usedClasses: data.usedClasses,
     }
     return dataOut
   }
