@@ -3,6 +3,7 @@ import { useGlobalStore } from '@/store/globalStore'
 import { useOxyJSONStore } from '@/store/oxyJSONStore'
 import useSelectorHelpers from '@/composables/useSelectorHelpers'
 import useClassCompiler from '@/composables/useClassCompiler'
+import useOxyDataCompiler from '@/composables/useOxyDataCompiler'
 import useFileSystem from '@/composables/useFileSystem'
 
 export const useSelectorStore = defineStore('selectorStore', {
@@ -150,6 +151,8 @@ export const useSelectorStore = defineStore('selectorStore', {
       this.styleSheetFolders = data.styleSheetFolders
       // this.usedClasses = data.usedClasses
       const { compile } = useClassCompiler()
+      const { compileData } = useOxyDataCompiler()
+      console.log(compileData())
       const compiled = compile()
       this.usedClasses = compiled.usedClassList
       this.usedClassData = compiled.usedClassData

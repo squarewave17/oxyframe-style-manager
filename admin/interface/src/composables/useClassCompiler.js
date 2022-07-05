@@ -115,7 +115,7 @@ export default function classCompiler() {
   const compilePresent = () => {
     let classes = []
     const styleSheetClasses = () => {
-      const selectorStore = useSelectorStore()
+      // const selectorStore = useSelectorStore()
       //for each item in selectorStore.styleSheets
       selectorStore.styleSheets.forEach((styleSheet) => {
         styleSheet = JSON.parse(JSON.stringify(styleSheet))
