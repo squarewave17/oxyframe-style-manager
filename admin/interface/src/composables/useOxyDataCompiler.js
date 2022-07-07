@@ -23,17 +23,26 @@ export default function classCompiler() {
           obj.options.original['code-php'] &&
           obj.options.original['code-php'] !== ''
         ) {
+          let uniqueClassNames = []
           //find class attributes in the codeblock
           const classAttr =
             obj.options.original['code-php'].match(/class="(.*?)"/g)
+          console.log(classAttr)
           //for each class attribute, find the class names and put the in an array
-          const classNames = classAttr.map((classAttr) =>
-            classAttr.match(/class="(.*?)"/)[1].split(' ')
-          )
-          //flatten the array
-          const flatClassNames = classNames.flat()
-          //remove duplicates
-          const uniqueClassNames = [...new Set(flatClassNames)]
+          if (classAttr) {
+            classAttr.forEach((attr) => {
+              const className = attr.match(/class="(.*?)"/)[1]
+              codeBlockClasses.push(className)
+            })
+
+            const classNames = classAttr.map((classAttr) =>
+              classAttr.match(/class="(.*?)"/)[1].split(' ')
+            )
+            //flatten the array
+            const flatClassNames = classNames.flat()
+            //remove duplicates
+            uniqueClassNames = [...new Set(flatClassNames)]
+          }
           let componentName = obj.options.nicename || obj.options.selector
           uniqueClassNames.forEach((className) => {
             newClassData(postID, obj.name, componentName, className, true)
