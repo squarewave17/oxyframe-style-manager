@@ -31,22 +31,7 @@
         <span>{{ selectorStore.styleSheets.length }}</span>
       </p>
     </div>
-    <div class="selector-info panel">
-      <div>
-        <h5>Selector Info</h5>
-        <p>Class Name: <span>class</span></p>
-        <p>Instances: <span>10</span></p>
-        <p>Page: <span>Home</span></p>
-        <p>Component type: <span>Div</span></p>
-        <p>Component Name: <span>nice Name</span></p>
-        <p>In Code Block: <span>True</span></p>
-      </div>
-      <div class="selector-nav">
-        <IconBack class="icon" />
-        1/28
-        <IconForward class="icon" />
-      </div>
-    </div>
+    <SelectorInfoPanel />
     <OverviewSelectorPreview :view="selectorPreview" />
     <!-- <pre>{{ selectorStore.selectors }}</pre> -->
     <FileControlPanel />
@@ -60,9 +45,9 @@
 
 import FileControlPanel from '@/components/selectors/control-panel/FileControlPanel.vue'
 import OverviewSelectorPreview from '@/components/selectors/OverviewSelectorPreview.vue'
+import SelectorInfoPanel from '@/components/selectors/SelectorInfoPanel.vue'
 import BaseButton from '@/components/inputs/BaseButton.vue'
-import IconForward from '@/components/icons/IconForward'
-import IconBack from '@/components/icons/IconBack'
+
 import { useSelectorStore } from '@/store/selectorStore'
 import { ref, computed } from 'vue'
 
@@ -105,27 +90,8 @@ const selectorPreview = ref('')
 
 .selector-info {
   grid-area: 2 / 2 / 3 / 3;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: var(--global-space-m);
 }
-.selector-info p {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.selector-info h5 {
-  padding: var(--global-space-s) 0 var(--global-space-m) 0;
-}
-.selector-info button {
-  margin: var(--global-space-m) 0;
-}
-.selector-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 .file-control-panel {
   grid-area: 1 / 3 / 3 / 4;
 }
