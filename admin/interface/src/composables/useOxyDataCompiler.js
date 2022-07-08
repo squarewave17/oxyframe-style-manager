@@ -30,11 +30,6 @@ export default function classCompiler() {
           console.log(classAttr)
           //for each class attribute, find the class names and put the in an array
           if (classAttr) {
-            classAttr.forEach((attr) => {
-              const className = attr.match(/class="(.*?)"/)[1]
-              codeBlockClasses.push(className)
-            })
-
             const classNames = classAttr.map((classAttr) =>
               classAttr.match(/class="(.*?)"/)[1].split(' ')
             )
@@ -52,10 +47,11 @@ export default function classCompiler() {
             ) {
               //add it to the usedClassList
               usedClassList.push(className)
+              //add it to the codeBlockClasses
+              codeBlockClasses.push(className)
             }
           })
         }
-        console.log('code-block')
       }
       //if the obj has options key
       if (obj.options) {

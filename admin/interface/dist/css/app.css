@@ -1054,6 +1054,9 @@ svg[data-v-6395b005] {
   justify-content: space-between;
   align-items: center;
 }
+.icon[data-v-065d47fc] {
+  cursor: pointer;
+}
 
 /*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/views/OverView.vue?vue&type=style&index=0&id=e3deb676&scoped=true&lang=css ***!

@@ -150,12 +150,11 @@ export const useSelectorStore = defineStore('selectorStore', {
       this.styleSheets = data.styleSheets
       this.styleSheetFolders = data.styleSheetFolders
       // this.usedClasses = data.usedClasses
-      const { compile } = useClassCompiler()
+      // const { compile } = useClassCompiler()
       const { compileData } = useOxyDataCompiler()
-      console.log(compileData())
-      const compiled = compile()
+      const compiled = compileData()
       this.usedClasses = compiled.usedClassList
-      this.usedClassData = compiled.usedClassData
+      this.usedClassData = compiled.classDB
       this.styleSheetClasses = compiled.styleSheetClasses
       this.codeBlockClasses = compiled.codeBlockClasses
     },
@@ -733,6 +732,18 @@ export const useSelectorStore = defineStore('selectorStore', {
         }
       }
       return active
+    },
+    selectorInfo: (state) => {
+      return (selector) => {
+        //put each object in usedClassData where the class_name matches selector into a new arrayh and return it
+        let usedClassData = []
+        for (var i = 0; i < state.usedClassData.length; i++) {
+          if (state.usedClassData[i].class_name === selector) {
+            usedClassData.push(state.usedClassData[i])
+          }
+        }
+        return usedClassData
+      }
     },
   },
 })

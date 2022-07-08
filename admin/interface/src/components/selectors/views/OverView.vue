@@ -31,7 +31,7 @@
         <span>{{ selectorStore.styleSheets.length }}</span>
       </p>
     </div>
-    <SelectorInfoPanel />
+    <SelectorInfoPanel :selector="sel" />
     <OverviewSelectorPreview :view="selectorPreview" />
     <!-- <pre>{{ selectorStore.selectors }}</pre> -->
     <FileControlPanel />
@@ -39,6 +39,7 @@
 </template>
 
 <script setup>
+const sel = 'code-block-class'
 /**
  * import
  */
