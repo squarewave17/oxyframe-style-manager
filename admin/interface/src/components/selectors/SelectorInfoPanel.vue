@@ -44,7 +44,7 @@ const selectorArray = computed(() => {
     return false
   }
 })
-console.log(selectorArray.value)
+
 const selectorInfo = computed(() => {
   if (selectorArray.value) {
     return selectorArray.value[currentSelector.value]

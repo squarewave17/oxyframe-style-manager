@@ -27,7 +27,6 @@ export default function classCompiler() {
           //find class attributes in the codeblock
           const classAttr =
             obj.options.original['code-php'].match(/class="(.*?)"/g)
-          console.log(classAttr)
           //for each class attribute, find the class names and put the in an array
           if (classAttr) {
             const classNames = classAttr.map((classAttr) =>

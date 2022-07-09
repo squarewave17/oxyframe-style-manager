@@ -11,7 +11,6 @@ export const useOxyJSONStore = defineStore('oxyJSONStore', {
   actions: {
     initStore(data) {
       this.data = data.oxyJson
-      console.log(this.data)
     },
     replaceClass(currentClass, newClass) {
       const searchForClasses = (obj) => {

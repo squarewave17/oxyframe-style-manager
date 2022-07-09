@@ -32,7 +32,6 @@ export const useSelectorStore = defineStore('selectorStore', {
      * Loading/Saving Data
      */
     getSet(data) {
-      console.log('getset')
       const { processInput } = useSelectorHelpers()
 
       this.setData(processInput(data))
