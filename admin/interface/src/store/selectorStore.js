@@ -459,6 +459,7 @@ export const useSelectorStore = defineStore('selectorStore', {
     /**
      * Selectors
      */
+    //Returns currently selected classes
     selectedClasses: (state) => {
       return state.currentClass.sort(function (a, b) {
         return a - b
@@ -651,6 +652,12 @@ export const useSelectorStore = defineStore('selectorStore', {
     /**
      * Project info
      */
+    // TODO
+    //Return a list of selectors found in stylesheets
+    //Return a list of ALL selectors
+    //Return a list of selectors found in code Blocks
+    //Return a list of Oxy Selectors
+    //Return a list of custom selectors
     //Return Selectors that aren't used in the project
     unusedClasses: (state) => {
       let unused = []
