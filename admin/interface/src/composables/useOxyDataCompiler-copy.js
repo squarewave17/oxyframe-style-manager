@@ -57,6 +57,7 @@ export default function classCompiler() {
           obj.options.original['code-css'] &&
           obj.options.original['code-css'] !== ''
         ) {
+          console.log('css')
           let uniqueClassNames = []
           //find css selectors in the codeblock
           const cssSelectors =

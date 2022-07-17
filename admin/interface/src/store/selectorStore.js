@@ -22,7 +22,7 @@ export const useSelectorStore = defineStore('selectorStore', {
       typeSelected: 'selector',
       usedClasses: [],
       usedClassData: [],
-      codeBlockClasses: [],
+      codeBlockPhpClasses: [],
       styleSheetClasses: [],
       replaceClasses: [],
     }
@@ -150,12 +150,13 @@ export const useSelectorStore = defineStore('selectorStore', {
       this.styleSheetFolders = data.styleSheetFolders
       // this.usedClasses = data.usedClasses
       // const { compile } = useClassCompiler()
+      // console.log(compile())
       const { compileData } = useOxyDataCompiler()
       const compiled = compileData()
       this.usedClasses = compiled.usedClassList
       this.usedClassData = compiled.classDB
       this.styleSheetClasses = compiled.styleSheetClasses
-      this.codeBlockClasses = compiled.codeBlockClasses
+      this.codeBlockPhpClasses = compiled.codeBlockPhpClasses
     },
     getData() {
       const output = {
@@ -654,6 +655,15 @@ export const useSelectorStore = defineStore('selectorStore', {
      */
     // TODO
     //Return a list of selectors found in stylesheets
+    stylesheetClasses: (state) => {
+      const { extractClasses } = useClassCompiler()
+      let uniqueClassNames = []
+      //for every stylesheet in state.styleSheets
+      state.styleSheets.forEach((sheet) => {
+        uniqueClassNames.push(extractClasses(sheet.css))
+      })
+      return uniqueClassNames
+    },
     //Return a list of ALL selectors
     //Return a list of selectors found in code Blocks
     //Return a list of Oxy Selectors
