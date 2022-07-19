@@ -1,6 +1,6 @@
 import { useSelectorStore } from '@/store/selectorStore'
 import { useOxyJSONStore } from '@/store/oxyJSONStore'
-export default function classCompiler() {
+export default function dataCompiler() {
   const selectorStore = useSelectorStore()
   const oxyJSONStore = useOxyJSONStore()
   // DB for all class instances and info
@@ -8,11 +8,11 @@ export default function classCompiler() {
   // Array of classes present in selectors, stylesheets and codeblocks
   let usedClassList = []
   // present classes in stylesheets
-  let styleSheetClasses = []
+  // let styleSheetClasses = []
   //present classes in php code blocks
   let codeBlockPhpClasses = []
   //present classes in css code blocks
-  let codeBlockCssClasses = []
+  let codeBlockCss = []
   const oxyJson = JSON.parse(JSON.stringify(oxyJSONStore.data))
 
   const compileData = () => {
@@ -57,21 +57,7 @@ export default function classCompiler() {
           obj.options.original['code-css'] &&
           obj.options.original['code-css'] !== ''
         ) {
-          let uniqueClassNames = []
-          //find css selectors in the codeblock
-          const cssSelectors =
-            obj.options.original['code-css'].match(/\.(.*?)\{/g)
-          //for each css selector, find the class names and put the in an array
-          if (cssSelectors) {
-            const classNames = cssSelectors.map((cssSelector) =>
-              cssSelector.match(/\.(.*?)\{/)[1].split(' ')
-            )
-            //flatten the array
-            const flatClassNames = classNames.flat()
-            //remove duplicates
-            uniqueClassNames = [...new Set(flatClassNames)]
-          }
-          console.log(uniqueClassNames)
+          codeBlockCss.push(obj.options.original['code-css'])
         }
       }
       //if the obj has options key
@@ -115,8 +101,9 @@ export default function classCompiler() {
     return {
       classDB: classDB,
       usedClassList: usedClassList,
-      styleSheetClasses: styleSheetClasses,
+      // styleSheetClasses: styleSheetClasses,
       codeBlockPhpClasses: codeBlockPhpClasses,
+      codeBlockCss: codeBlockCss,
     }
   }
 

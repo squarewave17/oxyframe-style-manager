@@ -23,7 +23,8 @@ export const useSelectorStore = defineStore('selectorStore', {
       usedClasses: [],
       usedClassData: [],
       codeBlockPhpClasses: [],
-      styleSheetClasses: [],
+      // styleSheetClasses: [],
+      codeBlockCss: [],
       replaceClasses: [],
     }
   },
@@ -155,8 +156,9 @@ export const useSelectorStore = defineStore('selectorStore', {
       const compiled = compileData()
       this.usedClasses = compiled.usedClassList
       this.usedClassData = compiled.classDB
-      this.styleSheetClasses = compiled.styleSheetClasses
+      // this.styleSheetClasses = compiled.styleSheetClasses
       this.codeBlockPhpClasses = compiled.codeBlockPhpClasses
+      this.codeBlockCss = compiled.codeBlockCss
     },
     getData() {
       const output = {
@@ -653,21 +655,87 @@ export const useSelectorStore = defineStore('selectorStore', {
     /**
      * Project info
      */
-    // TODO
     //Return a list of selectors found in stylesheets
-    stylesheetClasses: (state) => {
+    styleSheetClasses: (state) => {
       const { extractClasses } = useClassCompiler()
-      let uniqueClassNames = []
+      let styleSheetClasses = []
       //for every stylesheet in state.styleSheets
       state.styleSheets.forEach((sheet) => {
-        uniqueClassNames.push(extractClasses(sheet.css))
+        styleSheetClasses.push(extractClasses(sheet.css))
       })
+      //combine classes into one array
+      const flatClassNames = styleSheetClasses.flat()
+      //remove duplicate classes
+      const uniqueClassNames = [...new Set(flatClassNames)]
+      //return list of unique class names
+      return uniqueClassNames
+    },
+    //Return a list of selectors found in code Block css
+    codeBlockClasses: (state) => {
+      const { extractClasses } = useClassCompiler()
+      let codeBlockClasses = []
+      //for every stylesheet in state.styleSheets
+      state.codeBlockCss.forEach((sheet) => {
+        codeBlockClasses.push(extractClasses(sheet))
+      })
+      //combine classes into one array
+      const flatClassNames = codeBlockClasses.flat()
+      //remove duplicate classes
+      const uniqueClassNames = [...new Set(flatClassNames)]
+      //return list of unique class names
+      return uniqueClassNames
+    },
+    //Return a list of Oxy Selectors
+    oxyClasses: (state) => {
+      //for every object in the state.selectors array, if state.selectors.type === 'selector', put key into an array
+      const oxyClasses = state.selectors
+        .filter((selector) => {
+          return selector.type === 'selector'
+        })
+        .map((selector) => {
+          return selector.key
+        })
+
+      return oxyClasses
+    },
+    //Return a list of classes found in custom selectors
+    customSelectorClasses: (state) => {
+      const { extractClasses } = useClassCompiler()
+      let codeBlockClasses = []
+      //for every stylesheet in state.styleSheets
+      state.selectors.forEach((selector) => {
+        if (selector.type === 'custom-selector') {
+          codeBlockClasses.push(extractClasses(selector.key))
+        }
+      })
+      //combine classes into one array
+      const flatClassNames = codeBlockClasses.flat()
+      //remove duplicate classes
+      const uniqueClassNames = [...new Set(flatClassNames)]
+      //return list of unique class names
       return uniqueClassNames
     },
     //Return a list of ALL selectors
-    //Return a list of selectors found in code Blocks
-    //Return a list of Oxy Selectors
-    //Return a list of custom selectors
+    allClasses: (state) => {
+      let allClasses = []
+      if (state.oxyClasses) {
+        allClasses.push(state.oxyClasses)
+      }
+      if (state.customSelectorClasses) {
+        allClasses.push(state.customSelectorClasses)
+      }
+      if (state.styleSheetClasses) {
+        allClasses.push(state.styleSheetClasses)
+      }
+      if (state.codeBlockClasses) {
+        allClasses.push(state.codeBlockClasses)
+      }
+      const flatClassNames = allClasses.flat()
+      //remove duplicate classes
+      const uniqueClassNames = [...new Set(flatClassNames)]
+      //return list of unique class names
+      return uniqueClassNames
+    },
     //Return Selectors that aren't used in the project
     unusedClasses: (state) => {
       let unused = []

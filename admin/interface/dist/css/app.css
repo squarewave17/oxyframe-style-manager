@@ -1012,6 +1012,26 @@ svg[data-v-2311756e] {
   max-width: 28ch;
 }
 
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/selectors/OverviewInfoPanel.vue?vue&type=style&index=0&id=78db8ebc&scoped=true&lang=css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+
+.info[data-v-78db8ebc] {
+  padding: var(--global-space-m);
+}
+.info p[data-v-78db8ebc] {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.info h5[data-v-78db8ebc] {
+  padding: var(--global-space-s) 0 var(--global-space-m) 0;
+}
+.info p span[data-v-78db8ebc] {
+  color: var(--color-text-muted);
+}
+
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-12.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-12.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./src/components/icons/IconForward.vue?vue&type=style&index=0&id=ef0c5dd2&scoped=true&lang=css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -1043,6 +1063,9 @@ svg[data-v-6395b005] {
   display: flex;
   justify-content: space-between;
 }
+.selector-info p span[data-v-065d47fc] {
+  color: var(--color-text-muted);
+}
 .selector-info h5[data-v-065d47fc] {
   padding: var(--global-space-s) 0 var(--global-space-m) 0;
 }
@@ -1073,20 +1096,6 @@ svg[data-v-6395b005] {
 }
 .info[data-v-e3deb676] {
   grid-area: 1 / 2 / 2 / 3;
-  padding: var(--global-space-m);
-}
-.info p[data-v-e3deb676] {
-  cursor: pointer;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.info h5[data-v-e3deb676] {
-  padding: var(--global-space-s) 0 var(--global-space-m) 0;
-}
-.info p span[data-v-e3deb676],
-.selector-info p span[data-v-e3deb676] {
-  color: var(--color-text-muted);
 }
 .selector-info[data-v-e3deb676] {
   grid-area: 2 / 2 / 3 / 3;

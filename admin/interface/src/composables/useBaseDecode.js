@@ -15,7 +15,8 @@ export default function baseDecode() {
     if (input)
       input.forEach((obj) => {
         if (obj.css) {
-          obj.css = btoa(obj.css)
+          // obj.css = btoa(obj.css)
+          obj.css = btoa(unescape(encodeURIComponent(obj.css)))
         }
       })
     return input

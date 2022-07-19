@@ -92,6 +92,10 @@ const selectorCycle = (dir) => {
   display: flex;
   justify-content: space-between;
 }
+.selector-info p span {
+  color: var(--color-text-muted);
+}
+
 .selector-info h5 {
   padding: var(--global-space-s) 0 var(--global-space-m) 0;
 }
