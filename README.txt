@@ -16,12 +16,20 @@ class rename Feature
 - clear out new class new after cancel
 -- class bulk rename
    - limit line height to selector amount
+   - Multi cursor at end
 change state order icons to something better
 truncate text - uncategorized selectors | Selector Name
 Folder name validation
 show real color in css preview
 search on organiser view
 Delete inactive confirmation
+
+Selector info
+- Page name
+
+Misc
+Folder Name validation
+Make vars available for color swatches
 
 
 =====================================================

@@ -1,15 +1,24 @@
 <template>
   <div class="overview">
-    <OverviewInfoPanel />
+    <OverviewInfoPanel @changeData="selectorView" />
     <SelectorInfoPanel :selector="sel" />
-    <OverviewSelectorPreview :view="selectorPreview" />
+    <OverviewSelectorPreview
+      :view="selectorList"
+      :name="selName"
+      @info="setInfo"
+    />
     <!-- <pre>{{ selectorStore.selectors }}</pre> -->
     <FileControlPanel />
   </div>
 </template>
 
 <script setup>
-const sel = 'code-block-class'
+const sel = ref('')
+
+const setInfo = (l) => {
+  sel.value = l
+}
+
 /**
  * import
  */
@@ -21,14 +30,28 @@ import SelectorInfoPanel from '@/components/selectors/SelectorInfoPanel.vue'
 import BaseButton from '@/components/inputs/BaseButton.vue'
 
 import { useSelectorStore } from '@/store/selectorStore'
-import { ref, computed } from 'vue'
-
+import { ref, reactive, computed, onMounted } from 'vue'
 /**
  * stores
  */
 const selectorStore = useSelectorStore()
 
-const selectorPreview = ref('')
+const selName = ref('All Selectors')
+const selectorView = (n) => {
+  selectedSelectors.value = n.data
+  selName.value = n.name
+}
+const selectedSelectors = ref('')
+
+const selectorList = computed(() => {
+  if (selectedSelectors.value !== '') {
+    return selectedSelectors.value
+  } else {
+    return selectorStore.allClasses
+  }
+})
+
+// const selectorPreview = ref('all')
 </script>
 
 <style scoped>

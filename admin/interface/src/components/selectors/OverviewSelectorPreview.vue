@@ -1,9 +1,15 @@
 <template>
-  <div class="selector-preview selectors" v-if="view === ''">
-    <h5>All Selectors</h5>
+  <div class="selector-preview selectors">
+    <h5 class="noselect">{{ name }}</h5>
     <div class="selector-list">
-      <div v-for="(element, index) in selectorStore.selectors" :key="index">
-        <h6 class="selector-item text-limit">{{ selectorName(element) }}</h6>
+      <div v-for="(element, index) in view" :key="index">
+        <h6
+          class="selector-item text-limit noselect"
+          ref="selectorRef"
+          @click="$emit('info', selectorRef[index].innerHTML)"
+        >
+          {{ view[index] }}
+        </h6>
       </div>
     </div>
   </div>
@@ -17,7 +23,8 @@ import { ref, computed, onMounted, onUpdated } from 'vue'
  * stores
  */
 const selectorStore = useSelectorStore()
-const props = defineProps(['view'])
+const props = defineProps(['view', 'name'])
+const selectorRef = ref([])
 
 const { hScroll } = useHorizontalScroll()
 
@@ -28,24 +35,24 @@ onMounted(() => {
   hScroll('.selector-list')
 })
 
-const selectorsOnly = computed(() => {
-  return selectorStore.selectors.filter((cClass) => cClass.type === 'selector')
-})
-const customSelectorsOnly = computed(() => {
-  return selectorStore.selectors.filter(
-    (cClass) => cClass.type === 'custom-selector'
-  )
-})
+// const selectorsOnly = computed(() => {
+//   return selectorStore.selectors.filter((cClass) => cClass.type === 'selector')
+// })
+// const customSelectorsOnly = computed(() => {
+//   return selectorStore.selectors.filter(
+//     (cClass) => cClass.type === 'custom-selector'
+//   )
+// })
 /**
  * get friendly name for custom class
  */
-const selectorName = (sel) => {
-  if (sel['friendly_name'] !== undefined) {
-    return sel['friendly_name']
-  } else {
-    return sel.key
-  }
-}
+// const selectorName = (sel) => {
+//   if (sel['friendly_name'] !== undefined) {
+//     return sel['friendly_name']
+//   } else {
+//     return sel.key
+//   }
+// }
 </script>
 <style scoped>
 .selector-preview {
@@ -66,6 +73,7 @@ const selectorName = (sel) => {
 }
 .selector-item {
   padding-right: var(--global-space-m);
+  cursor: pointer;
 }
 .text-limit {
   text-overflow: ellipsis;

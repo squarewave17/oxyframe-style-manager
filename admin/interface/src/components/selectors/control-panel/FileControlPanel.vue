@@ -1,7 +1,7 @@
 <template>
   <div class="file-control-panel panel">
-    <h5>File Management</h5>
-    <div class="panel-controls">
+    <h5 class="noselect">File Management</h5>
+    <div class="panel-controls noselect">
       <div class="import-section">
         <p>Import selectors from a file on your machine</p>
         <BaseButton

@@ -1,6 +1,6 @@
 <template>
-  <div class="selector-info panel">
-    <div v-if="selectorInfo !== undefined">
+  <div class="selector-info panel" v-if="infoStatus === 'active'">
+    <div class="selector-info-content">
       <h5>Selector Info</h5>
       <p>
         Class Name: <span>{{ selectorInfo.class_name }}</span>
@@ -21,10 +21,24 @@
         In Code Block: <span>{{ selectorInfo.phpCode }}</span>
       </p>
     </div>
-    <div class="selector-nav">
+    <div class="selector-nav noselect">
       <IconBack class="icon" @click="selectorCycle('down')" />
-      {{ currentSelector + 1 }}/{{ selectorInstances }}
+      <p>{{ currentSelector + 1 }}/{{ selectorInstances }}</p>
       <IconForward class="icon" @click="selectorCycle('up')" />
+    </div>
+  </div>
+  <!-- Non Found -->
+  <div class="selector-info panel" v-if="infoStatus === 'non-found'">
+    <div class="selector-info-content">
+      <h5>Selector Info</h5>
+      <p class="selector-info-default">No instances found</p>
+    </div>
+  </div>
+  <!-- Non Set -->
+  <div class="selector-info panel" v-if="infoStatus === 'non-set'">
+    <div class="selector-info-content">
+      <h5>Selector Info</h5>
+      <p class="selector-info-default">Click on a selector for info</p>
     </div>
   </div>
 </template>
@@ -32,7 +46,7 @@
 import IconForward from '@/components/icons/IconForward'
 import IconBack from '@/components/icons/IconBack'
 import { useSelectorStore } from '@/store/selectorStore'
-import { ref, computed } from 'vue'
+import { ref, computed, onUpdated, watchEffect } from 'vue'
 const selectorStore = useSelectorStore()
 
 const props = defineProps(['selector'])
@@ -44,13 +58,18 @@ const selectorArray = computed(() => {
     return false
   }
 })
+const infoStatus = computed(() => {
+  if (selectorArray.value === false) {
+    return 'non-set'
+  } else if (selectorArray.value.length < 1) {
+    return 'non-found'
+  } else {
+    return 'active'
+  }
+})
 
 const selectorInfo = computed(() => {
-  if (selectorArray.value) {
-    return selectorArray.value[currentSelector.value]
-  } else {
-    return false
-  }
+  return selectorArray.value[currentSelector.value]
 })
 const selectorInstances = computed(() => {
   return selectorArray.value.length
@@ -58,6 +77,11 @@ const selectorInstances = computed(() => {
 /**
  * Cycle Logic
  */
+watchEffect(() => {
+  if (props.selector) {
+    currentSelector.value = 0
+  }
+})
 const currentSelector = ref(0)
 const selectorCycle = (dir) => {
   switch (dir) {
@@ -87,7 +111,7 @@ const selectorCycle = (dir) => {
   justify-content: space-between;
   padding: var(--global-space-m);
 }
-.selector-info p {
+.selector-info-content p {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -106,6 +130,9 @@ const selectorCycle = (dir) => {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.selector-info-default {
+  text-align: center;
 }
 .icon {
   cursor: pointer;

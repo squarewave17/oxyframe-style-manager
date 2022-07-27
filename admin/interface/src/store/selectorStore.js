@@ -768,6 +768,9 @@ export const useSelectorStore = defineStore('selectorStore', {
             if (state.selectors[j].key == state.usedClasses[i]) {
               found = true
               break
+            } else if (state.codeBlockClasses[j] == state.usedClasses[i]) {
+              found = true
+              break
             }
           }
           if (!found) {
@@ -806,17 +809,17 @@ export const useSelectorStore = defineStore('selectorStore', {
       }
       return inactive
     },
-    activeSelectors: (state) => {
-      let active = []
-      for (var i = 0; i < state.selectors.length; i++) {
-        if (
-          state.disabledFolderList.indexOf(state.selectors[i].parent) === -1
-        ) {
-          active.push(state.selectors[i])
-        }
-      }
-      return active
-    },
+    // activeSelectors: (state) => {
+    //   let active = []
+    //   for (var i = 0; i < state.selectors.length; i++) {
+    //     if (
+    //       state.disabledFolderList.indexOf(state.selectors[i].parent) === -1
+    //     ) {
+    //       active.push(state.selectors[i])
+    //     }
+    //   }
+    //   return active
+    // },
     selectorInfo: (state) => {
       return (selector) => {
         //put each object in usedClassData where the class_name matches selector into a new arrayh and return it

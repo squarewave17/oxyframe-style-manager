@@ -1,45 +1,103 @@
 <template>
   <div class="info panel">
     <h5>Project Info</h5>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.allClasses,
+          name: 'All Selectors',
+        })
+      "
+    >
       All Selectors:
-      <span>0</span>
+      <span>{{ selectorStore.allClasses.length }}</span>
     </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.oxyClasses,
+          name: 'Oxygen Selectors',
+        })
+      "
+    >
       Oxygen Selectors:
-      <span>0</span>
+      <span>{{ selectorStore.oxyClasses.length }}</span>
     </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.customSelectorClasses,
+          name: 'Custom Selectors',
+        })
+      "
+    >
       Custom Selectors:
-      <span>0</span>
+      <span>{{ selectorStore.customSelectorClasses.length }}</span>
     </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.codeBlockClasses,
+          name: 'Codeblock Selectors',
+        })
+      "
+    >
       Codeblock Selectors:
-      <span>0</span>
+      <span>{{ selectorStore.codeBlockClasses.length }}</span>
     </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.styleSheetClasses,
+          name: 'Stylesheet Selectors',
+        })
+      "
+    >
       Stylesheet Selectors:
-      <span>0</span>
+      <span>{{ selectorStore.styleSheetClasses.length }}</span>
     </p>
-    <p>
+    <!-- <p>
       Active:
-      <span>0</span>
+      <span>{{ selectorStore.activeSelectors.length }}</span>
+    </p> -->
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.unusedClasses,
+          name: 'Unused Selectors',
+        })
+      "
+    >
+      Unused Oxygen Selectors:
+      <span>{{ selectorStore.unusedClasses.length }}</span>
     </p>
-    <p>
-      Unused:
-      <span>0</span>
-    </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.missingClasses,
+          name: 'Missing Selectors',
+        })
+      "
+    >
       Missing:
-      <span>0</span>
+      <span>{{ selectorStore.missingClasses.length }}</span>
     </p>
-    <p>
+    <p
+      @click="
+        $emit('changeData', {
+          data: selectorStore.inactiveSelectors,
+          name: 'Disabled Selectors',
+        })
+      "
+    >
       Disabled:
-      <span>0</span>
+      <span>{{ selectorStore.inactiveSelectors.length }}</span>
     </p>
   </div>
 </template>
 <script setup>
+import { useSelectorStore } from '@/store/selectorStore'
+const selectorStore = useSelectorStore()
 const props = defineProps({
   all: {
     type: Number,
